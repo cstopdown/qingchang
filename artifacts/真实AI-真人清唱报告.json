@@ -1,0 +1,31 @@
+{
+  "id": "30876c75-61a5-4292-a91f-7ff5ec511e08",
+  "recordingId": "real-ai-human",
+  "model": "MiniCPM-o 4.5",
+  "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+  "createdAt": 1793298514117,
+  "inputKind": "dry-vocal",
+  "scorable": true,
+  "overall": 68.8,
+  "dimensions": {
+    "clarity": 80,
+    "steadiness": 60,
+    "expression": 70,
+    "recordingQuality": 65
+  },
+  "summary": "音频中包含明显的女声清唱，演唱了具有宗教或仪式感的歌词。人声较为突出，伴以轻微的环境底噪。",
+  "strengths": [
+    "人声清晰，能够辨识歌词内容",
+    "演唱具有一定的表现力和情感投入"
+  ],
+  "improvements": [
+    "演唱时的节奏稳定性有待提高",
+    "部分音节的咬字可以更加清晰"
+  ],
+  "limitations": [
+    "本报告为 AI 听音的主观演唱评价；未提供标准旋律参考，不评判逐音音准或与原唱的一致性。"
+  ],
+  "analyzedSeconds": 20.1405,
+  "totalSeconds": 20.1405,
+  "clipStartSeconds": 0
+}

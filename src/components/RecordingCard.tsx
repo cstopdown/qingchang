@@ -2,15 +2,24 @@ import { useEffect, useState } from "react";
 import { ArrowDownToLine, AudioLines, Trash2 } from "lucide-react";
 import type { Recording } from "../core/types";
 import { formatTime } from "./formatTime";
+import { AiScorePanel, type AiScoringState } from "./AiScorePanel";
 
 export function RecordingCard({
   recording,
   onExport,
   onDelete,
+  onScore,
+  onAiSettings,
+  scoreState,
+  aiBusy,
 }: {
   recording: Recording;
   onExport: () => void;
   onDelete: () => void;
+  onScore: () => void;
+  onAiSettings: () => void;
+  scoreState?: AiScoringState;
+  aiBusy: boolean;
 }) {
   const [url, setUrl] = useState<string>();
   useEffect(() => {
@@ -46,10 +55,19 @@ export function RecordingCard({
             className="icon-button muted"
             aria-label={`删除作品 ${recording.title}`}
             onClick={onDelete}
+            disabled={scoreState?.status === "analyzing"}
           >
             <Trash2 size={17} />
           </button>
         </div>
+        <AiScorePanel
+          report={recording.aiScore}
+          state={scoreState}
+          mixed={!recording.vocalAudio}
+          busy={aiBusy}
+          onScore={onScore}
+          onSettings={onAiSettings}
+        />
       </div>
     </article>
   );

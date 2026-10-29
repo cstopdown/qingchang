@@ -1,0 +1,27 @@
+{
+  "id": "31ec4eee-20b2-4c9e-9d46-c50b49590fcf",
+  "recordingId": "real-ai-instrumental",
+  "model": "MiniCPM-o 4.5",
+  "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+  "createdAt": 1793298511043,
+  "inputKind": "mixed",
+  "scorable": false,
+  "overall": null,
+  "dimensions": {
+    "clarity": null,
+    "steadiness": null,
+    "expression": null,
+    "recordingQuality": null
+  },
+  "summary": "音频中只有轻柔的器乐伴奏，没有明显的人声演唱或哼唱。主要听到的是合成器音色的旋律和节奏型，没有可辨识的嗓音出现。",
+  "strengths": [],
+  "improvements": [],
+  "limitations": [
+    "本报告为 AI 听音的主观演唱评价；未提供标准旋律参考，不评判逐音音准或与原唱的一致性。",
+    "本次听取混音作品，伴奏、音色滤镜和混响可能影响演唱评价。",
+    "仅分析从 5.0 秒开始的 30.0 秒高能量片段，未听取整首。"
+  ],
+  "analyzedSeconds": 30,
+  "totalSeconds": 36,
+  "clipStartSeconds": 5
+}

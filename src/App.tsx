@@ -44,6 +44,15 @@ import { exportAudio, getPlatformLabel, openExternal } from "./platform/bridge";
 import { CoverArt } from "./components/CoverArt";
 import { Modal } from "./components/Modal";
 import { RecordingCard } from "./components/RecordingCard";
+import { AiServiceSettings } from "./components/AiServiceSettings";
+import type { AiScoringState } from "./components/AiScorePanel";
+import {
+  DEFAULT_AI_SETTINGS,
+  loadAiSettings,
+  saveAiSettings,
+  scoreRecording,
+} from "./ai/client";
+import type { AiServiceSettings as ServiceSettings } from "./ai/types";
 import { ImportForm } from "./components/ImportForm";
 import {
   Toggle,
@@ -83,6 +92,10 @@ export default function App() {
   } | null>(null);
   const [saving, setSaving] = useState(false);
   const [selecting, setSelecting] = useState(false);
+  const [aiSettings, setAiSettings] = useState<ServiceSettings>({
+    ...DEFAULT_AI_SETTINGS,
+  });
+  const [aiJobs, setAiJobs] = useState<Record<string, AiScoringState>>({});
   const lyricContainer = useRef<HTMLDivElement>(null);
   const notify = useCallback(
     (text: string, error = false) => setNotification({ text, error }),
@@ -95,6 +108,55 @@ export default function App() {
       notify("这一遍，已好好保存。去「我的作品」听听吧。");
     },
     [notify],
+  );
+  useEffect(() => {
+    try {
+      setAiSettings(loadAiSettings());
+    } catch {
+      notify(
+        "AI 服务配置无法读取，已使用默认本机地址，请到设置中重新保存。",
+        true,
+      );
+    }
+  }, [notify]);
+  const saveAiConfiguration = (value: ServiceSettings) => {
+    saveAiSettings(value);
+    setAiSettings(value);
+  };
+  const analyzeRecording = async (item: Recording) => {
+    setAiJobs((jobs) => ({
+      ...jobs,
+      [item.id]: { status: "analyzing", startedAt: Date.now() },
+    }));
+    try {
+      const lyrics =
+        tracks.find((song) => song.id === item.trackId)?.lyrics ?? "";
+      const report = await scoreRecording(item, lyrics, aiSettings);
+      await saveRecording({ ...item, aiScore: report });
+      setRecordings(await listRecordings());
+      setAiJobs((jobs) => {
+        const updated = { ...jobs };
+        delete updated[item.id];
+        return updated;
+      });
+      notify(
+        report.scorable
+          ? "AI 练唱反馈已保存到作品。"
+          : "这段音频暂不适合评分，原因已保存。",
+      );
+    } catch (error) {
+      setAiJobs((jobs) => ({
+        ...jobs,
+        [item.id]: {
+          status: "error",
+          startedAt: 0,
+          message: (error as Error).message,
+        },
+      }));
+    }
+  };
+  const aiBusy = Object.values(aiJobs).some(
+    (job) => job.status === "analyzing",
   );
   const studio = useStudio(handleRecordingComplete);
   const { track, status, position, duration, settings } = studio;
@@ -267,6 +329,7 @@ export default function App() {
           {navigation.map((item) => (
             <button
               key={item.id}
+              aria-label={item.label}
               className={`nav-item ${view === item.id ? "active" : ""}`}
               onClick={() => setView(item.id)}
               aria-current={view === item.id ? "page" : undefined}
@@ -314,6 +377,7 @@ export default function App() {
             </span>
           </div>
           <button
+            aria-label="偏好设置"
             className={`nav-item settings-nav ${view === "settings" ? "active" : ""}`}
             onClick={() => setView("settings")}
           >
@@ -978,6 +1042,12 @@ export default function App() {
                   <RecordingCard
                     key={item.id}
                     recording={item}
+                    scoreState={aiJobs[item.id]}
+                    aiBusy={aiBusy}
+                    onScore={() => {
+                      void analyzeRecording(item);
+                    }}
+                    onAiSettings={() => setView("settings")}
                     onExport={() => exportRecording(item)}
                     onDelete={() =>
                       setConfirmation({
@@ -1145,6 +1215,10 @@ export default function App() {
                     恢复默认录音设置 <ArrowRight size={14} />
                   </button>
                 </section>
+                <AiServiceSettings
+                  settings={aiSettings}
+                  onSave={saveAiConfiguration}
+                />
                 <section className="settings-card device-card">
                   <h2>
                     <SlidersHorizontal size={20} /> 当前环境
