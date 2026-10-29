@@ -1,0 +1,86 @@
+name: 三平台构建
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    name: 网页构建与功能测试
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 网页生产文件
+          path: dist/
+
+  desktop:
+    name: 桌面安装包 (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: 构建 macOS 自用包（临时签名，未公证）
+        if: runner.os == 'macOS'
+        run: npm run desktop:dist -- --publish never --config.electronDist=node_modules/electron/dist --config.mac.identity=- --config.mac.hardenedRuntime=false
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: 构建 Windows 自用包（未签名）
+        if: runner.os == 'Windows'
+        run: npm run desktop:dist -- --publish never --config.electronDist=node_modules/electron/dist --config.win.signExecutable=false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 轻唱-${{ runner.os }}-安装包
+          path: |
+            release/*.dmg
+            release/*.exe
+          if-no-files-found: error
+
+  android:
+    name: Android debug APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - name: 安装 Android SDK 36
+        run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 'platform-tools'
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      - run: chmod +x android/gradlew
+      - run: npm run android:build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 轻唱-Android-debug-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error

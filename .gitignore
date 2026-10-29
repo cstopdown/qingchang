@@ -1,0 +1,17 @@
+node_modules/
+dist/
+release/
+.tools/
+.DS_Store
+*.log
+test-results/
+playwright-report/
+android/.gradle/
+android/local.properties
+android/app/build/
+android/build/
+android/capacitor-cordova-android-plugins/build/
+android/.idea/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
