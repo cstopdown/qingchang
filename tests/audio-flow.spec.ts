@@ -243,3 +243,193 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     expect(recording.dryRms).toBeCloseTo(0.2 / Math.sqrt(2), 2)
   }
 })
+
+test('音频线程挂起后保存已收到的部分PCM，允许重新录音并保留保存失败作品', async ({ page, context }) => {
+  await context.grantPermissions(['microphone'])
+  await page.goto('/')
+  const result = await page.evaluate(async () => {
+    const enginePath = '/src/audio/StudioEngine.ts'
+    const mixPath = '/src/audio/mix.ts'
+    const { StudioEngine } = await import(/* @vite-ignore */ enginePath)
+    const { encodeWav } = await import(/* @vite-ignore */ mixPath)
+    const OriginalContext = window.AudioContext
+    const OriginalWorklet = window.AudioWorkletNode
+    let audioContext!: AudioContext
+    window.AudioContext = class extends OriginalContext {
+      constructor(options?: AudioContextOptions) { super(options); audioContext = this }
+    }
+    // 观察真实 Worklet 的公开消息协议，核对导出帧数确为主线程已收到的帧数。
+    const receivedFrames: number[] = []
+    window.AudioWorkletNode = class extends OriginalWorklet {
+      constructor(...args: ConstructorParameters<typeof AudioWorkletNode>) {
+        super(...args)
+        const index = receivedFrames.length
+        receivedFrames.push(0)
+        this.port.addEventListener('message', ({ data }) => {
+          if (data.type === 'chunk') receivedFrames[index] = data.offset + data.samples.length
+        })
+      }
+    }
+    const streams: MediaStream[] = []
+    const getUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices)
+    navigator.mediaDevices.getUserMedia = async (constraints) => {
+      const stream = await getUserMedia(constraints)
+      streams.push(stream)
+      return stream
+    }
+    type Captured = { audio: Blob; vocalAudio: Blob; duration: number }
+    const saved: Captured[] = []
+    let failOnce = false
+    const engine = new StudioEngine(async (recording: Captured) => {
+      if (failOnce) { failOnce = false; throw new Error('测试：中断后存储写入失败') }
+      saved.push(recording)
+    })
+    const wait = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds))
+    const waitReady = () => new Promise<void>((resolve) => {
+      if (engine.getSnapshot().status === 'ready') return resolve()
+      const remove = engine.subscribe(() => {
+        if (engine.getSnapshot().status === 'ready') { remove(); resolve() }
+      })
+    })
+    const readWav = async (recording: Captured) => {
+      const dry = new DataView(await recording.vocalAudio.arrayBuffer())
+      const mixed = new DataView(await recording.audio.arrayBuffer())
+      let energy = 0
+      const frames = dry.getUint32(40, true) / 2
+      for (let frame = 0; frame < frames; frame++) energy += (dry.getInt16(44 + frame * 2, true) / 32768) ** 2
+      return { duration: recording.duration, sampleRate: dry.getUint32(24, true), frames, mixedFrames: mixed.getUint32(40, true) / 4, rms: Math.sqrt(energy / frames) }
+    }
+    const rate = 48000
+    const backing = Float32Array.from({ length: rate * 2 }, (_, frame) => 0.1 * Math.sin(2 * Math.PI * 220 * frame / rate))
+    await engine.selectTrack({
+      id: 'interrupt-test', title: '中断测试', artist: '测试', duration: 2,
+      cover: 'amber', origin: 'local', lyrics: '', createdAt: Date.now(), favorite: false,
+      audio: encodeWav([backing], rate),
+    })
+    engine.updateSettings({ musicVolume: 0, vocalVolume: 1, reverb: 0, vocalTone: 'natural', latencyMs: 0, monitoring: true })
+
+    // 真实停止音频渲染线程，而非模拟 Worklet 完成消息。
+    await engine.startRecording()
+    await wait(520)
+    await audioContext.suspend()
+    await waitReady()
+    const interrupted = await readWav(saved[0])
+    const interruptedNotice = engine.getSnapshot().notice
+    const firstReleased = streams.every((stream) => stream.getTracks().every((track) => track.readyState === 'ended'))
+    const streamCount = streams.length
+    await wait(100)
+    const didNotRestart = audioContext.state === 'suspended' && streams.length === streamCount
+
+    // 用户重新开始才恢复音频；同一次中断的保存失败必须保留真实部分作品。
+    failOnce = true
+    await engine.startRecording()
+    const restarted = engine.getSnapshot().status
+    await wait(420)
+    await audioContext.suspend()
+    await waitReady()
+    const pending = engine.getSnapshot().pendingRecording
+    const pendingWav = await readWav(pending)
+    const pendingNotice = engine.getSnapshot().notice
+    const pendingError = engine.getSnapshot().error
+    await engine.retrySaveRecording()
+    const recovered = engine.getSnapshot().pendingRecording === null
+
+    // 起唱前立即重复中断不产生空作品，也不重复调用保存。
+    await engine.startRecording()
+    await Promise.all([engine.interrupt('主动中断'), engine.interrupt('重复中断')])
+    const noEmptyRecording = saved.length === 2
+    const emptyNotice = engine.getSnapshot().notice
+
+    // 输入设备事件为受控注入，不将此等同于 iPhone 真机麦克风中断。
+    await engine.startRecording()
+    await wait(420)
+    streams.at(-1)!.getAudioTracks()[0].dispatchEvent(new Event('mute'))
+    await waitReady()
+    const muteWav = await readWav(saved[2])
+    const mutedNotice = engine.getSnapshot().notice
+
+    // 在真实麦克风流已获准后挂住 resume，模拟 iOS 启动阶段的系统等待。
+    const makeGate = () => {
+      let enter!: () => void
+      let release!: () => void
+      const entered = new Promise<void>((resolve) => { enter = resolve })
+      const released = new Promise<void>((resolve) => { release = resolve })
+      return { enter, release, entered, released }
+    }
+    const firstGate = makeGate()
+    const secondGate = makeGate()
+    const captureGates = [firstGate, secondGate]
+    let nextResumeGate: ReturnType<typeof makeGate> | null = null
+    const capture = navigator.mediaDevices.getUserMedia
+    navigator.mediaDevices.getUserMedia = async (constraints) => {
+      const stream = await capture(constraints)
+      nextResumeGate = captureGates.shift()!
+      return stream
+    }
+    const resume = audioContext.resume.bind(audioContext)
+    audioContext.resume = async () => {
+      const gate = nextResumeGate
+      if (gate) {
+        nextResumeGate = null
+        gate.enter()
+        await gate.released
+      }
+      await resume()
+    }
+    const staleStart = engine.startRecording()
+    await firstGate.entered
+    const staleStream = streams.at(-1)!
+    await engine.interrupt('启动时切入后台')
+    const startupReleasedImmediately = staleStream.getTracks().every((track) => track.readyState === 'ended')
+    const freshStart = engine.startRecording()
+    await secondGate.entered
+    const freshStream = streams.at(-1)!
+    firstGate.release()
+    await staleStart
+    const newerStreamSurvived = freshStream.getTracks().every((track) => track.readyState === 'live')
+    await engine.interrupt('再次启动被中断')
+    const newerStreamReleasedImmediately = freshStream.getTracks().every((track) => track.readyState === 'ended')
+    secondGate.release()
+    await freshStart
+    audioContext.resume = resume
+    navigator.mediaDevices.getUserMedia = capture
+    const noStartupRecording = saved.length === 3
+    const allReleased = streams.every((stream) => stream.getTracks().every((track) => track.readyState === 'ended'))
+    engine.clearNotice()
+    const cleared = engine.getSnapshot().notice === null
+    engine.dispose()
+    window.AudioContext = OriginalContext
+    window.AudioWorkletNode = OriginalWorklet
+    navigator.mediaDevices.getUserMedia = getUserMedia
+    return { interrupted, interruptedNotice, firstReleased, didNotRestart, restarted, pendingWav, pendingNotice,
+      pendingError, recovered, noEmptyRecording, emptyNotice, muteWav, mutedNotice, allReleased, cleared, receivedFrames,
+      startupReleasedImmediately, newerStreamSurvived, newerStreamReleasedImmediately, noStartupRecording }
+  })
+  console.log('中断与部分录音验收结果', JSON.stringify(result))
+  expect(result.firstReleased).toBe(true)
+  expect(result.didNotRestart).toBe(true)
+  expect(result.restarted).toBe('recording')
+  expect(result.interruptedNotice).toContain('已保存')
+  expect(result.pendingNotice).toContain('待保存')
+  expect(result.pendingError).toContain('保存作品失败')
+  expect(result.recovered).toBe(true)
+  expect(result.noEmptyRecording).toBe(true)
+  expect(result.emptyNotice).toContain('尚未收到')
+  expect(result.mutedNotice).toContain('麦克风输入已中断')
+  expect(result.allReleased).toBe(true)
+  expect(result.cleared).toBe(true)
+  expect(result.startupReleasedImmediately).toBe(true)
+  expect(result.newerStreamSurvived).toBe(true)
+  expect(result.newerStreamReleasedImmediately).toBe(true)
+  expect(result.noStartupRecording).toBe(true)
+  for (const [recording, received] of [
+    [result.interrupted, result.receivedFrames[0]], [result.pendingWav, result.receivedFrames[1]], [result.muteWav, result.receivedFrames[3]],
+  ] as const) {
+    expect(recording.frames).toBe(received)
+    expect(recording.mixedFrames).toBe(received)
+    expect(recording.duration).toBeCloseTo(received / recording.sampleRate, 8)
+    expect(recording.duration).toBeGreaterThan(0.1)
+    expect(recording.duration).toBeLessThan(1)
+    expect(recording.rms).toBeCloseTo(0.2 / Math.sqrt(2), 2)
+  }
+})

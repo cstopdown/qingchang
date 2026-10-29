@@ -2,8 +2,15 @@ import { Capacitor, CapacitorHttp } from '@capacitor/core';
 import { Browser } from '@capacitor/browser';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
+import { App } from '@capacitor/app';
 
 type ExportResult = 'saved' | 'shared' | 'cancelled';
+
+export async function subscribeAppPause(listener: () => void): Promise<() => void> {
+  if (!Capacitor.isNativePlatform()) return () => {};
+  const handle = await App.addListener('pause', listener);
+  return () => { void handle.remove(); };
+}
 
 export interface LocalAiProgress {
   state: 'idle' | 'installing' | 'starting' | 'ready' | 'error';

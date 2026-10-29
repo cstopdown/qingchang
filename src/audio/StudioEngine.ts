@@ -12,6 +12,7 @@ export interface StudioSnapshot {
   pitch: Pitch | null
   settings: MixerSettings
   error: string | null
+  notice: string | null
   pendingRecording: Recording | null
   previewStatus: 'off' | 'starting' | 'on'
 }
@@ -41,6 +42,9 @@ interface RecordingSession {
   resolveDone: (frames: number) => void
   finishing: Promise<void> | null
   cancelled: boolean
+  receivedFrames: number
+  released: boolean
+  interruptionReason: string | null
 }
 
 /** 仅在浏览器 I/O 边界转换错误；内部音频图与 PCM 格式使用固定契约。 */
@@ -103,6 +107,7 @@ export class StudioEngine {
     pitch: null,
     settings: { ...DEFAULT_MIXER_SETTINGS },
     error: null,
+    notice: null,
     pendingRecording: null,
     previewStatus: 'off',
   }
@@ -114,6 +119,7 @@ export class StudioEngine {
   private playbackGain: GainNode | null = null
   private recording: RecordingSession | null = null
   private preview: MicrophoneInput | null = null
+  private startingStream: { stream: MediaStream; purpose: 'preview' | 'recording' } | null = null
   private previewVersion = 0
   private playbackStartedAt = 0
   private playbackOffset = 0
@@ -139,7 +145,15 @@ export class StudioEngine {
   }
 
   private getContext(): AudioContext {
-    if (!this.context) this.context = new AudioContext({ latencyHint: 'interactive' })
+    if (!this.context) {
+      const context = new AudioContext({ latencyHint: 'interactive' })
+      context.onstatechange = () => {
+        if (context.state !== 'running' && (this.playbackSource || this.preview || this.recording)) {
+          void this.interrupt('系统暂停了音频')
+        }
+      }
+      this.context = context
+    }
     return this.context
   }
 
@@ -148,7 +162,7 @@ export class StudioEngine {
     const version = ++this.loadVersion
     ++this.transportVersion
     this.stopPlayback()
-    this.update({ status: this.snapshot.track ? 'ready' : 'empty', position: 0, error: null })
+    this.update({ status: this.snapshot.track ? 'ready' : 'empty', position: 0, error: null, notice: null })
     try {
       const bytes = await track.audio.arrayBuffer()
       if (version !== this.loadVersion) return
@@ -203,7 +217,7 @@ export class StudioEngine {
       this.update({ status: 'ready', position: this.snapshot.duration })
     }
     source.start(context.currentTime, offset)
-    this.update({ status: 'playing', position: offset, error: null })
+    this.update({ status: 'playing', position: offset, error: null, notice: null })
     this.startAnimation()
   }
 
@@ -220,7 +234,7 @@ export class StudioEngine {
   startPreview = async (): Promise<void> => {
     if (this.snapshot.previewStatus !== 'off' || this.snapshot.status === 'recording' || this.snapshot.status === 'finishing') return
     const version = ++this.previewVersion
-    this.update({ previewStatus: 'starting', error: null })
+    this.update({ previewStatus: 'starting', error: null, notice: null })
     let stream: MediaStream | null = null
     try {
       const context = this.getContext()
@@ -228,14 +242,22 @@ export class StudioEngine {
       if (version !== this.previewVersion) return
       stream = await this.openMicrophone()
       if (version !== this.previewVersion) {
-        for (const track of stream.getTracks()) track.stop()
+        this.stopStartingStream(stream)
+        return
+      }
+      this.startingStream = { stream, purpose: 'preview' }
+      // 首次授权/输入路由切换可能暂停 iOS 音频；当前仍属于用户主动启动链路。
+      await context.resume()
+      if (version !== this.previewVersion) {
+        this.stopStartingStream(stream)
         return
       }
       this.preview = this.createMicrophoneInput(context, stream)
+      this.startingStream = null
       this.update({ previewStatus: 'on' })
       this.startAnimation()
     } catch (error) {
-      if (stream) for (const track of stream.getTracks()) track.stop()
+      if (stream) this.stopStartingStream(stream)
       if (version !== this.previewVersion) return
       console.error('麦克风测试启动失败', error)
       this.update({ previewStatus: 'off', error: describeInputError(error), level: 0, pitch: null })
@@ -244,6 +266,7 @@ export class StudioEngine {
 
   stopPreview = (): void => {
     ++this.previewVersion
+    if (this.startingStream?.purpose === 'preview') this.stopStartingStream(this.startingStream.stream)
     if (this.preview) {
       this.releaseInput(this.preview)
       this.preview = null
@@ -259,6 +282,11 @@ export class StudioEngine {
     return navigator.mediaDevices.getUserMedia({
       audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 },
     })
+  }
+
+  private stopStartingStream(stream: MediaStream): void {
+    for (const track of stream.getTracks()) track.stop()
+    if (this.startingStream?.stream === stream) this.startingStream = null
   }
 
   private createMicrophoneInput(context: AudioContext, stream: MediaStream): MicrophoneInput {
@@ -286,6 +314,10 @@ export class StudioEngine {
     vocalGain.connect(monitorGate).connect(context.destination)
     vocalGain.connect(delay).connect(reverbGain).connect(monitorGate)
     delay.connect(feedback).connect(delay)
+    for (const track of stream.getAudioTracks()) {
+      track.onended = () => { void this.interrupt('麦克风连接已结束') }
+      track.onmute = () => { void this.interrupt('麦克风输入已中断') }
+    }
     return {
       stream, analyser, tone, vocalGain, monitorGate, reverbGain,
       nodes: [microphone, analyser, silent, toneInput, vocalGain, monitorGate, delay, feedback, reverbGain],
@@ -293,6 +325,10 @@ export class StudioEngine {
   }
 
   private releaseInput(input: MicrophoneInput): void {
+    for (const track of input.stream.getAudioTracks()) {
+      track.onended = null
+      track.onmute = null
+    }
     input.tone.dispose()
     for (const node of input.nodes) node.disconnect()
     for (const track of input.stream.getTracks()) track.stop()
@@ -308,7 +344,7 @@ export class StudioEngine {
     const version = ++this.transportVersion
     ++this.loadVersion
     this.stopPlayback()
-    this.update({ status: 'finishing', position: 0, error: null })
+    this.update({ status: 'finishing', position: 0, error: null, notice: null })
     let stream: MediaStream | null = null
     try {
       const context = this.getContext()
@@ -317,19 +353,26 @@ export class StudioEngine {
       if (version !== this.transportVersion) return
       stream = await this.openMicrophone()
       if (version !== this.transportVersion) {
-        for (const track of stream.getTracks()) track.stop()
+        this.stopStartingStream(stream)
         return
       }
+      this.startingStream = { stream, purpose: 'recording' }
       if (!context.audioWorklet) throw new Error('当前浏览器不支持 AudioWorklet，请升级浏览器或使用桌面应用。')
       this.workletLoaded ??= context.audioWorklet.addModule(`${import.meta.env.BASE_URL}audio-worklets/pcm-recorder.js`)
       await this.workletLoaded
       if (version !== this.transportVersion) {
-        for (const track of stream.getTracks()) track.stop()
+        this.stopStartingStream(stream)
+        return
+      }
+      await context.resume()
+      if (version !== this.transportVersion) {
+        this.stopStartingStream(stream)
         return
       }
       this.createRecordingSession(context, stream)
+      this.startingStream = null
     } catch (error) {
-      if (stream) for (const track of stream.getTracks()) track.stop()
+      if (stream) this.stopStartingStream(stream)
       if (version !== this.transportVersion) return
       console.error('录音启动失败', error)
       this.update({ status: 'ready', error: describeInputError(error), level: 0, pitch: null })
@@ -365,12 +408,15 @@ export class StudioEngine {
       track: this.snapshot.track!, backing, input, source, worklet, musicGain,
       nodes: [source, musicGain, worklet, silent],
       pcm: new Float32Array(backing.length), startFrame, endFrame, done, resolveDone,
-      finishing: null, cancelled: false,
+      finishing: null, cancelled: false, receivedFrames: 0, released: false, interruptionReason: null,
     }
     worklet.port.onmessage = ({ data }: MessageEvent<
       { type: 'chunk'; offset: number; samples: Float32Array } | { type: 'complete'; frames: number }
     >) => {
-      if (data.type === 'chunk') session.pcm.set(data.samples, data.offset)
+      if (data.type === 'chunk') {
+        session.pcm.set(data.samples, data.offset)
+        session.receivedFrames = data.offset + data.samples.length
+      }
       else {
         resolveDone(data.frames)
         void this.finishRecording(session)
@@ -403,6 +449,31 @@ export class StudioEngine {
     await this.finishRecording(session)
   }
 
+  interrupt = async (reason = '音频已中断'): Promise<void> => {
+    const session = this.recording
+    if (session?.released) {
+      if (session.finishing) await session.finishing
+      return
+    }
+    const preparing = this.snapshot.status === 'finishing' && !session && !this.snapshot.pendingRecording
+    const active = !!(session || this.preview || this.playbackSource || this.startingStream || preparing || this.snapshot.previewStatus === 'starting')
+    if (!active) return
+    ++this.transportVersion
+    if (this.startingStream) this.stopStartingStream(this.startingStream.stream)
+    const position = this.playbackSource ? this.currentPosition() : this.snapshot.position
+    this.stopPreview()
+    this.stopPlayback()
+    if (session) {
+      session.interruptionReason = reason
+      // 被系统挂起的 Worklet 无法再响应 stop；只保留主线程确已收到的连续 PCM。
+      this.releaseSession(session)
+      session.resolveDone(session.receivedFrames)
+      await this.finishRecording(session)
+    } else {
+      this.update({ status: this.snapshot.track ? 'ready' : 'empty', position, notice: `${reason}。请回到前台后重新开始。` })
+    }
+  }
+
   private finishRecording(session: RecordingSession): Promise<void> {
     if (session.finishing) return session.finishing
     this.update({ status: 'finishing' })
@@ -411,6 +482,14 @@ export class StudioEngine {
       const frames = await session.done
       this.releaseSession(session)
       if (session.cancelled) return
+      if (frames === 0) {
+        this.recording = null
+        this.update({
+          status: 'ready', position: 0, level: 0, pitch: null,
+          notice: `${session.interruptionReason ?? '录音时间太短'}。尚未收到可保存的声音，请重新开始。`,
+        })
+        return
+      }
       const settings = this.snapshot.settings
       const music = Array.from({ length: session.backing.numberOfChannels }, (_, index) => session.backing.getChannelData(index))
       const mixed = renderMix(music, session.pcm.subarray(0, frames), session.backing.sampleRate, settings)
@@ -429,7 +508,12 @@ export class StudioEngine {
       } finally {
         if (this.recording === session) {
           this.recording = null
-          this.update({ status: 'ready', position: recording.duration, level: 0, pitch: null })
+          this.update({
+            status: 'ready', position: recording.duration, level: 0, pitch: null,
+            notice: session.interruptionReason
+              ? `${session.interruptionReason}。${this.snapshot.pendingRecording ? '部分作品待保存，可重试保存或直接导出。' : `已保存 ${recording.duration.toFixed(1)} 秒部分作品。`}`
+              : this.snapshot.notice,
+          })
         }
       }
     })()
@@ -452,11 +536,14 @@ export class StudioEngine {
     this.stopPlayback()
     this.update({ status: 'finishing' })
     await this.saveRecording(recording)
-    this.update({ status: this.snapshot.track ? 'ready' : 'empty' })
+    this.update({
+      status: this.snapshot.track ? 'ready' : 'empty',
+      notice: this.snapshot.pendingRecording ? this.snapshot.notice : '作品已保存。',
+    })
   }
 
   discardPendingRecording = (): void => {
-    this.update({ pendingRecording: null, error: null })
+    this.update({ pendingRecording: null, error: null, notice: null })
   }
 
   updateSettings = (patch: Partial<MixerSettings>): void => {
@@ -480,9 +567,11 @@ export class StudioEngine {
   }
 
   clearError = (): void => { this.update({ error: null }) }
+  clearNotice = (): void => { this.update({ notice: null }) }
 
   stop = (): void => {
     this.stopPreview()
+    if (this.startingStream) this.stopStartingStream(this.startingStream.stream)
     if (this.recording) {
       void this.stopRecording()
       return
@@ -509,7 +598,10 @@ export class StudioEngine {
   }
 
   private releaseSession(session: RecordingSession): void {
+    if (session.released) return
+    session.released = true
     session.source.stop()
+    session.worklet.onprocessorerror = null
     session.worklet.port.onmessage = null
     session.worklet.port.close()
     for (const node of session.nodes) node.disconnect()
@@ -548,6 +640,7 @@ export class StudioEngine {
     ++this.loadVersion
     ++this.transportVersion
     this.stopPreview()
+    if (this.startingStream) this.stopStartingStream(this.startingStream.stream)
     this.stopPlayback()
     if (this.recording) {
       this.recording.cancelled = true
@@ -555,7 +648,10 @@ export class StudioEngine {
       this.releaseSession(this.recording)
       this.recording = null
     }
-    if (this.context) void this.context.close().catch((error: unknown) => { console.error('音频设备关闭失败', error) })
+    if (this.context) {
+      this.context.onstatechange = null
+      void this.context.close().catch((error: unknown) => { console.error('音频设备关闭失败', error) })
+    }
     this.context = null
     this.workletLoaded = null
   }

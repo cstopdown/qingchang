@@ -25,12 +25,16 @@
     "android:build": "npm run android:sync && node scripts/build-android.mjs",
     "ios:sync": "npm run build && cap sync ios",
     "ios:open": "cap open ios",
+    "ios:check": "node scripts/ios.mjs check",
+    "ios:build": "node scripts/ios.mjs build",
+    "ios:run": "node scripts/ios.mjs run",
     "ai:setup": "node scripts/setup-ai.mjs",
     "ai:start": "node scripts/start-ai.mjs",
     "test:ai": "node scripts/test-ai.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.6.0",
+    "@capacitor/app": "8.1.2",
     "@capacitor/browser": "8.0.5",
     "@capacitor/core": "8.6.0",
     "@capacitor/filesystem": "8.1.5",

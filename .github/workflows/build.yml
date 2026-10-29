@@ -1,4 +1,4 @@
-name: 三平台构建
+name: 四平台构建
 
 on:
   push:
@@ -83,4 +83,29 @@ jobs:
         with:
           name: 轻唱-Android-debug-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+  ios:
+    name: iOS 模拟器应用（未签名）
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      - run: npm run ios:build
+      - name: 归档模拟器应用
+        run: |
+          mkdir -p release
+          ditto -c -k --sequesterRsrc --keepParent ios/DerivedData/simulator/Build/Products/Debug-iphonesimulator/App.app release/qingchang-ios-simulator.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 轻唱-iOS-模拟器应用
+          path: release/qingchang-ios-simulator.zip
           if-no-files-found: error
