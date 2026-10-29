@@ -7,7 +7,7 @@
 - `npm test` 运行功能级测试，`npm run test:e2e` 运行浏览器验收。
 - `npm run desktop:dev` 启动 Electron；`npm run desktop:pack` 生成当前系统可运行的应用目录；`npm run desktop:dist` 生成安装包。
 - `npm run android:sync` 同步 Android 工程；`npm run android:build` 需要 JDK 21 和 Android SDK，产出 debug APK。
-- `npm run ios:sync` 同步 iOS 工程；`npm run ios:open` 打开 Xcode 项目。真机自用需要 Xcode 26+、Apple ID 签名与设备开发者模式。
+- `npm run ios:check` 检查完整 Xcode 26+ 及 iOS SDK；`ios:sync` 同步工程；`ios:build` 构建未签名模拟器应用；`ios:run` 选择设备/模拟器运行；`ios:open` 打开 Xcode，均通过 `npm run` 调用。轻唱最低 iOS 16.4，真机自用需个人 Apple Team 签名与设备开发者模式；SPM 依赖兼容下限不改变应用部署下限。
 - `npm run ai:setup` 准备 Apple Silicon Mac 的私有 AI 环境，`npm run ai:start` 启动服务，`npm run test:ai` 运行功能测试。`QINGCHANG_AI_HOME` 可指定独立环境目录；已安装环境直接离线启动。
 - 模型和 Python 环境不进 Git 或安装包。默认只监听本机；仅用户显式启用局域网监听并设置令牌后，手机才可连接该私有服务。
 - 原生 IPC 只接受受信任本地窗口，网页外链仅允许 HTTP/HTTPS。不要关闭 Web 安全或给远程内容开放 Node.js。

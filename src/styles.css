@@ -2746,7 +2746,8 @@ h1 {
     font-size: 8px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 700px),
+  (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
   :root {
     --sidebar: 0px;
   }
@@ -3728,7 +3729,8 @@ h1 {
     flex-wrap: wrap;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 700px),
+  (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
   .pending-recording {
     margin: 17px 21px 0;
     padding: 16px;
@@ -3882,7 +3884,8 @@ h1 {
     font-size: 8px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 700px),
+  (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
   .page-heading p {
     font-size: 11px;
   }
@@ -4178,7 +4181,8 @@ h1 {
     font-size: 10px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 700px),
+  (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
   .settings-preview {
     gap: 13px;
     align-items: flex-start;
@@ -4587,7 +4591,8 @@ h1 {
   flex-shrink: 0;
   margin-top: 2px;
 }
-@media (max-width: 700px) {
+@media (max-width: 700px),
+  (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
   .ai-score-heading > span {
     font-size: 11px;
   }
@@ -4726,4 +4731,202 @@ h1 {
   font-size: 13px;
   color: #53664d;
   line-height: 1.9;
+}
+/* iOS 视口与安全区：装饰背景全屏，交互内容避开状态栏和手势区域。 */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --page-gutter: 43px;
+  --header-height: 78px;
+  --sidebar-top: 36px;
+  --sidebar-side: 20px;
+  --sidebar-bottom: 18px;
+  --player-gutter: 34px;
+  --mobile-nav-height: calc(68px + var(--safe-bottom));
+}
+.app-shell {
+  min-height: 100dvh;
+}
+.app-shell.has-player {
+  padding-bottom: calc(84px + var(--safe-bottom));
+}
+.sidebar {
+  width: calc(var(--sidebar) + var(--safe-left));
+  padding-top: calc(var(--sidebar-top) + var(--safe-top));
+  padding-bottom: calc(var(--sidebar-bottom) + var(--safe-bottom));
+  padding-left: calc(var(--sidebar-side) + var(--safe-left));
+}
+.main-content {
+  margin-left: calc(var(--sidebar) + var(--safe-left));
+}
+.topbar {
+  height: calc(var(--header-height) + var(--safe-top));
+  padding-top: var(--safe-top);
+  padding-right: calc(var(--page-gutter) + var(--safe-right));
+}
+.page-content {
+  padding-right: calc(var(--page-gutter) + var(--safe-right));
+}
+.global-player {
+  left: calc(var(--sidebar) + var(--safe-left));
+  height: calc(78px + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  padding-right: calc(var(--player-gutter) + var(--safe-right));
+}
+.modal-backdrop {
+  top: var(--visual-offset-top, 0px);
+  bottom: auto;
+  height: var(--visual-height, 100dvh);
+  padding-top: calc(25px + var(--safe-top));
+  padding-right: calc(25px + var(--safe-right));
+  padding-bottom: calc(25px + var(--safe-bottom));
+  padding-left: calc(25px + var(--safe-left));
+}
+.modal-panel {
+  max-height: calc(
+    var(--visual-height, 100dvh) - 50px - var(--safe-top) - var(--safe-bottom)
+  );
+  overscroll-behavior: contain;
+}
+.studio-notice {
+  margin: 20px var(--page-gutter) 0;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d7e3cc;
+  border-radius: 7px;
+  background: #edf3e7;
+  color: #59744b;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.studio-notice > svg {
+  flex-shrink: 0;
+}
+.studio-notice > span {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.studio-notice .icon-button {
+  color: #7f986d;
+  min-width: 44px;
+  min-height: 44px;
+}
+@media (min-width: 1600px) {
+  :root {
+    --page-gutter: 55px;
+    --sidebar-side: 24px;
+  }
+}
+@media (max-width: 1200px) {
+  :root {
+    --page-gutter: 28px;
+    --sidebar-side: 13px;
+    --player-gutter: 24px;
+  }
+}
+@media (max-width: 960px) {
+  :root {
+    --page-gutter: 24px;
+    --header-height: 67px;
+    --sidebar-top: 29px;
+    --sidebar-side: 10px;
+    --sidebar-bottom: 13px;
+    --player-gutter: 18px;
+  }
+}
+@media (max-width: 700px),
+  (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
+  :root {
+    --page-gutter: 21px;
+    --header-height: 57px;
+    --player-gutter: 17px;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .topbar {
+    padding-left: calc(var(--page-gutter) + var(--safe-left));
+  }
+  .page-content {
+    padding-left: calc(var(--page-gutter) + var(--safe-left));
+    padding-bottom: calc(95px + var(--safe-bottom));
+  }
+  .app-shell.has-player {
+    padding-bottom: 0;
+  }
+  .has-player .page-content {
+    padding-bottom: calc(167px + var(--safe-bottom));
+  }
+  .mobile-nav {
+    height: var(--mobile-nav-height);
+    padding-top: 7px;
+    padding-right: calc(9px + var(--safe-right));
+    padding-bottom: calc(8px + var(--safe-bottom));
+    padding-left: calc(9px + var(--safe-left));
+  }
+  .mobile-nav button {
+    min-height: 44px;
+  }
+  .global-player {
+    left: 0;
+    bottom: var(--mobile-nav-height);
+    height: 67px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: calc(var(--player-gutter) + var(--safe-left));
+  }
+  .toast {
+    bottom: calc(151px + var(--safe-bottom));
+  }
+  .modal-backdrop {
+    padding-top: calc(12px + var(--safe-top));
+    padding-right: calc(12px + var(--safe-right));
+    padding-bottom: calc(12px + var(--safe-bottom));
+    padding-left: calc(12px + var(--safe-left));
+  }
+  .modal-panel {
+    max-height: calc(
+      var(--visual-height, 100dvh) - 24px - var(--safe-top) - var(--safe-bottom)
+    );
+  }
+  .engine-error,
+  .pending-recording,
+  .studio-notice {
+    margin-left: calc(var(--page-gutter) + var(--safe-left));
+    margin-right: calc(var(--page-gutter) + var(--safe-right));
+  }
+  .studio-notice {
+    font-size: 12px;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .studio-notice > svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media (max-width: 960px), (pointer: coarse) {
+  .field-label input:not([type="file"]),
+  .field-label textarea,
+  .search-field input {
+    font-size: 16px;
+  }
+  .mini-play,
+  .play-control {
+    width: 44px;
+    height: 44px;
+  }
+  .mini-stop,
+  .record-button {
+    min-height: 44px;
+  }
+  .modal-heading .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }

@@ -196,6 +196,29 @@ export default function App() {
     };
   }, []);
   useEffect(() => {
+    const root = document.documentElement;
+    const viewport = window.visualViewport;
+    const updateViewport = () => {
+      root.style.setProperty(
+        "--visual-height",
+        `${viewport?.height ?? window.innerHeight}px`,
+      );
+      root.style.setProperty(
+        "--visual-offset-top",
+        `${viewport?.offsetTop ?? 0}px`,
+      );
+    };
+    updateViewport();
+    viewport?.addEventListener("resize", updateViewport);
+    viewport?.addEventListener("scroll", updateViewport);
+    window.addEventListener("resize", updateViewport);
+    return () => {
+      viewport?.removeEventListener("resize", updateViewport);
+      viewport?.removeEventListener("scroll", updateViewport);
+      window.removeEventListener("resize", updateViewport);
+    };
+  }, []);
+  useEffect(() => {
     if (!notification) return;
     const timeout = window.setTimeout(() => setNotification(null), 5500);
     return () => clearTimeout(timeout);
@@ -434,6 +457,20 @@ export default function App() {
                 <X size={17} />
               </button>
             )}
+          </div>
+        )}
+
+        {studio.notice && (
+          <div className="studio-notice" role="status" aria-live="polite">
+            <AudioLines size={18} />
+            <span>{studio.notice}</span>
+            <button
+              className="icon-button"
+              aria-label="关闭音频提示"
+              onClick={studio.clearNotice}
+            >
+              <X size={17} />
+            </button>
           </div>
         )}
 
