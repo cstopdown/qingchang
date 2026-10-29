@@ -50,14 +50,14 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     }
     const sampleRate = 48000
     const samples = Float32Array.from({ length: sampleRate * 1.25 }, (_, frame) => 0.12 * Math.sin(2 * Math.PI * 220 * frame / sampleRate))
-    const recorded: { duration: number; wav: Blob }[] = []
+    const recorded: { duration: number; wav: Blob; vocalWav: Blob }[] = []
     let failNextSave = false
     // 使用已发布首版的真实缓存结构，验证一次性补 natural 并保留用户参数。
     const { vocalTone: _newField, ...oldSettings } = { ...DEFAULT_MIXER_SETTINGS, latencyMs: 17, musicVolume: 0.43 }
     localStorage.setItem('qingchang-mixer', JSON.stringify(oldSettings))
-    const engine = new StudioEngine(async (recording: { duration: number; audio: Blob }) => {
+    const engine = new StudioEngine(async (recording: { duration: number; audio: Blob; vocalAudio: Blob }) => {
       if (failNextSave) { failNextSave = false; throw new Error('测试：存储写入失败') }
-      recorded.push({ duration: recording.duration, wav: recording.audio })
+      recorded.push({ duration: recording.duration, wav: recording.audio, vocalWav: recording.vocalAudio })
     })
     const migratedSettings = engine.getSnapshot().settings
     const wait = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds))
@@ -130,6 +130,7 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     const output = []
     for (const recording of recorded) {
       const view = new DataView(await recording.wav.arrayBuffer())
+      const dry = new DataView(await recording.vocalWav.arrayBuffer())
       let energy = 0
       let nonSilent = 0
       for (let index = 44; index < view.byteLength; index += 2) {
@@ -144,6 +145,9 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
         frames: view.getUint32(40, true) / 4,
         rms: Math.sqrt(energy / ((view.byteLength - 44) / 2)),
         nonSilent,
+        dryChannels: dry.getUint16(22, true),
+        dryFrames: dry.getUint32(40, true) / 2,
+        dryRms: Math.sqrt(Array.from({ length: (dry.byteLength - 44) / 2 }, (_, frame) => (dry.getInt16(44 + frame * 2, true) / 32768) ** 2).reduce((sum, value) => sum + value, 0) / ((dry.byteLength - 44) / 2)),
       })
     }
     // 在权限准备阶段取消后，结果不应产生第三份录音。
@@ -234,5 +238,8 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     expect(recording.frames / recording.sampleRate).toBeCloseTo(recording.duration, 6)
     expect(recording.rms).toBeGreaterThan(0.002)
     expect(recording.nonSilent).toBeGreaterThan(1000)
+    expect(recording.dryChannels).toBe(1)
+    expect(recording.dryFrames).toBe(recording.frames)
+    expect(recording.dryRms).toBeCloseTo(0.2 / Math.sqrt(2), 2)
   }
 })

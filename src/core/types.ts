@@ -1,3 +1,5 @@
+import type { AiScoreReport } from '../ai/types'
+
 export interface Track {
   id: string
   title: string
@@ -19,6 +21,8 @@ export interface Recording {
   createdAt: number
   duration: number
   audio: Blob
+  vocalAudio?: Blob
+  aiScore?: AiScoreReport
 }
 
 export interface MixerSettings {

@@ -8,6 +8,26 @@
 	<string>zh_CN</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>轻唱需要使用麦克风录制你的歌声。录音仅保存在本机。</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>轻唱可连接你指定的局域网私有 AI 服务，将选中的录音交给该服务评分。</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>127.0.0.0/8</key>
+			<dict><key>NSExceptionAllowsInsecureHTTPLoads</key><true/></dict>
+			<key>::1</key>
+			<dict><key>NSExceptionAllowsInsecureHTTPLoads</key><true/></dict>
+			<key>10.0.0.0/8</key>
+			<dict><key>NSExceptionAllowsInsecureHTTPLoads</key><true/></dict>
+			<key>172.16.0.0/12</key>
+			<dict><key>NSExceptionAllowsInsecureHTTPLoads</key><true/></dict>
+			<key>192.168.0.0/16</key>
+			<dict><key>NSExceptionAllowsInsecureHTTPLoads</key><true/></dict>
+		</dict>
+	</dict>
 	<key>CFBundleDisplayName</key>
         <string>轻唱</string>
 	<key>CFBundleExecutable</key>

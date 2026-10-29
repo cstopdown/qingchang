@@ -422,6 +422,7 @@ export class StudioEngine {
         createdAt: Date.now(),
         duration: frames / session.backing.sampleRate,
         audio: encodeWav(mixed, session.backing.sampleRate),
+        vocalAudio: encodeWav([session.pcm.subarray(0, frames)], session.backing.sampleRate),
       }
       try {
         await this.saveRecording(recording)

@@ -24,7 +24,10 @@
     "android:sync": "npm run build && cap sync android",
     "android:build": "npm run android:sync && node scripts/build-android.mjs",
     "ios:sync": "npm run build && cap sync ios",
-    "ios:open": "cap open ios"
+    "ios:open": "cap open ios",
+    "ai:setup": "node scripts/setup-ai.mjs",
+    "ai:start": "node scripts/start-ai.mjs",
+    "test:ai": "node scripts/test-ai.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.6.0",
@@ -64,6 +67,10 @@
       "package.json"
     ],
     "asar": true,
+    "extraResources": [
+      { "from": "ai_service", "to": "ai_service", "filter": ["**/*", "!**/__pycache__/**", "!**/*.pyc", "!tests/**"] },
+      { "from": "scripts", "to": "scripts", "filter": ["setup-ai.mjs", "start-ai.mjs"] }
+    ],
     "mac": {
       "icon": "electron/icons/icon.icns",
       "category": "public.app-category.music",

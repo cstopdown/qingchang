@@ -1,0 +1,20 @@
+[project]
+name = "qingchang-ai"
+version = "0.1.0"
+description = "轻唱本机 MiniCPM 音频评分服务"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "mlx-vlm==0.7.11",
+  "mlx==0.32.4",
+  "fastapi==0.162.0",
+  "uvicorn==0.54.0",
+  "python-multipart==0.0.32",
+  "soundfile==0.14.0",
+  "scipy==1.18.1",
+  "huggingface-hub==2.4.0",
+  "httpx==0.28.1",
+  "pytest==9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

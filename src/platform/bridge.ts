@@ -1,18 +1,89 @@
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, CapacitorHttp } from '@capacitor/core';
 import { Browser } from '@capacitor/browser';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 
 type ExportResult = 'saved' | 'shared' | 'cancelled';
 
+export interface LocalAiProgress {
+  state: 'idle' | 'installing' | 'starting' | 'ready' | 'error';
+  message: string;
+}
+
 declare global {
   interface Window {
     qingchangDesktop?: {
       platform: string;
+      canStartLocalAi: boolean;
       exportAudio(bytes: Uint8Array, fileName: string): Promise<ExportResult>;
       openExternal(url: string): Promise<void>;
+      startLocalAi(): Promise<void>;
+      getLocalAiProgress(): Promise<LocalAiProgress>;
     };
   }
+}
+
+export function canStartLocalAi(): boolean {
+  return window.qingchangDesktop?.canStartLocalAi === true;
+}
+
+export async function startLocalAi(): Promise<void> {
+  if (!canStartLocalAi()) throw new Error('当前平台请连接已有私有 AI 服务。');
+  await window.qingchangDesktop!.startLocalAi();
+}
+
+export async function getLocalAiProgress(): Promise<LocalAiProgress> {
+  return window.qingchangDesktop
+    ? window.qingchangDesktop.getLocalAiProgress()
+    : { state: 'idle', message: '当前平台请连接已有私有 AI 服务。' };
+}
+
+export async function aiRequest(value: string, init: RequestInit = {}): Promise<Response> {
+  const url = new URL(value);
+  const host = url.hostname.toLowerCase();
+  const octets = host.split('.').map(Number);
+  const ipv4 = /^\d{1,3}(\.\d{1,3}){3}$/.test(host) && octets.every(part => part <= 255);
+  const privateHost = host === 'localhost' || host === '[::1]' || host.endsWith('.local') ||
+    (ipv4 && (octets[0] === 127 || octets[0] === 10 ||
+      (octets[0] === 172 && octets[1] >= 16 && octets[1] <= 31) ||
+      (octets[0] === 192 && octets[1] === 168)));
+  if ((url.protocol !== 'https:' && !(url.protocol === 'http:' && privateHost)) || url.username || url.password) {
+    throw new Error('AI 服务仅允许 HTTPS，或本机、私有局域网与 .local 地址的 HTTP。');
+  }
+  if (!Capacitor.isNativePlatform()) return fetch(url.href, { ...init, redirect: 'error' });
+
+  init.signal?.throwIfAborted();
+  const method = (init.method ?? 'GET').toUpperCase();
+  if (method !== 'GET' && method !== 'POST') throw new Error('AI 接口仅支持 GET 与 POST。');
+  if (init.body && !(init.body instanceof FormData)) throw new Error('AI 音频请求必须使用 FormData。');
+  const headers = new Headers(init.headers);
+  const data = [];
+  if (init.body instanceof FormData) {
+    for (const [key, value] of init.body.entries()) {
+      data.push(typeof value === 'string'
+        ? { key, type: 'string', value }
+        : { key, type: 'base64File', value: await blobBase64(value), fileName: value.name, contentType: value.type || 'application/octet-stream' });
+    }
+    headers.set('Content-Type', 'multipart/form-data');
+  }
+  init.signal?.throwIfAborted();
+  const request = CapacitorHttp.request({
+    url: url.href, method, headers: Object.fromEntries(headers), data,
+    dataType: 'formData', responseType: 'json',
+    connectTimeout: 10_000, readTimeout: 20 * 60_000, disableRedirects: true,
+  }).then(result => new Response(typeof result.data === 'string' ? result.data : JSON.stringify(result.data), {
+    status: result.status, headers: result.headers,
+  }));
+  if (!init.signal) return request;
+  const signal = init.signal;
+  // 原生请求发出后取消只中止界面等待；服务端已开始的推理仍可能完成。
+  let abort: () => void;
+  const cancelled = new Promise<never>((_resolve, reject) => {
+    abort = () => reject(signal.reason);
+    signal.addEventListener('abort', abort, { once: true });
+  });
+  try { return await Promise.race([request, cancelled]); }
+  finally { signal.removeEventListener('abort', abort!); }
 }
 
 function blobBase64(blob: Blob): Promise<string> {

@@ -1,0 +1,16 @@
+{
+  "model": "MiniCPM-o 4.5",
+  "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+  "revision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+  "files": [
+    "README.md", "added_tokens.json", "chat_template.jinja", "config.json",
+    "generation_config.json", "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors", "model.safetensors.index.json",
+    "preprocessor_config.json", "processor_config.json", "special_tokens_map.json",
+    "tokenizer.json", "tokenizer_config.json", "vocab.json"
+  ],
+  "weightHashes": {
+    "model-00001-of-00002.safetensors": "f90098983cc0aa9ebbe229df10c3de352f33a07ef57c321e76437bab5fa5a2c7",
+    "model-00002-of-00002.safetensors": "94eec5685bbbdd2611070d789aa5e5beba9a8fcbd9ba6849762160a9813a0a1d"
+  }
+}

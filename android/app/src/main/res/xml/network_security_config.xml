@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 私有 AI 的 HTTP 目标由 bridge.aiRequest 限定为本机与私有局域网。
+         WebView 仍禁止混合内容与远程页面导航。 -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

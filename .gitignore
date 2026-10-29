@@ -2,6 +2,12 @@ node_modules/
 dist/
 release/
 .tools/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+models/
 .DS_Store
 *.log
 test-results/
@@ -12,6 +18,7 @@ android/app/build/
 android/build/
 android/capacitor-cordova-android-plugins/build/
 android/.idea/
+android/.kotlin/
 android/app/src/main/assets/public/
 android/app/src/main/assets/capacitor.config.json
 android/app/src/main/assets/capacitor.plugins.json
