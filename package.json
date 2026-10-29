@@ -68,7 +68,7 @@
     ],
     "asar": true,
     "extraResources": [
-      { "from": "ai_service", "to": "ai_service", "filter": ["**/*", "!**/__pycache__/**", "!**/*.pyc", "!tests/**"] },
+      { "from": "ai_service", "to": "ai_service", "filter": ["**/*", "!**/__pycache__/**", "!**/.pytest_cache/**", "!**/*.pyc", "!tests/**"] },
       { "from": "scripts", "to": "scripts", "filter": ["setup-ai.mjs", "start-ai.mjs"] }
     ],
     "mac": {

@@ -70,14 +70,18 @@ export function run(command, args, { protocol = false, env = environment } = {})
       }
       process.stderr.write(`${line}\n`)
     })
-    const terminate = () => child.kill('SIGTERM')
+    let stopping = false
+    const terminate = () => {
+      stopping = true
+      child.kill('SIGTERM')
+    }
     process.on('SIGTERM', terminate)
     process.on('SIGINT', terminate)
     child.once('error', reject)
-    child.once('exit', code => {
+    child.once('exit', (code, signal) => {
       process.off('SIGTERM', terminate)
       process.off('SIGINT', terminate)
-      if (code === 0) resolve()
+      if (code === 0 || (stopping && signal === 'SIGTERM')) resolve()
       else reject(new Error(`子进程退出，状态 ${code}`))
     })
   })

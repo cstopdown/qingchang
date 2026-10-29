@@ -54,6 +54,7 @@ function createLocalAiController(resourceDirectory, userDataDirectory) {
     if (!response.ok) throw new Error(`本机 AI 服务返回 HTTP ${response.status}，请检查 8787 端口。`);
     const value = await response.json();
     if (value?.service !== 'qingchang-ai' || value.apiVersion !== 1 || !['loading', 'ready', 'error'].includes(value.status) ||
+        (value.message !== undefined && typeof value.message !== 'string') ||
         value.modelId !== 'mlx-community/MiniCPM-o-4_5-4bit' || value.backend !== 'mlx' || value.audioInput !== true) {
       throw new Error('8787 端口不是兼容的轻唱 MiniCPM-o 4.5 私有服务。');
     }
@@ -86,7 +87,11 @@ function createLocalAiController(resourceDirectory, userDataDirectory) {
             throw new Error('AI 启动脚本返回了无效的进度信息。');
           }
           if (event.event === 'error') throw new Error(event.message);
-          progress = { state, message: event.message };
+          const bytes = event.downloadedBytes === undefined ? ''
+            : `（${(event.downloadedBytes / 1e9).toFixed(2)} / ${(event.totalBytes / 1e9).toFixed(2)} GB）`;
+          const rate = event.downloadRateBytesPerSecond === undefined ? ''
+            : ` ${(event.downloadRateBytesPerSecond / 1e6).toFixed(1)} MB/s`;
+          progress = { state, message: `${event.message}${bytes}${rate}` };
         } catch (error) {
           terminate(child);
           reject(error);
