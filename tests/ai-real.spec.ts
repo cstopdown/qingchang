@@ -34,10 +34,10 @@ test('真实 VocalVerse 干声评分并在刷新后保留', async ({ page }) => 
   expect(report.scorable).toBe(true)
   expect(report.score).toBeGreaterThanOrEqual(0)
   expect(report.score).toBeLessThanOrEqual(100)
-  await expect(card.getByText('原生总体参考分 · 干声')).toBeVisible()
+  await expect(card.getByText('模型实验分数 · 干声')).toBeVisible()
   await page.reload()
   await page.getByRole('button', { name: '我的作品', exact: true }).click()
-  await expect(card.getByText('原生总体参考分 · 干声')).toBeVisible()
+  await expect(card.getByText('模型实验分数 · 干声')).toBeVisible()
   const persisted = await page.evaluate(async () => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open('qingchang-library', 1); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error) })
     return await new Promise<{ aiScore: { id: string } }>((resolve, reject) => { const request = db.transaction('recordings').objectStore('recordings').get('real-vocalverse-human'); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error) })

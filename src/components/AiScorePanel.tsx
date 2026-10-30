@@ -60,7 +60,7 @@ export function AiScorePanel({
       ) : (
         <>
           {report && "schemaVersion" in report && (
-            <div><div className="ai-score-overview"><strong>{report.score === null ? "暂不评分" : `${report.score.toFixed(1)} / 100`}</strong><span>原生总体参考分 · 干声</span></div><p>{report.summary}</p><p>评估片段 {formatTime(report.analysis.startSeconds)}–{formatTime(report.analysis.startSeconds + report.analysis.durationSeconds)}，共 {report.analysis.durationSeconds.toFixed(1)} 秒；作品 {formatTime(report.analysis.sourceDurationSeconds)}。</p><ul>{report.limitations.map((item, index) => <li key={index}>{item}</li>)}</ul><small>{report.model} · {report.modelRevision}</small></div>
+            <div><div className="ai-score-overview"><strong>{report.score === null ? "暂不评分" : `${report.score.toFixed(1)} / 100`}</strong><span>模型实验分数 · 干声</span></div><p>{report.summary}</p><p>评估片段 {formatTime(report.analysis.startSeconds)}–{formatTime(report.analysis.startSeconds + report.analysis.durationSeconds)}，共 {report.analysis.durationSeconds.toFixed(1)} 秒；作品 {formatTime(report.analysis.sourceDurationSeconds)}。</p><ul>{report.limitations.map((item, index) => <li key={index}>{item}</li>)}</ul><small>{report.model} · {report.modelRevision}</small></div>
           )}
           {report && !("schemaVersion" in report) && (
             <>
@@ -183,6 +183,7 @@ export function AiScorePanel({
               使用 VocalVerse 评估保存的人声干声。
             </p>
           )}
+          {(!report || "schemaVersion" in report) && <p className="ai-intro">实测中噪声、失真可能抬高分数，暂不用于判断唱功或录音质量。</p>}
           <button className="ai-score-button" onClick={onScore} disabled={busy || mixed}>
             <Sparkles size={14} />
             {state?.status === "error"
