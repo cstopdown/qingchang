@@ -26,7 +26,7 @@ export interface AiServiceHealth {
   status: "loading" | "ready" | "error";
   model: "MiniCPM-o 4.5";
   modelId: string;
-  backend: "mlx";
+  backend: "mlx" | "transformers";
   audioInput: true;
   message?: string;
 }

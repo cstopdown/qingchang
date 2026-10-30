@@ -7,7 +7,9 @@ import type {
 } from "./types";
 
 export const DEFAULT_AI_SETTINGS: AiServiceSettings = {
-  endpoint: "http://127.0.0.1:8787",
+  endpoint: import.meta.env.VITE_AI_ENDPOINT
+    ? new URL(import.meta.env.VITE_AI_ENDPOINT, window.location.origin).href.replace(/\/+$/, "")
+    : "http://127.0.0.1:8787",
   token: "",
 };
 const SETTINGS_KEY = "qingchang-ai-service";
@@ -60,7 +62,7 @@ export function parseAiSettings(value: unknown): AiServiceSettings {
       "AI 服务地址只支持 HTTP(S)，请勿在地址中填写密钥或查询参数。",
     );
   const loopback = ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname);
-  if (!loopback && !token)
+  if (!loopback && url.origin !== window.location.origin && !token)
     throw new Error("连接局域网或远程私有服务时，请填写服务访问密钥。");
   return { endpoint, token };
 }
@@ -125,7 +127,7 @@ export async function checkAiService(
     body.service !== "qingchang-ai" ||
     body.apiVersion !== 1 ||
     body.model !== "MiniCPM-o 4.5" ||
-    body.backend !== "mlx" ||
+    !(["mlx", "transformers"].includes(text(body.backend))) ||
     body.audioInput !== true ||
     !["loading", "ready", "error"].includes(text(body.status))
   )
@@ -134,7 +136,7 @@ export async function checkAiService(
     status: body.status as AiServiceHealth["status"],
     model: "MiniCPM-o 4.5",
     modelId: text(body.modelId),
-    backend: "mlx",
+    backend: body.backend as AiServiceHealth["backend"],
     audioInput: true,
     ...(body.message === undefined ? {} : { message: text(body.message) }),
   };

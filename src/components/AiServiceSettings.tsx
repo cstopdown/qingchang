@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import {
   checkAiService,
-  DEFAULT_AI_SETTINGS,
   parseAiSettings,
 } from "../ai/client";
 import type { AiServiceSettings as ServiceSettings } from "../ai/types";
@@ -82,7 +81,7 @@ export function AiServiceSettings({
   const start = async () => {
     setProgress({ state: "starting", message: "正在准备本机 AI 服务…" });
     try {
-      onSave({ ...DEFAULT_AI_SETTINGS });
+      onSave({ endpoint: "http://127.0.0.1:8787", token: "" });
       await startLocalAi();
       setProgress(await getLocalAiProgress());
     } catch (error) {
@@ -180,9 +179,7 @@ export function AiServiceSettings({
           />
         </label>
         <p className="ai-address-help">
-          手机或 Windows 请填写运行模型的 Mac 局域网地址，例如
-          http://192.168.1.20:8787，并填写服务密钥。127.0.0.1
-          只代表当前设备；模型不会在手机内运行。
+          填写私有 AI 服务地址及访问密钥；同源网关可留空密钥。127.0.0.1 只代表当前设备。
         </p>
         <button
           className="button ghost ai-check-button"
@@ -214,9 +211,9 @@ export function AiServiceSettings({
         <details className="ai-setup-help">
           <summary>如何准备私有 AI 服务</summary>
           <p>
-            在 Apple Silicon Mac 上打开本项目，依次运行{" "}
+            可在 Apple Silicon Mac 上打开本项目，依次运行{" "}
             <code>npm run ai:setup</code> 和 <code>npm run ai:start</code>
-            。服务就绪后回到这里检测连接。手机需连接同一私有网络，并按部署说明启用密钥与局域网访问。
+            。也可连接已部署的音频评分服务。服务就绪后回到这里检测连接。
           </p>
         </details>
       )}
