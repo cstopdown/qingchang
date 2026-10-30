@@ -1,0 +1,25 @@
+[Unit]
+Description=轻唱 VocalVerse 独立 CPU 干声评分
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/qingchang-vocalverse/source
+EnvironmentFile=/opt/qingchang-vocalverse/worker.env
+Environment=QINGCHANG_VOCAL_HOME=/opt/qingchang-vocalverse
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+Environment=CUDA_VISIBLE_DEVICES=
+Environment=OMP_NUM_THREADS=4
+Environment=MKL_NUM_THREADS=4
+Environment=OPENBLAS_NUM_THREADS=4
+Environment=NUMEXPR_NUM_THREADS=4
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/qingchang-vocalverse/venv/bin/python -m vocal_service --host 127.0.0.1 --port 28787
+CPUQuota=200%
+MemoryMax=16G
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

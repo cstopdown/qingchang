@@ -1,0 +1,128 @@
+{
+  "modelId": "karl-wang/QwenFeat-Vocal-Score/step_3_ktv_rerecord_highscore",
+  "modelRevision": "6ae0c27734f770dd26804cbac11c171fd5504b00",
+  "codeRepository": "CarlWangChina/QwenFeat-Vocal-Score",
+  "codeRevision": "5cd52efb223a1bd93fed3c0a4483efe812398568",
+  "files": [
+    {
+      "repository": "karl-wang/QwenFeat-Vocal-Score",
+      "revision": "6ae0c27734f770dd26804cbac11c171fd5504b00",
+      "path": "audioscore/ckpts/SongEvalGenerator/step_3_ktv_rerecord_highscore/config.json",
+      "destination": "models/step3/config.json",
+      "size": 1750,
+      "sha256": "7f5682c6acb72a3f056463362b149717fc0f7494163bf5dae3b037f11e5697ff"
+    },
+    {
+      "repository": "karl-wang/QwenFeat-Vocal-Score",
+      "revision": "6ae0c27734f770dd26804cbac11c171fd5504b00",
+      "path": "audioscore/ckpts/SongEvalGenerator/step_3_ktv_rerecord_highscore/muq_lora.pt",
+      "destination": "models/step3/muq_lora.pt",
+      "size": 13277588,
+      "sha256": "e280c28ab654e5ef333b06fff89939900d8bc8b15872b935d87fa90ced8fb8d6"
+    },
+    {
+      "repository": "karl-wang/QwenFeat-Vocal-Score",
+      "revision": "6ae0c27734f770dd26804cbac11c171fd5504b00",
+      "path": "audioscore/ckpts/SongEvalGenerator/step_3_ktv_rerecord_highscore/regression_head.pt",
+      "destination": "models/step3/regression_head.pt",
+      "size": 54581126,
+      "sha256": "bcb95ff2a78d2582adbd1d4b728cb85afe6f1547c13a2479ccda600ec0ba904b"
+    },
+    {
+      "repository": "karl-wang/QwenFeat-Vocal-Score",
+      "revision": "6ae0c27734f770dd26804cbac11c171fd5504b00",
+      "path": "audioscore/ckpts/SongEvalGenerator/step_3_ktv_rerecord_highscore/type.txt",
+      "destination": "models/step3/type.txt",
+      "size": 22,
+      "sha256": "19ca6227c36c58624e6748925550bef7a78f9909dfe609b7a61cb5741a6cdcf4"
+    },
+    {
+      "repository": "OpenMuQ/MuQ-large-msd-iter",
+      "revision": "0562a57814f6f8bbd9fdea0a25921a2fce1a841a",
+      "path": "config.json",
+      "destination": "models/muq/config.json",
+      "size": 3133,
+      "sha256": "237335ee27d8fb951ce778701a12a79e06c51ae636dd786f97e45f51ce532543"
+    },
+    {
+      "repository": "OpenMuQ/MuQ-large-msd-iter",
+      "revision": "0562a57814f6f8bbd9fdea0a25921a2fce1a841a",
+      "path": "model.safetensors",
+      "destination": "models/muq/model.safetensors",
+      "size": 1333825096,
+      "sha256": "273febab2be02872c37d2c37e48a9d6c52c1c9392f3eeeabd498efa281ccb7a6"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "LICENSE",
+      "gitBlob": "8cdc982cf2af2a2ade3cab958207b3c96105c315",
+      "size": 1499
+    },
+    {
+      "path": "audioscore/src/audioscore/model.py",
+      "gitBlob": "8a432aa3f6867a0684312f702f230acfee003499",
+      "size": 68639
+    },
+    {
+      "path": "audioscore/src/audioscore/model_regression_audio.py",
+      "gitBlob": "5d4ab69b86532ea37fd579d7314415346b4d3387",
+      "size": 5316
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/config.py",
+      "gitBlob": "60bd893a22b5d17a519b574dd23d50f823420d94",
+      "size": 2148
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/infer.py",
+      "gitBlob": "06240532c6be2192ea7fd803f0387594b3b3f28d",
+      "size": 3362
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/models/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/models/lstm.py",
+      "gitBlob": "ce1afc0b8ed85c5a4fde52cc9c11121d4d9a65c7",
+      "size": 6051
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/models/resnet.py",
+      "gitBlob": "700e3f35b5ae5c743a69659e87e4aa5980bcf196",
+      "size": 7130
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/utils/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/utils/audio.py",
+      "gitBlob": "029a659d3097d1c7113fb2f5b59341e1f5e649e8",
+      "size": 30350
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/utils/coqpit.py",
+      "gitBlob": "1f14e0bf0cef32115f59fa286fec83906cc47e2a",
+      "size": 35022
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/utils/io.py",
+      "gitBlob": "8d1d019b290939a28dd9bebd2b3157d93469c8ee",
+      "size": 6351
+    },
+    {
+      "path": "audioscore/src/audioscore/speaker/utils/shared_configs.py",
+      "gitBlob": "63784b19fe36144494cca739358bd7be8867f7ad",
+      "size": 12752
+    }
+  ]
+}
