@@ -1,6 +1,8 @@
 import { expect, test, webkit } from "@playwright/test";
 import { readFile, mkdir, mkdtemp, rm } from "node:fs/promises";
 
+test.use({ channel: undefined, launchOptions: {} });
+
 // 显式启用的桌面 WebKit 流程；安全区和键盘高度为浏览器模拟，不替代 iOS 真机。
 test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad 布局", async () => {
   test.skip(
@@ -10,6 +12,8 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
   await mkdir(".tools", { recursive: true });
   const profile = await mkdtemp(`${process.cwd()}/.tools/webkit-ios-ui-`);
   const context = await webkit.launchPersistentContext(profile, {
+    // 此版本会将 project channel 注入手动启动，需显式清空 Chrome 配置。
+    channel: undefined,
     viewport: { width: 390, height: 844 },
     isMobile: true,
     hasTouch: true,
