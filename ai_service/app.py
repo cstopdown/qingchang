@@ -18,7 +18,7 @@ from fastapi.responses import JSONResponse
 import soundfile as sf
 
 from .scoring import (
-    MAX_AUDIO_BYTES, MODEL_ID, MODEL_NAME, InputKind, MiniCpmScorer, SAMPLE_RATE,
+    MANIFEST, MAX_AUDIO_BYTES, MODEL_NAME, InputKind, MiniCpmScorer, SAMPLE_RATE,
     make_report, parse_decision, prepare_audio, scoring_prompt, silent_report,
 )
 
@@ -50,8 +50,15 @@ class BodyLimitMiddleware:
         await self.app(scope, limited_receive, send)
 
 
-def create_app(home: Path, token: str = "") -> FastAPI:
-    scorer = MiniCpmScorer(home)
+def create_app(home: Path, token: str = "", *, backend: str = "mlx") -> FastAPI:
+    if backend not in {"mlx", "transformers"}:
+        raise ValueError("QINGCHANG_AI_BACKEND 必须为 mlx 或 transformers")
+    if backend == "transformers":
+        from .transformers_backend import MANIFEST as manifest, TransformersScorer
+        scorer = TransformersScorer(home)
+    else:
+        manifest = MANIFEST
+        scorer = MiniCpmScorer(home)
     executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="minicpm")
     busy = threading.Lock()
     state = {"status": "loading", "message": "正在加载 MiniCPM 音频模型"}
@@ -98,7 +105,8 @@ def create_app(home: Path, token: str = "") -> FastAPI:
     async def health():
         return {
             "service": "qingchang-ai", "apiVersion": 1, **state,
-            "model": MODEL_NAME, "modelId": MODEL_ID, "backend": "mlx", "audioInput": True,
+            "model": MODEL_NAME, "modelId": manifest["modelId"], "modelRevision": manifest["revision"],
+            "backend": backend, "audioInput": True,
         }
 
     @app.post("/v1/score")
@@ -122,7 +130,7 @@ def create_app(home: Path, token: str = "") -> FastAPI:
             except (RuntimeError, ValueError) as error:
                 raise HTTPException(422, f"音频无法读取：{error}") from error
             if clip.rms < 0.0001:
-                return silent_report(clip, recordingId, inputKind)
+                return silent_report(clip, recordingId, inputKind, model_revision=manifest["revision"])
             with tempfile.TemporaryDirectory(prefix="score-", dir=work_dir) as directory:
                 clip_path = Path(directory) / "audio.wav"
                 sf.write(clip_path, clip.samples, SAMPLE_RATE, subtype="PCM_16")
@@ -133,7 +141,7 @@ def create_app(home: Path, token: str = "") -> FastAPI:
                 except (RuntimeError, ValueError) as error:
                     LOGGER.exception("MiniCPM 听音评分失败")
                     raise HTTPException(502, f"MiniCPM 无法生成有效听音评价：{error}") from error
-            return make_report(decision, clip, recordingId, inputKind)
+            return make_report(decision, clip, recordingId, inputKind, model_revision=manifest["revision"])
         finally:
             await audio.close()
             busy.release()
@@ -143,4 +151,4 @@ def create_app(home: Path, token: str = "") -> FastAPI:
 
 def app_from_environment() -> FastAPI:
     home = Path(os.environ.get("QINGCHANG_AI_HOME", Path(__file__).resolve().parent.parent / ".tools" / "ai")).resolve()
-    return create_app(home, os.environ.get("QINGCHANG_AI_TOKEN", ""))
+    return create_app(home, os.environ.get("QINGCHANG_AI_TOKEN", ""), backend=os.environ.get("QINGCHANG_AI_BACKEND", "mlx"))

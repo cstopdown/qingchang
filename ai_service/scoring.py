@@ -103,7 +103,7 @@ def parse_decision(text: str) -> ModelDecision:
     return ModelDecision.model_validate_json(text)
 
 
-def make_report(decision: ModelDecision, clip: AudioClip, recording_id: str, input_kind: InputKind, *, model_called: bool = True) -> dict:
+def make_report(decision: ModelDecision, clip: AudioClip, recording_id: str, input_kind: InputKind, *, model_called: bool = True, model_revision: str = MODEL_REVISION) -> dict:
     dimensions = decision.dimensions.model_dump()
     limitations = [*decision.limitations, NO_REFERENCE_LIMITATION]
     if input_kind == "mixed":
@@ -114,7 +114,7 @@ def make_report(decision: ModelDecision, clip: AudioClip, recording_id: str, inp
     return {
         "id": str(uuid4()), "recordingId": recording_id,
         "model": MODEL_NAME if model_called else "未调用 MiniCPM-o 4.5（静音预检）",
-        "modelRevision": MODEL_REVISION, "createdAt": int(time.time() * 1000),
+        "modelRevision": model_revision, "createdAt": int(time.time() * 1000),
         "inputKind": input_kind, "scorable": decision.scorable, "overall": overall,
         "dimensions": dimensions, "summary": decision.summary,
         "strengths": decision.strengths, "improvements": decision.improvements,
@@ -123,14 +123,14 @@ def make_report(decision: ModelDecision, clip: AudioClip, recording_id: str, inp
     }
 
 
-def silent_report(clip: AudioClip, recording_id: str, input_kind: InputKind) -> dict:
+def silent_report(clip: AudioClip, recording_id: str, input_kind: InputKind, *, model_revision: str = MODEL_REVISION) -> dict:
     decision = ModelDecision(
         scorable=False,
         dimensions=Dimensions(clarity=None, steadiness=None, expression=None, recordingQuality=None),
         summary="这段音频接近静音，没有足够可听声音供演唱评价，未调用模型。",
         strengths=[], improvements=["请检查麦克风输入，录下一段清晰可听的演唱后再试。"], limitations=[],
     )
-    return make_report(decision, clip, recording_id, input_kind, model_called=False)
+    return make_report(decision, clip, recording_id, input_kind, model_called=False, model_revision=model_revision)
 
 
 def scoring_prompt(title: str, lyrics: str, input_kind: InputKind) -> str:

@@ -1,0 +1,14 @@
+# Linux CPU 音频后端；PyTorch 使用官方 CPU wheel，不安装 CUDA 或 MLX。
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.8.0+cpu
+torchaudio==2.8.0+cpu
+transformers==4.51.0
+accelerate==1.10.1
+minicpmo-utils==1.0.6
+fastapi==0.162.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+soundfile==0.14.0
+scipy==1.18.1
+httpx==0.28.1
+pytest==9.2.0

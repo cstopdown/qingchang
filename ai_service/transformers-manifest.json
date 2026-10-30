@@ -1,0 +1,6 @@
+{
+  "model": "MiniCPM-o 4.5",
+  "modelId": "openbmb/MiniCPM-o-4_5",
+  "revision": "eb4141de24550a3a1a4082f718be58f46b761728",
+  "directory": "MiniCPM-o-4_5"
+}
