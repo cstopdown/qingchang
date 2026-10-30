@@ -1,0 +1,3136 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-30T10:24:30+08:00",
+  "sourceScope": [
+    "铜钟音乐",
+    "煎饼搜"
+  ],
+  "audioObtainedCount": 20,
+  "limitations": [
+    "20个目标条目已取得23份文件，统计依据检索目标与来源标签，不代表逐一人工核曲。才二十三为微音乐制作人候选；谢天宇Live黑色柳丁也不是陶喆演唱版本认证。",
+    "来源页伴奏标注与可免费获取不等于已独立认证版权、原版、原调或无主唱。",
+    "技术解码结果与人声听音判断分别记录；每份三个30秒片段共90秒，AI片段判断不构成整首保证或自动可用/不可用判定。",
+    "MP3解码器警告与独立浏览器验证已列在具体文件；原下载文件保持不变。"
+  ],
+  "files": [
+    {
+      "artist": "陶喆",
+      "title": "普通朋友",
+      "downloadedTitle": "普通朋友 (伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 普通朋友 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T01:59:45.658Z",
+        "query": "陶喆 普通朋友 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "下载链接由可见下载按钮展示；链接可能过期；实际内容与容器交音频验证，非无损认证。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E6%99%AE%E9%80%9A%E6%9C%8B%E5%8F%8B%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/000UkuiI1AsrHW",
+        "visibleLabel": "普通朋友 (伴奏) - 陶喆",
+        "visibleDuration": "04:04",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=000UkuiI1AsrHW&sign=5djArwZaUijPc&t=1793325036",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3915198,
+        "sha256": "424ce460ef9a5f8614ed04179e41880cd62d0c5701aa3fc370a189ce918ae1d6",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 244.61167800453515,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 10787375,
+        "rms": 0.07679303307894009,
+        "rmsPerChannel": [
+          0.07679303748606424,
+          0.07679302867187535
+        ],
+        "peak": 0.7028794288635254,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "e038b1238290b2a15e5ffe017fecfe0538f1ffe315902d4815971bbba8d5d1e1",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5718060419894755,
+            "rawText": "{\"summary\": \"一段轻柔的吉他伴奏，旋律舒缓，节奏平稳，适合营造轻松的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中只有清晰的吉他演奏声，无明显人声主唱或和声。\", \"吉他旋律连贯，伴奏部分稳定，无其他乐器或人声干扰。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声出现。\", \"无法确定该音频是否为原版歌曲的伴奏。\"]}",
+            "decision": {
+              "summary": "一段轻柔的吉他伴奏，旋律舒缓，节奏平稳，适合营造轻松的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中只有清晰的吉他演奏声，无明显人声主唱或和声。",
+                "吉他旋律连贯，伴奏部分稳定，无其他乐器或人声干扰。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声出现。",
+                "无法确定该音频是否为原版歌曲的伴奏。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 107.3058125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5120945840026252,
+            "rawText": "{\"summary\": \"一段轻柔的吉他伴奏，带有轻微的失真效果，节奏舒缓，适合营造轻松的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中只有清晰的电吉他演奏，无明显人声主唱或和声\", \"吉他旋律简单重复，伴奏音色偏暖，无其他乐器或人声干扰\"], \"limitations\": [\"音频片段较短，无法判断是否整首歌曲均无主唱\", \"无法确定该伴奏是否为原版或经过改编\"]}",
+            "decision": {
+              "summary": "一段轻柔的吉他伴奏，带有轻微的失真效果，节奏舒缓，适合营造轻松的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中只有清晰的电吉他演奏，无明显人声主唱或和声",
+                "吉他旋律简单重复，伴奏音色偏暖，无其他乐器或人声干扰"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断是否整首歌曲均无主唱",
+                "无法确定该伴奏是否为原版或经过改编"
+              ]
+            }
+          },
+          {
+            "startSeconds": 199.6116875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.1899749170115683,
+            "rawText": "{\"summary\": \"吉他独奏伴奏，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有电吉他演奏，无任何人声出现。\", \"伴奏风格偏向练习或演奏，无主唱或和声元素。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声。\"]}",
+            "decision": {
+              "summary": "吉他独奏伴奏，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有电吉他演奏，无任何人声出现。",
+                "伴奏风格偏向练习或演奏，无主唱或和声元素。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声。"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取约30、107、200秒开始的三个30秒片段，三段均报告未检出前景主唱或和声。原始模型输出逐段保留；这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "就是爱你",
+      "downloadedTitle": "就是爱你 (伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 就是爱你 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T01:59:56.569Z",
+        "query": "陶喆 就是爱你 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E5%B0%B1%E6%98%AF%E7%88%B1%E4%BD%A0%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/00479Dk93AlUD6",
+        "visibleLabel": "就是爱你 (伴奏) - 陶喆",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=00479Dk93AlUD6&sign=0083oNN3o6iHw&t=1793325600",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4569304,
+        "sha256": "5443b870ade34f6d4e66d9edc2f9395f783e53d714e2064fbe65cc4d6c77ed85",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 285.4933106575964,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 12590255,
+        "rms": 0.06581770296941457,
+        "rmsPerChannel": [
+          0.06389103866427598,
+          0.06768955035115845
+        ],
+        "peak": 0.7550159096717834,
+        "nonZeroSampleFraction": 0.9999923750551518,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "ef1d6c98cd5e69da512cf29c3d95cae710cf0ad4eb168c053c5bd96bc6e32f62",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.2353272500040475,
+            "rawText": "{\"summary\": \"钢琴伴奏，旋律性较强，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有钢琴演奏，旋律清晰，无其他乐器或人声叠加。\", \"无主唱或和声出现，仅为纯音乐伴奏。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与。\"]}",
+            "decision": {
+              "summary": "钢琴伴奏，旋律性较强，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有钢琴演奏，旋律清晰，无其他乐器或人声叠加。",
+                "无主唱或和声出现，仅为纯音乐伴奏。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 127.746625,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.1999359170149546,
+            "rawText": "{\"summary\": \"钢琴伴奏，旋律性较强，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有钢琴演奏，旋律清晰，无其他乐器或人声叠加。\", \"未发现人声主唱或背景和声。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与。\"]}",
+            "decision": {
+              "summary": "钢琴伴奏，旋律性较强，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有钢琴演奏，旋律清晰，无其他乐器或人声叠加。",
+                "未发现人声主唱或背景和声。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 240.4933125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.2515859590203036,
+            "rawText": "{\"summary\": \"钢琴伴奏，旋律舒缓，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有钢琴演奏，旋律清晰，无其他乐器或人声叠加。\", \"未发现主唱或背景和声的声学特征。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与。\"]}",
+            "decision": {
+              "summary": "钢琴伴奏，旋律舒缓，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有钢琴演奏，旋律清晰，无其他乐器或人声叠加。",
+                "未发现主唱或背景和声的声学特征。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与。"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "今天你要嫁给我",
+      "downloadedTitle": "今天你要嫁给我 (伴奏) - 蔡依林;陶喆",
+      "relativePath": "煎饼搜/陶喆 - 今天你要嫁给我 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:03.499Z",
+        "query": "陶喆 今天你要嫁给我 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E4%BB%8A%E5%A4%A9%E4%BD%A0%E8%A6%81%E5%AB%81%E7%BB%99%E6%88%91%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/003MQfsz3E4Q8y",
+        "visibleLabel": "今天你要嫁给我 (伴奏) - 蔡依林;陶喆",
+        "visibleDuration": "04:18",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003MQfsz3E4Q8y&sign=eew5Z67VCdwo2&t=1793325604",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4137984,
+        "sha256": "4e18090200a48fe7da5eb34db9eb04361591e32a55b336dd90afa552e5d5ccaf",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 258.5349433106576,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11401391,
+        "rms": 0.23276981573596864,
+        "rmsPerChannel": [
+          0.23133155697398608,
+          0.23419924206451703
+        ],
+        "peak": 1.1506531238555908,
+        "nonZeroSampleFraction": 0.9999915799747592,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 127999,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "e6915005e8eca3b071fc8dca5d6376f8cbc6a7b48297e95c36cc6aa9bdc43f9e",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4850630830042064,
+            "rawText": "{\"summary\": \"轻快的流行音乐伴奏，包含鼓点、贝斯、吉他和合成器音效，节奏感强，适合背景音乐使用。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或和声表现\", \"以乐器为主的伴奏音乐，节奏轻快\", \"鼓点、贝斯、吉他等乐器清晰可辨\"], \"limitations\": [\"无法判断是否为完整歌曲片段\", \"无法确定是否有极细微的非人声演唱元素\"]}",
+            "decision": {
+              "summary": "轻快的流行音乐伴奏，包含鼓点、贝斯、吉他和合成器音效，节奏感强，适合背景音乐使用。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或和声表现",
+                "以乐器为主的伴奏音乐，节奏轻快",
+                "鼓点、贝斯、吉他等乐器清晰可辨"
+              ],
+              "limitations": [
+                "无法判断是否为完整歌曲片段",
+                "无法确定是否有极细微的非人声演唱元素"
+              ]
+            }
+          },
+          {
+            "startSeconds": 114.2675,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4594388749974314,
+            "rawText": "{\"summary\": \"一段轻快的流行音乐伴奏，包含鼓点、贝斯、吉他和合成器音效，节奏感强，适合用于K歌练习。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或背景和声\", \"主要由乐器构成的伴奏音乐\", \"节奏感强，适合演唱练习\"], \"limitations\": [\"无法判断整首歌曲是否有人声部分\", \"音频片段较短，可能存在人声但未在此片段出现\"]}",
+            "decision": {
+              "summary": "一段轻快的流行音乐伴奏，包含鼓点、贝斯、吉他和合成器音效，节奏感强，适合用于K歌练习。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或背景和声",
+                "主要由乐器构成的伴奏音乐",
+                "节奏感强，适合演唱练习"
+              ],
+              "limitations": [
+                "无法判断整首歌曲是否有人声部分",
+                "音频片段较短，可能存在人声但未在此片段出现"
+              ]
+            }
+          },
+          {
+            "startSeconds": 213.535,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3373711250023916,
+            "rawText": "{\"summary\": \"轻快活泼的流行音乐，以电子合成器和打击乐为主，旋律简单重复，适合背景播放。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或和声表现\", \"旋律由电子合成器和打击乐器主导\", \"节奏感强，但无歌唱元素\"], \"limitations\": [\"音频片段较短，无法判断整首歌是否有人声参与\"]}",
+            "decision": {
+              "summary": "轻快活泼的流行音乐，以电子合成器和打击乐为主，旋律简单重复，适合背景播放。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或和声表现",
+                "旋律由电子合成器和打击乐器主导",
+                "节奏感强，但无歌唱元素"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌是否有人声参与"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "黑色柳丁",
+      "downloadedTitle": "黑色柳丁 (KTV版伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 黑色柳丁 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:08.040Z",
+        "query": "陶喆 黑色柳丁 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/002jcRq82t2VT6",
+        "visibleLabel": "黑色柳丁 (KTV版伴奏) - 陶喆",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=002jcRq82t2VT6&sign=404bYvp1oQyGM&t=1793325608",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4078640,
+        "sha256": "f1e6a47f638060fb9fc656e0d7a56a374d17d2e340eb5295c10fd4ccb804872a",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 254.8319954648526,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11238091,
+        "rms": 0.10508671442562979,
+        "rmsPerChannel": [
+          0.11494736697517441,
+          0.09419945818864017
+        ],
+        "peak": 0.6756163835525513,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "f6587794850741651c410ad3613fa009e03db572da96ba2cadccc2795adf4738",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5999541250057518,
+            "rawText": "{\"summary\": \"一段带有电吉他独奏的流行摇滚音乐，随后加入鼓点和合成器音效，人声演唱进入，整体氛围较为抒情。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频开始为电吉他独奏，随后有明显的鼓点和合成器音效\", \"约在音频中段，出现清晰的主唱人声，演唱抒情歌曲\", \"人声演唱过程中伴有和声或背景人声的叠唱效果\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的完整人声编排\"]}",
+            "decision": {
+              "summary": "一段带有电吉他独奏的流行摇滚音乐，随后加入鼓点和合成器音效，人声演唱进入，整体氛围较为抒情。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频开始为电吉他独奏，随后有明显的鼓点和合成器音效",
+                "约在音频中段，出现清晰的主唱人声，演唱抒情歌曲",
+                "人声演唱过程中伴有和声或背景人声的叠唱效果"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的完整人声编排"
+              ]
+            }
+          },
+          {
+            "startSeconds": 112.416,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5020703340123873,
+            "rawText": "{\"summary\": \"一段摇滚风格的音乐，包含电吉他、贝斯、鼓等乐器。音乐中有一段明显的电吉他失真音效，随后是较为平缓的旋律。在音乐的后半段，出现了一位女歌手的主唱。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音乐风格为摇滚，包含电吉他、贝斯、鼓等乐器\", \"音乐中有明显的电吉他失真音效\", \"音乐后半段出现女歌手主唱\"], \"limitations\": []}",
+            "decision": {
+              "summary": "一段摇滚风格的音乐，包含电吉他、贝斯、鼓等乐器。音乐中有一段明显的电吉他失真音效，随后是较为平缓的旋律。在音乐的后半段，出现了一位女歌手的主唱。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音乐风格为摇滚，包含电吉他、贝斯、鼓等乐器",
+                "音乐中有明显的电吉他失真音效",
+                "音乐后半段出现女歌手主唱"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 209.832,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3919788750063162,
+            "rawText": "{\"summary\": \"一段高能摇滚乐，包含强烈的电吉他失真音色、鼓点和人声演唱。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"电吉他失真音色明显，贯穿大部分音频\", \"鼓点强劲，具有典型的摇滚风格\", \"人声演唱清晰，位于音频前景\", \"背景中存在和声或叠唱人声\"], \"limitations\": [\"音频片段较短，无法判断整首歌的完整人声编排\"]}",
+            "decision": {
+              "summary": "一段高能摇滚乐，包含强烈的电吉他失真音色、鼓点和人声演唱。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "电吉他失真音色明显，贯穿大部分音频",
+                "鼓点强劲，具有典型的摇滚风格",
+                "人声演唱清晰，位于音频前景",
+                "背景中存在和声或叠唱人声"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的完整人声编排"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-lead-suspected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个片段均有AI前景人声疑点，建议试听核对；不是人工确认，不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "流沙",
+      "downloadedTitle": "流沙 (自制版伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 流沙 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:20.246Z",
+        "query": "陶喆 流沙 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E6%B5%81%E6%B2%99%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/0039mozM1omNeJ",
+        "visibleLabel": "流沙 (自制版伴奏) - 陶喆",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=0039mozM1omNeJ&sign=95aAQZH.Pk6sM&t=1793325622",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3857098,
+        "sha256": "97976a237b37174ccc328b58876ec99810bd799d68459ff88dcdd0d72c59b2e6",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 240.98065759637188,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 10627247,
+        "rms": 0.07670998346159251,
+        "rmsPerChannel": [
+          0.0767099834616213,
+          0.0767099834616213
+        ],
+        "peak": 0.6286481022834778,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "3ef6bf72c404706f5de910a449a2cbc7457a8a007b236452505b233e745cee53",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4128118749940768,
+            "rawText": "{\"summary\": \"一段轻柔舒缓的流行音乐，以合成器音色和电子鼓点为主，营造出宁静的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音乐中没有明显的人声演唱，仅有合成器、电子鼓等乐器演奏的旋律和节奏。\", \"整体音色偏向电子合成器音色，没有出现人声的特征。\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声出现。\"]}",
+            "decision": {
+              "summary": "一段轻柔舒缓的流行音乐，以合成器音色和电子鼓点为主，营造出宁静的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音乐中没有明显的人声演唱，仅有合成器、电子鼓等乐器演奏的旋律和节奏。",
+                "整体音色偏向电子合成器音色，没有出现人声的特征。"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声出现。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 105.4903125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.530734083004063,
+            "rawText": "{\"summary\": \"抒情流行风格的音乐，包含清晰的主唱人声，伴奏有电子鼓点、合成器音色和弦乐铺垫。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"人声位于音频前景，持续演唱主旋律\", \"伴奏包含电子鼓点、合成器音色和弦乐铺垫\", \"整体风格偏向抒情流行\"], \"limitations\": [\"无法判断整首歌是否持续有主唱\", \"无法判断伴奏中是否有细微的和声处理\"]}",
+            "decision": {
+              "summary": "抒情流行风格的音乐，包含清晰的主唱人声，伴奏有电子鼓点、合成器音色和弦乐铺垫。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "人声位于音频前景，持续演唱主旋律",
+                "伴奏包含电子鼓点、合成器音色和弦乐铺垫",
+                "整体风格偏向抒情流行"
+              ],
+              "limitations": [
+                "无法判断整首歌是否持续有主唱",
+                "无法判断伴奏中是否有细微的和声处理"
+              ]
+            }
+          },
+          {
+            "startSeconds": 195.9806875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6482204160129186,
+            "rawText": "{\"summary\": \"轻柔舒缓的器乐曲，以钢琴、电子合成器音色和鼓点节奏为主，营造出宁静的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或和声表现\", \"以电子乐器和打击乐构成的纯器乐伴奏为主\", \"旋律线条由合成器和钢琴共同完成，无额外人声叠加\"], \"limitations\": [\"音频片段较短，无法判断整首曲目的完整人声配置\", \"未提供原曲信息，无法排除隐藏或极弱的人声元素\"]}",
+            "decision": {
+              "summary": "轻柔舒缓的器乐曲，以钢琴、电子合成器音色和鼓点节奏为主，营造出宁静的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或和声表现",
+                "以电子乐器和打击乐构成的纯器乐伴奏为主",
+                "旋律线条由合成器和钢琴共同完成，无额外人声叠加"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首曲目的完整人声配置",
+                "未提供原曲信息，无法排除隐藏或极弱的人声元素"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "小镇姑娘",
+      "downloadedTitle": "小镇姑娘 (MV版伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 小镇姑娘 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:25.493Z",
+        "query": "陶喆 小镇姑娘 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E5%B0%8F%E9%95%87%E5%A7%91%E5%A8%98%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/00155D9312gVCM",
+        "visibleLabel": "小镇姑娘 (MV版伴奏) - 陶喆",
+        "visibleDuration": "04:35",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=00155D9312gVCM&sign=9e9bIYuj0ZGf.&t=1793325626",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4413840,
+        "sha256": "ccc35c43d6375211e22e5c071da2f0fcb2181b2710325b6d414cfb92ef887454",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 275.788820861678,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 12162287,
+        "rms": 0.12247626553450437,
+        "rmsPerChannel": [
+          0.12247626267623707,
+          0.1224762683928969
+        ],
+        "peak": 0.8628535270690918,
+        "nonZeroSampleFraction": 0.9998538926108222,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "bc8d3d726ed43e0ba417891100d8ced744f153643c89a9b3785ddb81af8036a4",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.564100707997568,
+            "rawText": "{\"summary\": \"一段轻柔的器乐伴奏，以吉他、贝斯和鼓点为基础，营造出舒缓的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中没有明显的人声主唱或背景和声\", \"主要乐器包括吉他、贝斯和鼓点，构成完整的伴奏结构\", \"整体音色偏向柔和，适合用作伴奏\"], \"limitations\": [\"无法判断该音频片段是否为整首歌曲的全部内容\", \"无法确定该音频片段的版权或原调信息\"]}",
+            "decision": {
+              "summary": "一段轻柔的器乐伴奏，以吉他、贝斯和鼓点为基础，营造出舒缓的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中没有明显的人声主唱或背景和声",
+                "主要乐器包括吉他、贝斯和鼓点，构成完整的伴奏结构",
+                "整体音色偏向柔和，适合用作伴奏"
+              ],
+              "limitations": [
+                "无法判断该音频片段是否为整首歌曲的全部内容",
+                "无法确定该音频片段的版权或原调信息"
+              ]
+            }
+          },
+          {
+            "startSeconds": 122.8944375,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4850132910069078,
+            "rawText": "{\"summary\": \"流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频中存在明显的主唱人声，演唱清晰的旋律线\", \"伴奏中包含和声或背景人声的叠唱效果\", \"整体音乐风格偏向流行，人声与乐器配合紧密\"], \"limitations\": [\"音频片段较短，无法判断整首歌的主唱是否持续存在\", \"无法确定背景人声是和声还是独立的背景演唱\"]}",
+            "decision": {
+              "summary": "流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频中存在明显的主唱人声，演唱清晰的旋律线",
+                "伴奏中包含和声或背景人声的叠唱效果",
+                "整体音乐风格偏向流行，人声与乐器配合紧密"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的主唱是否持续存在",
+                "无法确定背景人声是和声还是独立的背景演唱"
+              ]
+            }
+          },
+          {
+            "startSeconds": 230.788875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6751273330010008,
+            "rawText": "{\"summary\": \"一段充满活力的Funk风格音乐，以电吉他、贝斯、鼓和键盘为主，节奏感强，旋律重复且具有律动感。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音乐中没有明显的人声演唱或和声部分\", \"电吉他演奏着重复的旋律线条\", \"低音贝斯和鼓点提供了稳定的节奏基础\", \"整体风格偏向Funk，强调律动和节奏感\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声参与\", \"无法判断音乐中是否存在极细微的非人声演唱处理\"]}",
+            "decision": {
+              "summary": "一段充满活力的Funk风格音乐，以电吉他、贝斯、鼓和键盘为主，节奏感强，旋律重复且具有律动感。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音乐中没有明显的人声演唱或和声部分",
+                "电吉他演奏着重复的旋律线条",
+                "低音贝斯和鼓点提供了稳定的节奏基础",
+                "整体风格偏向Funk，强调律动和节奏感"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声参与",
+                "无法判断音乐中是否存在极细微的非人声演唱处理"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "Melody",
+      "downloadedTitle": "Melody (KTV版伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - Melody (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:31.042Z",
+        "query": "陶喆 Melody 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20Melody%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/000KI9bG1d3dmu",
+        "visibleLabel": "Melody (KTV版伴奏) - 陶喆",
+        "visibleDuration": "04:26",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=000KI9bG1d3dmu&sign=6eGZ4gZQYJkoo&t=1793325631",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 10679054,
+        "sha256": "4e0ad089e9df9ad8cb9d2dd6a55ec291e99331fdd72db5dd919431e880f9f071",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 266.911179138322,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11770783,
+        "rms": 0.18597155944312865,
+        "rmsPerChannel": [
+          0.19372612602478798,
+          0.17787925662908344
+        ],
+        "peak": 0.8410370349884033,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 320000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "6437121d43ec26601411ae5a79a970332034a18d980357818a4a720b1d5912fe",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4773475830152165,
+            "rawText": "{\"summary\": \"轻柔舒缓的器乐伴奏，包含电子鼓点、合成器旋律和环境音效，营造出宁静的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或和声表现\", \"以电子鼓点、合成器音色和环境音效为主\", \"旋律线条由合成器乐器承担，无辨识人声部分\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与\"]}",
+            "decision": {
+              "summary": "轻柔舒缓的器乐伴奏，包含电子鼓点、合成器旋律和环境音效，营造出宁静的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或和声表现",
+                "以电子鼓点、合成器音色和环境音效为主",
+                "旋律线条由合成器乐器承担，无辨识人声部分"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与"
+              ]
+            }
+          },
+          {
+            "startSeconds": 118.4555625,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4196875409979839,
+            "rawText": "{\"summary\": \"轻柔抒情的器乐伴奏，以钢琴和电子鼓点为主，营造出宁静的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为钢琴演奏的旋律，伴有规律的电子鼓点节奏。\", \"没有明显的人声演唱或和声出现。\", \"整体音色偏向柔和，适合作为背景音乐。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的完整人声配置。\"]}",
+            "decision": {
+              "summary": "轻柔抒情的器乐伴奏，以钢琴和电子鼓点为主，营造出宁静的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为钢琴演奏的旋律，伴有规律的电子鼓点节奏。",
+                "没有明显的人声演唱或和声出现。",
+                "整体音色偏向柔和，适合作为背景音乐。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的完整人声配置。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 221.911125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.2638787080068141,
+            "rawText": "{\"summary\": \"音乐风格为抒情流行，女声主唱清晰，伴奏包含吉他、鼓点和弦乐等。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"女声主唱位于音频前景，演唱清晰且持续\", \"伴奏乐器包括吉他、鼓点和弦乐，营造抒情氛围\", \"人声与乐器层次分明，主唱突出\"], \"limitations\": []}",
+            "decision": {
+              "summary": "音乐风格为抒情流行，女声主唱清晰，伴奏包含吉他、鼓点和弦乐等。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "女声主唱位于音频前景，演唱清晰且持续",
+                "伴奏乐器包括吉他、鼓点和弦乐，营造抒情氛围",
+                "人声与乐器层次分明，主唱突出"
+              ],
+              "limitations": []
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "寂寞的季节",
+      "downloadedTitle": "寂寞的季节 (原版伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 寂寞的季节 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:36.165Z",
+        "query": "陶喆 寂寞的季节 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E5%AF%82%E5%AF%9E%E7%9A%84%E5%AD%A3%E8%8A%82%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/000CtYav2WqV5o",
+        "visibleLabel": "寂寞的季节 (原版伴奏) - 陶喆",
+        "visibleDuration": "03:28",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=000CtYav2WqV5o&sign=4cVHt1w2an9sE&t=1793325639",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3338849,
+        "sha256": "5fc03e2476a6da15e8716a1e367dc305fe23b3a39743fff491bd6800bb9fafc4",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 208.58882086167802,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 9198767,
+        "rms": 0.054185324828197004,
+        "rmsPerChannel": [
+          0.05418478442866014,
+          0.05418586522239243
+        ],
+        "peak": 0.42618003487586975,
+        "nonZeroSampleFraction": 0.9998721024241618,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "2d808141d0b8aaf0c3129f09a403b13958a047e9ba3527246e5bb9699a93061a",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.0057770409912337,
+            "rawText": "{\"summary\": \"纯吉他伴奏，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有吉他演奏，未发现人声主唱或和声。\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声。\"]}",
+            "decision": {
+              "summary": "纯吉他伴奏，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有吉他演奏，未发现人声主唱或和声。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 89.2944375,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 0.8192379579995759,
+            "rawText": "{\"summary\": \"纯吉他伴奏，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有吉他演奏，无任何人声出现。\"], \"limitations\": []}",
+            "decision": {
+              "summary": "纯吉他伴奏，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有吉他演奏，无任何人声出现。"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 163.588875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 0.8280364999955054,
+            "rawText": "{\"summary\": \"纯吉他伴奏，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中仅有吉他演奏，无任何人声出现。\"], \"limitations\": []}",
+            "decision": {
+              "summary": "纯吉他伴奏，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中仅有吉他演奏，无任何人声出现。"
+              ],
+              "limitations": []
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "爱爱爱",
+      "downloadedTitle": "爱爱爱 (KTV版伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 爱爱爱 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:42.979Z",
+        "query": "方大同 爱爱爱 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%88%B1%E7%88%B1%E7%88%B1%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/003cNX7229Eg3L",
+        "visibleLabel": "爱爱爱 (KTV版伴奏) - 方大同",
+        "visibleDuration": "03:37",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003cNX7229Eg3L&sign=42zXgV10Jc0Hk&t=1793325643",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3486372,
+        "sha256": "5a7c43b6a51b764589f33d45e93d25b5f97dac7aef5037736edd93febbcc4e2f",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 217.82310657596372,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 9605999,
+        "rms": 0.13645523221417408,
+        "rmsPerChannel": [
+          0.13645523221422687,
+          0.13645523221422687
+        ],
+        "peak": 0.8422650694847107,
+        "nonZeroSampleFraction": 0.9616688488099988,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "ec6c3f5cdbebfc278a02079be88b54405f911cbfd858c161de6f4941992313a6",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3672808329865802,
+            "rawText": "{\"summary\": \"音乐以柔和的钢琴伴奏和轻柔的鼓点为背景，营造出抒情的氛围。随后出现一位男歌手的主唱，声音清澈且富有情感。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"钢琴伴奏贯穿始终，旋律舒缓\", \"鼓点轻柔，提供稳定的节奏感\", \"男声主唱进入后，人声清晰突出，演唱情感充沛\"], \"limitations\": []}",
+            "decision": {
+              "summary": "音乐以柔和的钢琴伴奏和轻柔的鼓点为背景，营造出抒情的氛围。随后出现一位男歌手的主唱，声音清澈且富有情感。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "钢琴伴奏贯穿始终，旋律舒缓",
+                "鼓点轻柔，提供稳定的节奏感",
+                "男声主唱进入后，人声清晰突出，演唱情感充沛"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 93.9115625,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.7228509580017999,
+            "rawText": "{\"summary\": \"音乐伴奏中包含清晰的主唱人声，演唱风格偏向流行。背景中隐约有和声或合唱的层次感，但主唱始终占据主导地位。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"主唱人声清晰，位于音频前景，持续演唱主旋律和歌词\", \"背景中存在和声或合唱的辅助人声，增强了音乐的厚度\", \"人声与伴奏乐器层次分明，主唱突出\"], \"limitations\": [\"音频片段较短，无法判断整首歌的主唱是否持续存在\", \"背景和声的清晰度和具体表现形式存在不确定性\"]}",
+            "decision": {
+              "summary": "音乐伴奏中包含清晰的主唱人声，演唱风格偏向流行。背景中隐约有和声或合唱的层次感，但主唱始终占据主导地位。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "主唱人声清晰，位于音频前景，持续演唱主旋律和歌词",
+                "背景中存在和声或合唱的辅助人声，增强了音乐的厚度",
+                "人声与伴奏乐器层次分明，主唱突出"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的主唱是否持续存在",
+                "背景和声的清晰度和具体表现形式存在不确定性"
+              ]
+            }
+          },
+          {
+            "startSeconds": 172.823125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.830579667002894,
+            "rawText": "{\"summary\": \"歌曲包含清晰的主唱人声，演唱情感充沛。伴奏中包含电子合成器、鼓点和弦乐等元素，整体风格偏向流行。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"主唱人声位于音频前景，持续演唱主旋律和歌词\", \"背景中存在和声或叠唱人声，增强了歌曲的层次感\", \"伴奏乐器丰富，包括电子合成器、鼓点和弦乐等流行音乐常见元素\"], \"limitations\": [\"音频片段较短，无法判断整首歌的演唱风格是否始终如此\", \"无法通过音频片段判断伴奏中是否包含其他类型的和声或人声处理\"]}",
+            "decision": {
+              "summary": "歌曲包含清晰的主唱人声，演唱情感充沛。伴奏中包含电子合成器、鼓点和弦乐等元素，整体风格偏向流行。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "主唱人声位于音频前景，持续演唱主旋律和歌词",
+                "背景中存在和声或叠唱人声，增强了歌曲的层次感",
+                "伴奏乐器丰富，包括电子合成器、鼓点和弦乐等流行音乐常见元素"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的演唱风格是否始终如此",
+                "无法通过音频片段判断伴奏中是否包含其他类型的和声或人声处理"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-lead-suspected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个片段均有AI前景人声疑点，建议试听核对；不是人工确认，不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "三人游",
+      "downloadedTitle": "三人游 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 三人游 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:48.288Z",
+        "query": "方大同 三人游 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E4%B8%89%E4%BA%BA%E6%B8%B8%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/004anNQF3AINC1",
+        "visibleLabel": "三人游 (伴奏) - 方大同",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=004anNQF3AINC1&sign=5eFqqfpK1N9Zg&t=1793325649",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4018434,
+        "sha256": "d29b21a1dec52383d7bc39553dea930f259fe4270ba676d9be7b8820714172fe",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 251.06399092970523,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11071922,
+        "rms": 0.09083249250198437,
+        "rmsPerChannel": [
+          0.090835994595613,
+          0.09082899027338498
+        ],
+        "peak": 0.9248181581497192,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "77ed50581ea9504483a3d38521a1adacea1a3c9372e23b4f94264a34bb4a3732",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5930812089936808,
+            "rawText": "{\"summary\": \"音频以柔和的吉他伴奏为主，伴有类似鸟鸣的自然音效。整体氛围宁静，适合营造轻松的背景音乐。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要乐器为吉他，演奏轻柔的旋律\", \"背景中存在类似鸟鸣的自然音效\", \"无明显人声演唱或和声出现\"], \"limitations\": [\"音频片段较短，无法判断是否有人声在更长的曲目中出现\", \"自然音效可能并非真实鸟鸣，而是乐器或音效合成\"]}",
+            "decision": {
+              "summary": "音频以柔和的吉他伴奏为主，伴有类似鸟鸣的自然音效。整体氛围宁静，适合营造轻松的背景音乐。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要乐器为吉他，演奏轻柔的旋律",
+                "背景中存在类似鸟鸣的自然音效",
+                "无明显人声演唱或和声出现"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断是否有人声在更长的曲目中出现",
+                "自然音效可能并非真实鸟鸣，而是乐器或音效合成"
+              ]
+            }
+          },
+          {
+            "startSeconds": 110.532,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6832352909841575,
+            "rawText": "{\"summary\": \"音乐以柔和的合成器弦乐为主旋律，辅以轻快的鼓点和贝斯，营造出轻松的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中没有明显的人声主唱或背景和声\", \"主要乐器包括合成器弦乐、电子鼓点和贝斯线\", \"整体音色偏向电子音乐或流行器乐伴奏风格\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲的完整人声配置\", \"未听到完整旋律或和声部分，可能存在人声未被捕捉到的情况\"]}",
+            "decision": {
+              "summary": "音乐以柔和的合成器弦乐为主旋律，辅以轻快的鼓点和贝斯，营造出轻松的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中没有明显的人声主唱或背景和声",
+                "主要乐器包括合成器弦乐、电子鼓点和贝斯线",
+                "整体音色偏向电子音乐或流行器乐伴奏风格"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲的完整人声配置",
+                "未听到完整旋律或和声部分，可能存在人声未被捕捉到的情况"
+              ]
+            }
+          },
+          {
+            "startSeconds": 206.064,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.500495292013511,
+            "rawText": "{\"summary\": \"一段流行风格的歌曲片段，包含清晰的主唱人声和伴奏音乐。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频中可以清晰辨识出一位主唱在演唱主旋律\", \"背景中存在和声或合唱效果，增强了人声的层次感\", \"伴奏音乐包含鼓点、贝斯和合成器等流行音乐常见元素\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的演唱风格或人声编排的完整性\"]}",
+            "decision": {
+              "summary": "一段流行风格的歌曲片段，包含清晰的主唱人声和伴奏音乐。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频中可以清晰辨识出一位主唱在演唱主旋律",
+                "背景中存在和声或合唱效果，增强了人声的层次感",
+                "伴奏音乐包含鼓点、贝斯和合成器等流行音乐常见元素"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的演唱风格或人声编排的完整性"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "够不够",
+      "downloadedTitle": "够不够 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 够不够 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:55.154Z",
+        "query": "方大同 够不够 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E5%A4%9F%E4%B8%8D%E5%A4%9F%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/002TXz2m1yIASg",
+        "visibleLabel": "够不够 (伴奏) - 方大同",
+        "visibleDuration": "04:05",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=002TXz2m1yIASg&sign=16ppTDi2TUNUA&t=1793325656",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3922216,
+        "sha256": "3adcaca4544a17db69c0f43ca4c624433ce3bbfee46db6f743d62e20d34ea8ea",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 245.06399092970523,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 10807322,
+        "rms": 0.14112292554616232,
+        "rmsPerChannel": [
+          0.14112472486697092,
+          0.14112112620250966
+        ],
+        "peak": 0.984403669834137,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "f3a9241a2cbf0d5e48039cb74142d4726d6494eff27c2fac5201e4b8284672da",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6635607079952024,
+            "rawText": "{\"summary\": \"一段节奏感较强的流行音乐伴奏，包含清晰的鼓点、贝斯线和合成器旋律。人声演唱部分尚未出现。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中可辨识出强劲的电子鼓点和低频贝斯音，构成稳定的节奏基础\", \"合成器音色在中频段持续演奏旋律性线条\", \"人声演唱尚未进入，目前仅为纯伴奏部分\"], \"limitations\": [\"音频片段较短，无法判断后续是否有人声加入\", \"无法判断该伴奏是否为完整歌曲的片段\"]}",
+            "decision": {
+              "summary": "一段节奏感较强的流行音乐伴奏，包含清晰的鼓点、贝斯线和合成器旋律。人声演唱部分尚未出现。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中可辨识出强劲的电子鼓点和低频贝斯音，构成稳定的节奏基础",
+                "合成器音色在中频段持续演奏旋律性线条",
+                "人声演唱尚未进入，目前仅为纯伴奏部分"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断后续是否有人声加入",
+                "无法判断该伴奏是否为完整歌曲的片段"
+              ]
+            }
+          },
+          {
+            "startSeconds": 107.532,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.9255066250043456,
+            "rawText": "{\"summary\": \"一段英文流行歌曲的伴奏，包含清晰的鼓点、贝斯线和合成器旋律。人声演唱部分在音频中存在，但似乎不是当前片段的主唱。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中可以听到明显的鼓点和贝斯线，构成了典型的流行音乐伴奏结构\", \"有清晰的英文人声演唱，但人声似乎不是当前片段的主唱\", \"伴奏中包含合成器旋律，营造出轻松的氛围\"], \"limitations\": [\"无法确定当前片段是否包含完整的主唱部分\", \"无法判断人声演唱的性别或具体演唱风格\", \"无法判断歌曲的版权或原调信息\"]}",
+            "decision": {
+              "summary": "一段英文流行歌曲的伴奏，包含清晰的鼓点、贝斯线和合成器旋律。人声演唱部分在音频中存在，但似乎不是当前片段的主唱。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中可以听到明显的鼓点和贝斯线，构成了典型的流行音乐伴奏结构",
+                "有清晰的英文人声演唱，但人声似乎不是当前片段的主唱",
+                "伴奏中包含合成器旋律，营造出轻松的氛围"
+              ],
+              "limitations": [
+                "无法确定当前片段是否包含完整的主唱部分",
+                "无法判断人声演唱的性别或具体演唱风格",
+                "无法判断歌曲的版权或原调信息"
+              ]
+            }
+          },
+          {
+            "startSeconds": 200.064,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.250686790997861,
+            "rawText": "{\"summary\": \"一首节奏感较强的流行歌曲，包含清晰的主唱人声和伴奏乐器。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中可以清晰地听到一位主唱在演唱主旋律。\", \"伴奏乐器包括鼓点、贝斯和吉他等，营造出较强的节奏感。\", \"人声位于音频的前景，非常突出。\"], \"limitations\": []}",
+            "decision": {
+              "summary": "一首节奏感较强的流行歌曲，包含清晰的主唱人声和伴奏乐器。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中可以清晰地听到一位主唱在演唱主旋律。",
+                "伴奏乐器包括鼓点、贝斯和吉他等，营造出较强的节奏感。",
+                "人声位于音频的前景，非常突出。"
+              ],
+              "limitations": []
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "春风吹",
+      "downloadedTitle": "春风吹 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 春风吹 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:00:59.199Z",
+        "query": "方大同 春风吹 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E6%98%A5%E9%A3%8E%E5%90%B9%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/003KARPM0nVO3Q",
+        "visibleLabel": "春风吹 (伴奏) - 方大同",
+        "visibleDuration": "02:05",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003KARPM0nVO3Q&sign=b0z8T0ZzpypO6&t=1793325660",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 2011394,
+        "sha256": "6472a19ac5c3d95e72099d266bc1828d7c2fc1c6bfba4438a39d977f2fe47ef2",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 125.63698412698413,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 5540591,
+        "rms": 0.10783479052627755,
+        "rmsPerChannel": [
+          0.10722251576830004,
+          0.10844360842395234
+        ],
+        "peak": 0.8884766101837158,
+        "nonZeroSampleFraction": 0.9825495150246607,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "3592b512d2975437f13098315d5dfc037ff83fd67c292b52a045237d327bf6da",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3177164579974487,
+            "rawText": "{\"summary\": \"一段带有电子节拍的流行歌曲片段，包含清晰的主唱人声和伴奏音乐。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中可以清晰辨识出持续的主唱人声在演唱主旋律\", \"伴奏音乐包含明显的电子节拍和合成器音色\"], \"limitations\": [\"无法判断整首歌曲的完整人声配置，仅基于当前片段分析\"]}",
+            "decision": {
+              "summary": "一段带有电子节拍的流行歌曲片段，包含清晰的主唱人声和伴奏音乐。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中可以清晰辨识出持续的主唱人声在演唱主旋律",
+                "伴奏音乐包含明显的电子节拍和合成器音色"
+              ],
+              "limitations": [
+                "无法判断整首歌曲的完整人声配置，仅基于当前片段分析"
+              ]
+            }
+          },
+          {
+            "startSeconds": 47.8185,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3485693330003414,
+            "rawText": "{\"summary\": \"一段带有电子节拍和合成器音效的流行音乐，人声演唱清晰，伴奏丰富。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"人声演唱位于音频前景，旋律清晰可辨\", \"背景包含电子鼓点和合成器音效\", \"人声与伴奏有明显的层次感\"], \"limitations\": [\"音频片段较短，无法判断整首歌的完整人声配置\"]}",
+            "decision": {
+              "summary": "一段带有电子节拍和合成器音效的流行音乐，人声演唱清晰，伴奏丰富。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "人声演唱位于音频前景，旋律清晰可辨",
+                "背景包含电子鼓点和合成器音效",
+                "人声与伴奏有明显的层次感"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的完整人声配置"
+              ]
+            }
+          },
+          {
+            "startSeconds": 80.637,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.582007374992827,
+            "rawText": "{\"summary\": \"一段带有电子节拍和合成器音效的流行音乐，人声演唱清晰，旋律感强，适合个人演唱练习使用。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音乐中包含明显的电子鼓点和合成器旋律\", \"人声演唱位于音频的前景，清晰可辨\", \"旋律部分由人声主导，节奏感强\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的完整结构\", \"无法确定人声是否为唯一演唱者或存在其他未察觉的和声层\"]}",
+            "decision": {
+              "summary": "一段带有电子节拍和合成器音效的流行音乐，人声演唱清晰，旋律感强，适合个人演唱练习使用。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音乐中包含明显的电子鼓点和合成器旋律",
+                "人声演唱位于音频的前景，清晰可辨",
+                "旋律部分由人声主导，节奏感强"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的完整结构",
+                "无法确定人声是否为唯一演唱者或存在其他未察觉的和声层"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-lead-suspected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个片段均有AI前景人声疑点，建议试听核对；不是人工确认，不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。实际文件不足三分钟，可能为短版。"
+    },
+    {
+      "artist": "方大同",
+      "title": "为你写的歌",
+      "downloadedTitle": "为你写的歌 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 为你写的歌 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:01:05.438Z",
+        "query": "方大同 为你写的歌 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E4%B8%BA%E4%BD%A0%E5%86%99%E7%9A%84%E6%AD%8C%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/002ftGTN0mwqWT",
+        "visibleLabel": "为你写的歌 (伴奏) - 方大同",
+        "visibleDuration": "03:10",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=002ftGTN0mwqWT&sign=c4zqtiOkyi24I&t=1793325666",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3046288,
+        "sha256": "ceac781f86dc8c5369910224b4d051f4193e0d5d4ddb1d043f4789ae9b4b6b77",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 190.3161678004535,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 8392943,
+        "rms": 0.06798379639373935,
+        "rmsPerChannel": [
+          0.06798320585593283,
+          0.06798438692646007
+        ],
+        "peak": 0.7347936034202576,
+        "nonZeroSampleFraction": 0.9999199327339647,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "78e804cdb8affe2e68de65b2bfa502005544de6deab227982dad03da3f1dbf21",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5482320840237662,
+            "rawText": "{\"summary\": \"一段轻柔抒情的器乐伴奏，以钢琴、合成器、鼓点和弦乐为主，营造出宁静悠扬的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或背景和声\", \"以钢琴和弦乐为主的旋律线条清晰，无歌唱痕迹\", \"节奏部分由电子鼓点提供稳定的节拍，但无演唱内容\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与\"]}",
+            "decision": {
+              "summary": "一段轻柔抒情的器乐伴奏，以钢琴、合成器、鼓点和弦乐为主，营造出宁静悠扬的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或背景和声",
+                "以钢琴和弦乐为主的旋律线条清晰，无歌唱痕迹",
+                "节奏部分由电子鼓点提供稳定的节拍，但无演唱内容"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与"
+              ]
+            }
+          },
+          {
+            "startSeconds": 80.1580625,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6161632080038544,
+            "rawText": "{\"summary\": \"音乐以柔和的钢琴伴奏为主，辅以轻柔的鼓点和贝斯，营造出抒情的氛围。人声演唱清晰，为男性主唱，旋律感较强。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"钢琴旋律贯穿始终，音色温暖\", \"鼓点和贝斯提供稳定的节奏支撑\", \"人声演唱位于音频前景，清晰可辨\", \"整体风格偏向抒情流行\"], \"limitations\": [\"音频片段较短，无法判断整首歌的完整结构和人声部分是否有更多层次变化\"]}",
+            "decision": {
+              "summary": "音乐以柔和的钢琴伴奏为主，辅以轻柔的鼓点和贝斯，营造出抒情的氛围。人声演唱清晰，为男性主唱，旋律感较强。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "钢琴旋律贯穿始终，音色温暖",
+                "鼓点和贝斯提供稳定的节奏支撑",
+                "人声演唱位于音频前景，清晰可辨",
+                "整体风格偏向抒情流行"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的完整结构和人声部分是否有更多层次变化"
+              ]
+            }
+          },
+          {
+            "startSeconds": 145.3161875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.143151083990233,
+            "rawText": "{\"summary\": \"一首流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"人声清晰地在前景中演唱主旋律\", \"伴奏中包含和声或背景人声的层次感\", \"整体音乐风格偏向流行，适合K歌伴奏\"], \"limitations\": []}",
+            "decision": {
+              "summary": "一首流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "人声清晰地在前景中演唱主旋律",
+                "伴奏中包含和声或背景人声的层次感",
+                "整体音乐风格偏向流行，适合K歌伴奏"
+              ],
+              "limitations": []
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "好不容易",
+      "downloadedTitle": "好不容易 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 好不容易 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:01:09.984Z",
+        "query": "方大同 好不容易 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/001HeT1Z3jkOz7",
+        "visibleLabel": "好不容易 (伴奏) - 方大同",
+        "visibleDuration": "04:43",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=001HeT1Z3jkOz7&sign=856GADQ3Do5nQ&t=1793325670",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4539877,
+        "sha256": "2a75a78e986eea95b59f1f893e4bd59dd8ecb490f0c7f3cad1850760076a1aba",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 283.6647392290249,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 12509615,
+        "rms": 0.12801091038857934,
+        "peak": 0.7801118493080139,
+        "nonZeroSampleFraction": 1,
+        "nonSilent": true,
+        "decoder": "Google Chrome AudioContext.decodeAudioData",
+        "decoderNote": "libsndfile MP3读取报内部错误；独立Chrome decodeAudioData完整解码成功。CoreAudio afconvert输出格式失败。AI仅使用Chrome解码临时16k单声道PCM，未改原文件。",
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "64345fd3ae031afb2e5585dbbbf8847bda7bd467d740052154a11cb1ea44dc03",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.1554492500144988,
+            "rawText": "{\"summary\": \"轻柔舒缓的器乐曲，以吉他、鼓点和贝斯为基础，营造出宁静的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为吉他、鼓点和贝斯的伴奏音乐\", \"没有明显的人声演唱或和声出现\"], \"limitations\": []}",
+            "decision": {
+              "summary": "轻柔舒缓的器乐曲，以吉他、鼓点和贝斯为基础，营造出宁静的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为吉他、鼓点和贝斯的伴奏音乐",
+                "没有明显的人声演唱或和声出现"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 126.832375,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.22516474997974,
+            "rawText": "{\"summary\": \"抒情流行歌曲，女声主唱，伴奏包含合成器、鼓点和弦乐。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"清晰的女声主唱在演唱主旋律\", \"背景中存在和声或叠唱人声\", \"伴奏包含电子合成器音色、鼓点和弦乐铺垫\"], \"limitations\": []}",
+            "decision": {
+              "summary": "抒情流行歌曲，女声主唱，伴奏包含合成器、鼓点和弦乐。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "清晰的女声主唱在演唱主旋律",
+                "背景中存在和声或叠唱人声",
+                "伴奏包含电子合成器音色、鼓点和弦乐铺垫"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 238.66475,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3001930830068886,
+            "rawText": "{\"summary\": \"轻柔抒情的流行音乐，以钢琴、吉他、贝斯和鼓点伴奏，旋律舒缓，氛围宁静。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中无明显人声主唱或和声表现\", \"以器乐演奏为主，营造出宁静的氛围\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声参与\"]}",
+            "decision": {
+              "summary": "轻柔抒情的流行音乐，以钢琴、吉他、贝斯和鼓点伴奏，旋律舒缓，氛围宁静。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中无明显人声主唱或和声表现",
+                "以器乐演奏为主，营造出宁静的氛围"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声参与"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱很简单",
+      "downloadedTitle": "爱, 很简单 (伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 爱很简单 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:05:51.440Z",
+        "query": "陶喆 爱很简单 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过另一条正常可见伴奏结果取得；标签与时长按站方实际显示，未确认实际调性。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E5%BE%88%E7%AE%80%E5%8D%95%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/004LIh1O0jcaPx",
+        "visibleLabel": "爱, 很简单 (伴奏) - 陶喆",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=004LIh1O0jcaPx&sign=b0EOcXHdNMRBU&t=1793325952",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 6919075,
+        "sha256": "4f5e6db10784f98fcb24d5cd0b81f36258d5b530518c8279d9a708054f347624",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 432.3537188208617,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 19066799,
+        "rms": 0.18155986181730593,
+        "rmsPerChannel": [
+          0.1842738972714685,
+          0.17880463537245478
+        ],
+        "peak": 1.1248282194137573,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "d9415bf84a9dd6cf9d54e167e64894f477a3cfef8f4b14002b599de026c52ed2",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4546925839968026,
+            "rawText": "{\"summary\": \"钢琴伴奏，无明显人声演唱，包含环境音效如欢呼声。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为钢琴演奏，旋律较为抒情。\", \"背景中有类似欢呼声的环境音效。\", \"未发现清晰的人声主唱或和声。\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声演唱。\", \"环境音效可能掩盖了细微的人声。\"]}",
+            "decision": {
+              "summary": "钢琴伴奏，无明显人声演唱，包含环境音效如欢呼声。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为钢琴演奏，旋律较为抒情。",
+                "背景中有类似欢呼声的环境音效。",
+                "未发现清晰的人声主唱或和声。"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声演唱。",
+                "环境音效可能掩盖了细微的人声。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 201.176875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.2774626250029542,
+            "rawText": "{\"summary\": \"音乐以合成器音色为主，伴有鼓点和贝斯，营造出一种轻松的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中没有明显的人声主唱或背景和声\", \"主要乐器包括合成器、鼓和贝斯，构成完整的伴奏结构\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声参与\"]}",
+            "decision": {
+              "summary": "音乐以合成器音色为主，伴有鼓点和贝斯，营造出一种轻松的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中没有明显的人声主唱或背景和声",
+                "主要乐器包括合成器、鼓和贝斯，构成完整的伴奏结构"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声参与"
+              ]
+            }
+          },
+          {
+            "startSeconds": 387.35375,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.7790989159839228,
+            "rawText": "{\"summary\": \"音乐以强烈的鼓点和电吉他为主，伴有合成器音效，整体风格偏向摇滚或流行摇滚，节奏感强，情绪激昂。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中没有明显的人声主唱或和声表现\", \"主要乐器包括电吉他、鼓、合成器音效，构成完整的伴奏结构\", \"音乐风格偏向摇滚或流行摇滚，强调节奏和旋律的乐器表现\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与\", \"未提供完整音频，可能存在人声在其他部分出现但未被捕捉到\"]}",
+            "decision": {
+              "summary": "音乐以强烈的鼓点和电吉他为主，伴有合成器音效，整体风格偏向摇滚或流行摇滚，节奏感强，情绪激昂。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中没有明显的人声主唱或和声表现",
+                "主要乐器包括电吉他、鼓、合成器音效，构成完整的伴奏结构",
+                "音乐风格偏向摇滚或流行摇滚，强调节奏和旋律的乐器表现"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与",
+                "未提供完整音频，可能存在人声在其他部分出现但未被捕捉到"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱我还是他",
+      "downloadedTitle": "爱我还是他 (Live|伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 爱我还是他 (Live版伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:05:57.433Z",
+        "query": "陶喆 爱我还是他 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "通过另一条正常可见伴奏结果取得；标签与时长按站方实际显示，未确认实际调性。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E6%88%91%E8%BF%98%E6%98%AF%E4%BB%96%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/001whSCf0AMFOx",
+        "visibleLabel": "爱我还是他 (Live|伴奏) - 陶喆",
+        "visibleDuration": "05:05",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=001whSCf0AMFOx&sign=0fpkKVNuVxUXE&t=1793325958",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 12206712,
+        "sha256": "9cb79fbb860f06ec45b3643c9ee56d796e5a3014b9b3fbfbd716af47ad298258",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 305.109410430839,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 13455325,
+        "rms": 0.13058004014451566,
+        "rmsPerChannel": [
+          0.1319730723919468,
+          0.12917198586277112
+        ],
+        "peak": 0.9494832754135132,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 320000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "2b79bc97f7cb8c736243ed9573a8742a0a3d7bca716037ae0bfb47f726e784a8",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4476653329911642,
+            "rawText": "{\"summary\": \"钢琴伴奏，旋律舒缓，无明显人声演唱。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为钢琴演奏，旋律较为平缓，无明显人声主唱或和声出现。\", \"未发现任何与人声相关的演唱或合唱元素。\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声参与。\", \"无法判断音频中是否包含极细微或极短暂的人声元素。\"]}",
+            "decision": {
+              "summary": "钢琴伴奏，旋律舒缓，无明显人声演唱。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为钢琴演奏，旋律较为平缓，无明显人声主唱或和声出现。",
+                "未发现任何与人声相关的演唱或合唱元素。"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声参与。",
+                "无法判断音频中是否包含极细微或极短暂的人声元素。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 137.5546875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.403751874982845,
+            "rawText": "{\"summary\": \"音乐风格为流行抒情，伴奏包含鼓点、贝斯、吉他和弦乐铺垫。人声演唱者为女性，主唱清晰，演唱情感充沛。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"清晰的女声主唱贯穿始终，演唱情感饱满\", \"伴奏乐器丰富，包括鼓、贝斯、吉他和弦乐\", \"人声与伴奏分离明确，主唱在前景\"], \"limitations\": []}",
+            "decision": {
+              "summary": "音乐风格为流行抒情，伴奏包含鼓点、贝斯、吉他和弦乐铺垫。人声演唱者为女性，主唱清晰，演唱情感充沛。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "清晰的女声主唱贯穿始终，演唱情感饱满",
+                "伴奏乐器丰富，包括鼓、贝斯、吉他和弦乐",
+                "人声与伴奏分离明确，主唱在前景"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 260.1094375,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.395233332994394,
+            "rawText": "{\"summary\": \"流行歌曲风格，女声主唱清晰，伴奏包含鼓、贝斯、合成器等，整体氛围抒情。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"女声主唱在音乐中占据主导地位，演唱清晰且情感充沛\", \"背景中存在和声或叠唱，增强了音乐的层次感\", \"伴奏乐器丰富，包括鼓点、贝斯线和合成器音色\"], \"limitations\": []}",
+            "decision": {
+              "summary": "流行歌曲风格，女声主唱清晰，伴奏包含鼓、贝斯、合成器等，整体氛围抒情。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "女声主唱在音乐中占据主导地位，演唱清晰且情感充沛",
+                "背景中存在和声或叠唱，增强了音乐的层次感",
+                "伴奏乐器丰富，包括鼓点、贝斯线和合成器音色"
+              ],
+              "limitations": []
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "特别的人",
+      "downloadedTitle": "特别的人 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 特别的人 (伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:06:02.377Z",
+        "query": "方大同 特别的人 伴奏",
+        "sourceOption": "QQ",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "通过另一条正常可见伴奏结果取得；标签与时长按站方实际显示，未确认实际调性。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%89%B9%E5%88%AB%E7%9A%84%E4%BA%BA%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/001E0HQU0qcL5k",
+        "visibleLabel": "特别的人 (伴奏) - 方大同",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=001E0HQU0qcL5k&sign=4dxcolkLODRYk&t=1793325963",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4161378,
+        "sha256": "e41f597c1c5697bd0887a8dc2a66f0da29b9ad5e12103ff79583020e620f9a4e",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 260.0108616780045,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11466479,
+        "rms": 0.09724753300792066,
+        "rmsPerChannel": [
+          0.09519751379546912,
+          0.09925522011173593
+        ],
+        "peak": 0.5579575300216675,
+        "nonZeroSampleFraction": 0.9999285744124242,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 127999,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "294c4e55ffb3fa48146c27a7e9cc1246809d3846d82d079c7fef2a8ec021315b",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.2821681659843307,
+            "rawText": "{\"summary\": \"音乐以合成器弦乐为主旋律，伴随电子鼓点节奏，整体氛围轻松舒缓，适合背景音乐使用。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音乐中无明显人声主唱或和声表现\", \"旋律由合成器弦乐主导，节奏由电子鼓点提供\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与\"]}",
+            "decision": {
+              "summary": "音乐以合成器弦乐为主旋律，伴随电子鼓点节奏，整体氛围轻松舒缓，适合背景音乐使用。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音乐中无明显人声主唱或和声表现",
+                "旋律由合成器弦乐主导，节奏由电子鼓点提供"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与"
+              ]
+            }
+          },
+          {
+            "startSeconds": 115.0054375,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5098712909966707,
+            "rawText": "{\"summary\": \"音乐以合成器弦乐为主旋律，伴随电子鼓点节奏，整体氛围轻松明快，适合舞蹈或休闲场景。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"主旋律由合成器弦乐演奏，音色明亮且具有电子感\", \"稳定的电子鼓点提供节奏支撑，包含底鼓和轻快的打击乐音色\", \"无明显人声演唱或和声出现\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否包含人声\"]}",
+            "decision": {
+              "summary": "音乐以合成器弦乐为主旋律，伴随电子鼓点节奏，整体氛围轻松明快，适合舞蹈或休闲场景。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "主旋律由合成器弦乐演奏，音色明亮且具有电子感",
+                "稳定的电子鼓点提供节奏支撑，包含底鼓和轻快的打击乐音色",
+                "无明显人声演唱或和声出现"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否包含人声"
+              ]
+            }
+          },
+          {
+            "startSeconds": 215.010875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5603477909753565,
+            "rawText": "{\"summary\": \"音乐以电子合成器音色为主，伴有鼓点和贝斯，营造出一种现代感。旋律线条较为平缓，整体氛围偏向抒情。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中没有明显的人声主唱或背景和声\", \"主要乐器包括合成器、电子鼓和低音贝斯\", \"旋律由合成器音色主导，没有听出人声演唱痕迹\"], \"limitations\": [\"音频片段较短，无法确定整首歌是否有人声参与\"]}",
+            "decision": {
+              "summary": "音乐以电子合成器音色为主，伴有鼓点和贝斯，营造出一种现代感。旋律线条较为平缓，整体氛围偏向抒情。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中没有明显的人声主唱或背景和声",
+                "主要乐器包括合成器、电子鼓和低音贝斯",
+                "旋律由合成器音色主导，没有听出人声演唱痕迹"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌是否有人声参与"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "Love Song",
+      "downloadedTitle": "Love Song (KTV版伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - Love Song (kugou伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:08:51.160Z",
+        "query": "方大同 Love Song 伴奏",
+        "sourceOption": "kugou",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20Love%20Song%20%E4%BC%B4%E5%A5%8F&type=kugou",
+        "catalogUrl": "https://www.kugou.com/song/#hash=0983474ABE6B2853961BBF135931B8ED",
+        "visibleLabel": "Love Song (KTV版伴奏) - 方大同",
+        "visibleDuration": "04:38",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=0983474ABE6B2853961BBF135931B8ED&sign=20X1GoP.dq2iE&t=1793326132",
+        "finalHttpStatus": 200,
+        "finalContentType": "application/octet-stream",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 4453935,
+        "sha256": "8c34280a7d1a2b1b5871879a12b9a43257ca97d881c01392e21d542d5343a299",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 278.3096371882086,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 12273455,
+        "rms": 0.10128699238691789,
+        "rmsPerChannel": [
+          0.10129015024479793,
+          0.10128383443066619
+        ],
+        "peak": 1.0794645547866821,
+        "nonZeroSampleFraction": 0.9996127414815144,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 127999,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "c712345c021ba6ae373620353021ab4ea04df926629bbe3faf18101d58ccfa2e",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4804287499864586,
+            "rawText": "{\"summary\": \"一段流行风格的歌曲伴奏，包含清晰的鼓点、贝斯线和合成器旋律。人声演唱者在前景中清晰地演唱主旋律，伴奏中没有明显的和声或背景人声。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"鼓点和贝斯线清晰，具有典型的流行伴奏风格\", \"人声演唱者在音频中占据主导地位，演唱主旋律\", \"没有听到明显的和声或背景人声叠唱\"], \"limitations\": []}",
+            "decision": {
+              "summary": "一段流行风格的歌曲伴奏，包含清晰的鼓点、贝斯线和合成器旋律。人声演唱者在前景中清晰地演唱主旋律，伴奏中没有明显的和声或背景人声。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "鼓点和贝斯线清晰，具有典型的流行伴奏风格",
+                "人声演唱者在音频中占据主导地位，演唱主旋律",
+                "没有听到明显的和声或背景人声叠唱"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 124.1548125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.2952501669933554,
+            "rawText": "{\"summary\": \"这是一首流行风格的歌曲，包含清晰的主唱人声和伴奏音乐。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频中可以清晰地听到一位男歌手在演唱主旋律\", \"背景中伴有和声或合唱效果，增强了人声的层次感\", \"伴奏音乐包括鼓点、贝斯和合成器等流行音乐常见元素\"], \"limitations\": []}",
+            "decision": {
+              "summary": "这是一首流行风格的歌曲，包含清晰的主唱人声和伴奏音乐。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频中可以清晰地听到一位男歌手在演唱主旋律",
+                "背景中伴有和声或合唱效果，增强了人声的层次感",
+                "伴奏音乐包括鼓点、贝斯和合成器等流行音乐常见元素"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 233.3096875,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3260272500046995,
+            "rawText": "{\"summary\": \"一段流行风格的歌曲，包含清晰的主唱人声和伴奏音乐。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频中可以清晰地听到一位主唱在演唱主旋律。\", \"背景中存在和声或合唱效果，增强了人声的层次感。\", \"伴奏音乐包括鼓点、贝斯和合成器等元素，营造出典型的流行音乐氛围。\"], \"limitations\": []}",
+            "decision": {
+              "summary": "一段流行风格的歌曲，包含清晰的主唱人声和伴奏音乐。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频中可以清晰地听到一位主唱在演唱主旋律。",
+                "背景中存在和声或合唱效果，增强了人声的层次感。",
+                "伴奏音乐包括鼓点、贝斯和合成器等元素，营造出典型的流行音乐氛围。"
+              ],
+              "limitations": []
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-lead-suspected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个片段均有AI前景人声疑点，建议试听核对；不是人工确认，不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "红豆",
+      "downloadedTitle": "红豆 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 红豆 (kugou伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:08:55.491Z",
+        "query": "方大同 红豆 伴奏",
+        "sourceOption": "kugou",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%BA%A2%E8%B1%86%20%E4%BC%B4%E5%A5%8F&type=kugou",
+        "catalogUrl": "https://www.kugou.com/song/#hash=4016A6C52A76C465AB8FFCF35E70E941",
+        "visibleLabel": "红豆 (伴奏) - 方大同",
+        "visibleDuration": "03:56",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=4016A6C52A76C465AB8FFCF35E70E941&sign=f0aX5ezIV7pRY&t=1793326137",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 9459588,
+        "sha256": "ee2ecf9888b510358b33a567f47bf5e99c4dc26a43c04528b9283373794a7542",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 236.4239909297052,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 10426298,
+        "rms": 0.08568657706195122,
+        "rmsPerChannel": [
+          0.08568597915079343,
+          0.08568717496899757
+        ],
+        "peak": 0.9838221073150635,
+        "nonZeroSampleFraction": 0.9998295176293638,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 320000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "f97ab7e205110b5acfeeb2f62ba1eaed78e85b8d80ee5325066a11eafb75a6c2",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。",
+        "libsndfileWarnings": "[src/libmpg123/layer3.c:INT123_do_layer3():1844] error: dequantization failed!",
+        "browserVerification": {
+          "decoder": "Google Chrome AudioContext.decodeAudioData",
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 11347097,
+          "durationSeconds": 236.39785416666666,
+          "rms": 0.08569211204619336,
+          "peak": 1.0031108856201172,
+          "nonZeroFraction": 0.9998310581111627,
+          "note": "独立Chrome AudioContext.decodeAudioData完整成功并非静音；此Context按48k重采样，原文件为44.1k。不同解码器的首尾帧数可能不同。"
+        }
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4281707920017652,
+            "rawText": "{\"summary\": \"轻柔的吉他伴奏，带有轻微的环境音效，整体氛围宁静。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为吉他演奏，旋律舒缓，无明显人声演唱\", \"背景中夹杂着细微的自然环境音，如鸟鸣或风声，但非人声\", \"无和声或叠唱人声出现\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声参与\"]}",
+            "decision": {
+              "summary": "轻柔的吉他伴奏，带有轻微的环境音效，整体氛围宁静。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为吉他演奏，旋律舒缓，无明显人声演唱",
+                "背景中夹杂着细微的自然环境音，如鸟鸣或风声，但非人声",
+                "无和声或叠唱人声出现"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声参与"
+              ]
+            }
+          },
+          {
+            "startSeconds": 103.212,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3131042500026524,
+            "rawText": "{\"summary\": \"音乐伴奏中包含清晰的主唱人声，演唱抒情歌曲。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中持续存在清晰的主唱人声，演唱旋律性歌词。\", \"人声位于音频的前景，伴奏音量适中，人声突出。\"], \"limitations\": [\"音频片段较短，无法判断整首歌是否始终有主唱。\"]}",
+            "decision": {
+              "summary": "音乐伴奏中包含清晰的主唱人声，演唱抒情歌曲。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中持续存在清晰的主唱人声，演唱旋律性歌词。",
+                "人声位于音频的前景，伴奏音量适中，人声突出。"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌是否始终有主唱。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 191.424,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.7247614999942016,
+            "rawText": "{\"summary\": \"音乐以柔和的钢琴伴奏和弦乐铺垫，随后加入抒情的男声主唱，演唱风格偏向流行抒情。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"钢琴伴奏贯穿始终，旋律舒缓\", \"弦乐组在中段加入，营造氛围\", \"清晰的男声主唱演唱主旋律\", \"人声与乐器层次分明，无明显和声或叠唱\"], \"limitations\": [\"音频片段较短，无法判断整首歌的完整人声配置\", \"未出现明显和声或背景人声，但无法完全排除整首歌存在\"]}",
+            "decision": {
+              "summary": "音乐以柔和的钢琴伴奏和弦乐铺垫，随后加入抒情的男声主唱，演唱风格偏向流行抒情。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "钢琴伴奏贯穿始终，旋律舒缓",
+                "弦乐组在中段加入，营造氛围",
+                "清晰的男声主唱演唱主旋律",
+                "人声与乐器层次分明，无明显和声或叠唱"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的完整人声配置",
+                "未出现明显和声或背景人声，但无法完全排除整首歌存在"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱很简单",
+      "downloadedTitle": "爱,很简单 (KTV版伴奏) - 陶喆",
+      "relativePath": "煎饼搜/陶喆 - 爱很简单 (kugou伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:10:36.495Z",
+        "query": "陶喆 爱很简单 伴奏",
+        "sourceOption": "kugou",
+        "sourceArtistLabel": "陶喆",
+        "attributionNote": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E5%BE%88%E7%AE%80%E5%8D%95%20%E4%BC%B4%E5%A5%8F&type=kugou",
+        "catalogUrl": "https://www.kugou.com/song/#hash=DF9A30E19D5E361FE4683CDFF7DF559B",
+        "visibleLabel": "爱,很简单 (KTV版伴奏) - 陶喆",
+        "visibleDuration": "04:26",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=DF9A30E19D5E361FE4683CDFF7DF559B&sign=35HPM6vwOi0Nk&t=1793326237",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 10751522,
+        "sha256": "34d9f11e1b5f4d0f96754f71da81576a36272074390cf5d38c39e289774abb29",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 266.6579591836735,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11759616,
+        "rms": 0.16089876968550595,
+        "rmsPerChannel": [
+          0.1510247751232018,
+          0.17020089738790428
+        ],
+        "peak": 1.0299715995788574,
+        "nonZeroSampleFraction": 0.9853136360915187,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 320000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "f0ea68d4b3c4b44df981ac2474e66933aad6f5db5c94933487c6d68bd33c2ad5",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。",
+        "libsndfileWarnings": "[src/libmpg123/id3.c:process_comment():587] error: No comment text / valid description?"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.9986475000041537,
+            "rawText": "{\"summary\": \"音乐以钢琴和弦乐为主，营造出抒情的氛围。中段加入了一段类似萨克斯或合成器的旋律，随后出现了一段人声演唱，音色较为柔和。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"钢琴和弦乐贯穿始终，营造抒情氛围\", \"中段出现类似萨克斯或合成器的旋律\", \"随后出现一段柔和的人声演唱\", \"人声旋律与乐器旋律交织，但人声清晰可辨\"], \"limitations\": [\"无法判断人声是否为原唱或翻唱\", \"无法判断整首歌曲的演唱风格和人声表现力\", \"无法判断乐器的具体类型和音色细节\"]}",
+            "decision": {
+              "summary": "音乐以钢琴和弦乐为主，营造出抒情的氛围。中段加入了一段类似萨克斯或合成器的旋律，随后出现了一段人声演唱，音色较为柔和。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "钢琴和弦乐贯穿始终，营造抒情氛围",
+                "中段出现类似萨克斯或合成器的旋律",
+                "随后出现一段柔和的人声演唱",
+                "人声旋律与乐器旋律交织，但人声清晰可辨"
+              ],
+              "limitations": [
+                "无法判断人声是否为原唱或翻唱",
+                "无法判断整首歌曲的演唱风格和人声表现力",
+                "无法判断乐器的具体类型和音色细节"
+              ]
+            }
+          },
+          {
+            "startSeconds": 118.329,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.3934020420128945,
+            "rawText": "{\"summary\": \"一首流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频中可以清晰地听到一位主唱在演唱主旋律\", \"背景中存在和声或叠唱的辅助人声\", \"伴奏乐器包括鼓、吉他等，营造出完整的流行音乐氛围\"], \"limitations\": [\"音频片段较短，无法判断整首歌的演唱风格或人声表现的全面性\"]}",
+            "decision": {
+              "summary": "一首流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频中可以清晰地听到一位主唱在演唱主旋律",
+                "背景中存在和声或叠唱的辅助人声",
+                "伴奏乐器包括鼓、吉他等，营造出完整的流行音乐氛围"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的演唱风格或人声表现的全面性"
+              ]
+            }
+          },
+          {
+            "startSeconds": 221.658,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5233023750188295,
+            "rawText": "{\"summary\": \"流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。\", \"leadVocal\": \"present\", \"backingVocal\": \"present\", \"evidence\": [\"音频中存在明显的主唱人声，演唱清晰的旋律线\", \"伴奏中包含和声或背景人声的叠唱效果\", \"整体音乐风格偏向流行，人声与乐器配合紧密\"], \"limitations\": [\"音频片段较短，无法判断整首歌的演唱风格或人声持续性\", \"无法确定背景人声是和声还是独立的背景合唱\"]}",
+            "decision": {
+              "summary": "流行风格的歌曲，包含清晰的主唱人声和伴奏乐器。",
+              "leadVocal": "present",
+              "backingVocal": "present",
+              "evidence": [
+                "音频中存在明显的主唱人声，演唱清晰的旋律线",
+                "伴奏中包含和声或背景人声的叠唱效果",
+                "整体音乐风格偏向流行，人声与乐器配合紧密"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌的演唱风格或人声持续性",
+                "无法确定背景人声是和声还是独立的背景合唱"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-lead-suspected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个片段均有AI前景人声疑点，建议试听核对；不是人工确认，不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "好不容易",
+      "downloadedTitle": "好不容易 (伴奏) - 方大同",
+      "relativePath": "煎饼搜/方大同 - 好不容易 (kugou伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:10:41.560Z",
+        "query": "方大同 好不容易 伴奏",
+        "sourceOption": "kugou",
+        "sourceArtistLabel": "方大同",
+        "attributionNote": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93%20%E4%BC%B4%E5%A5%8F&type=kugou",
+        "catalogUrl": "https://www.kugou.com/song/#hash=21F7FC6E53CB605E2834FA6EC9F96E92",
+        "visibleLabel": "好不容易 (伴奏) - 方大同",
+        "visibleDuration": "03:53",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=21F7FC6E53CB605E2834FA6EC9F96E92&sign=a6GHYJuM6luEw&t=1793326245",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。"
+      },
+      "technicalValidation": {
+        "bytes": 3733756,
+        "sha256": "0da2d8bd88fe4aa28721bd2e7a08c285bdf497333b7355a4a9e160570457150d",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 233.2995918367347,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 10288512,
+        "rms": 0.1918875552826922,
+        "rmsPerChannel": [
+          0.20820068730698463,
+          0.17405212308297877
+        ],
+        "peak": 1.04744291305542,
+        "nonZeroSampleFraction": 0.9996873211597557,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 128000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "77de875c9b64b6d48f10f4b1d48066fb800096c64822ead569d461407e84aecb",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.802799375000177,
+            "rawText": "{\"summary\": \"音乐伴奏中包含清晰的主唱人声，演唱风格偏向抒情。伴奏乐器包括吉他、鼓点和弦乐等，整体氛围较为柔和。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中持续存在人声演唱，旋律清晰，属于主唱部分\", \"伴奏乐器丰富，包括明显的吉他扫弦和鼓点节奏\", \"人声与伴奏融合度较高，但主唱音轨较为突出\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的演唱风格或人声处理细节\", \"无法确定是否有隐藏或未被察觉的和声层\"]}",
+            "decision": {
+              "summary": "音乐伴奏中包含清晰的主唱人声，演唱风格偏向抒情。伴奏乐器包括吉他、鼓点和弦乐等，整体氛围较为柔和。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中持续存在人声演唱，旋律清晰，属于主唱部分",
+                "伴奏乐器丰富，包括明显的吉他扫弦和鼓点节奏",
+                "人声与伴奏融合度较高，但主唱音轨较为突出"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的演唱风格或人声处理细节",
+                "无法确定是否有隐藏或未被察觉的和声层"
+              ]
+            }
+          },
+          {
+            "startSeconds": 101.6498125,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.1642906250199303,
+            "rawText": "{\"summary\": \"音乐伴奏中包含清晰的主唱人声，演唱抒情歌曲。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中持续存在人声演唱，旋律清晰，属于主唱部分。\", \"伴奏乐器包括吉他、鼓点等，人声位于前景，与伴奏配合紧密。\"], \"limitations\": []}",
+            "decision": {
+              "summary": "音乐伴奏中包含清晰的主唱人声，演唱抒情歌曲。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中持续存在人声演唱，旋律清晰，属于主唱部分。",
+                "伴奏乐器包括吉他、鼓点等，人声位于前景，与伴奏配合紧密。"
+              ],
+              "limitations": []
+            }
+          },
+          {
+            "startSeconds": 188.299625,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5668400000140537,
+            "rawText": "{\"summary\": \"人声主唱清晰，伴奏中有明显的弦乐和合成器音效，整体氛围较为抒情。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"人声主唱在音频中占据主导地位，清晰地演唱着主旋律\", \"伴奏中包含弦乐的拉奏声，音色较为柔和\", \"背景中存在类似合成器的音效，用于丰富音乐层次\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的演唱风格和人声处理细节\"]}",
+            "decision": {
+              "summary": "人声主唱清晰，伴奏中有明显的弦乐和合成器音效，整体氛围较为抒情。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "人声主唱在音频中占据主导地位，清晰地演唱着主旋律",
+                "伴奏中包含弦乐的拉奏声，音色较为柔和",
+                "背景中存在类似合成器的音效，用于丰富音乐层次"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的演唱风格和人声处理细节"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-lead-suspected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个片段均有AI前景人声疑点，建议试听核对；不是人工确认，不直接判不可用。"
+      },
+      "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "downloadedTitle": "才二十三 高清无损伴奏 - 微音乐",
+      "relativePath": "煎饼搜/微音乐 - 才二十三 (kugou伴奏).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:12:17.195Z",
+        "query": "才二十三 伴奏",
+        "sourceOption": "kugou",
+        "sourceArtistLabel": "微音乐",
+        "attributionNote": "制作人上传的才二十三伴奏候选，目标为方大同作品；实际上传者微音乐。站方高清无损标签不作为无损认证，曲目与实际音频内容待核验，未确认原调或原版。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=kugou",
+        "catalogUrl": "https://www.kugou.com/song/#hash=3A07E5D6FB631F017DB123930483A7F2",
+        "visibleLabel": "才二十三 高清无损伴奏 - 微音乐",
+        "visibleDuration": "03:44",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=3A07E5D6FB631F017DB123930483A7F2&sign=bfYz0QijIIN0o&t=1793326236",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。",
+        "targetArtist": "方大同",
+        "uploader": "微音乐",
+        "candidate": true
+      },
+      "technicalValidation": {
+        "bytes": 8983203,
+        "sha256": "19787cc842aad255ec0d623127fc84f47d115cf8369fc0123fc05f578e8c1f2e",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 224.51199546485262,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 9900979,
+        "rms": 0.1878508878550271,
+        "rmsPerChannel": [
+          0.16450811513130775,
+          0.2085976802168281
+        ],
+        "peak": 1.011644721031189,
+        "nonZeroSampleFraction": 0.9931137112804703,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 320000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "0b60a3b8510ba0adbd631439bf19ca23088adaac22020f1888e54cbcc3022bbf",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.4064157079847064,
+            "rawText": "{\"summary\": \"吉他独奏，伴奏音色较轻，无明显人声主唱或和声。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为吉他演奏，旋律清晰，伴奏音色较轻，未发现明显人声主唱或和声部分。\", \"无明显人声出现，仅以乐器演奏为主。\"], \"limitations\": [\"音频片段较短，无法确定整首歌曲是否有人声参与。\"]}",
+            "decision": {
+              "summary": "吉他独奏，伴奏音色较轻，无明显人声主唱或和声。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为吉他演奏，旋律清晰，伴奏音色较轻，未发现明显人声主唱或和声部分。",
+                "无明显人声出现，仅以乐器演奏为主。"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定整首歌曲是否有人声参与。"
+              ]
+            }
+          },
+          {
+            "startSeconds": 97.256,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.5169672500051092,
+            "rawText": "{\"summary\": \"一段轻柔舒缓的器乐伴奏，以吉他、钢琴和鼓点为主要乐器，营造出宁静的氛围。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中没有明显的人声主唱或背景和声\", \"主要乐器包括吉他、钢琴和轻柔的鼓点\", \"整体音色偏向柔和、抒情的风格\"], \"limitations\": [\"无法判断音频片段是否为完整歌曲的全部内容\", \"无法确定音频中是否存在极细微的非人声元素\"]}",
+            "decision": {
+              "summary": "一段轻柔舒缓的器乐伴奏，以吉他、钢琴和鼓点为主要乐器，营造出宁静的氛围。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中没有明显的人声主唱或背景和声",
+                "主要乐器包括吉他、钢琴和轻柔的鼓点",
+                "整体音色偏向柔和、抒情的风格"
+              ],
+              "limitations": [
+                "无法判断音频片段是否为完整歌曲的全部内容",
+                "无法确定音频中是否存在极细微的非人声元素"
+              ]
+            }
+          },
+          {
+            "startSeconds": 179.512,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6196377919986844,
+            "rawText": "{\"summary\": \"一段吉他独奏，伴奏音色较轻，整体氛围宁静，适合个人练习或伴奏使用。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为吉他演奏，无明显人声主唱或和声\", \"伴奏音量较低，不干扰吉他旋律的呈现\", \"整体音乐风格偏向抒情和练习导向\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲是否有人声参与\", \"无法确定伴奏乐器的具体类型和复杂程度\", \"无法判断歌曲的版权或原调信息\"]}",
+            "decision": {
+              "summary": "一段吉他独奏，伴奏音色较轻，整体氛围宁静，适合个人练习或伴奏使用。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为吉他演奏，无明显人声主唱或和声",
+                "伴奏音量较低，不干扰吉他旋律的呈现",
+                "整体音乐风格偏向抒情和练习导向"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲是否有人声参与",
+                "无法确定伴奏乐器的具体类型和复杂程度",
+                "无法判断歌曲的版权或原调信息"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "not-detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "all-three-no-lead-detected",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "三个抽检片段未检出主唱，可优先试听练唱；不代表整首保证。"
+      },
+      "versionNote": "微音乐制作人上传候选，曲目身份、方大同版本编曲及原调未经人工核实；实际文件为MP3，不能认定站方“无损”标签。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "黑色柳丁",
+      "downloadedTitle": "黑色柳丁 (Live|伴奏) - 谢天宇",
+      "relativePath": "煎饼搜/谢天宇 - 黑色柳丁 (Live版伴奏候选).mp3",
+      "audioObtained": true,
+      "status": "downloaded-decoded",
+      "source": {
+        "site": "煎饼搜",
+        "entryUrl": "https://www.jbsou.cn/",
+        "sourceMetadataPath": "煎饼搜/来源元数据.json",
+        "observedAt": "2026-10-30T02:20:04.177Z",
+        "query": "黑色柳丁 伴奏",
+        "sourceOption": "qq",
+        "sourceArtistLabel": "谢天宇",
+        "uploader": "谢天宇",
+        "candidate": true,
+        "attributionNote": "谢天宇Live版伴奏候选，目标为陶喆作品，不是陶喆演唱版本。仅新增这一份不同于既有KTV条目的正常公开免费候选，与原文件SHA256不同；未确认无主唱或实际调性，交音频验证对比。",
+        "visibleSearchUrl": "https://www.jbsou.cn/?name=%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81%20%E4%BC%B4%E5%A5%8F&type=qq",
+        "catalogUrl": "https://y.qq.com/n/ryqq/songDetail/004Cfefv2vfVUr",
+        "visibleLabel": "黑色柳丁 (Live|伴奏) - 谢天宇",
+        "visibleDuration": "00:00",
+        "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=004Cfefv2vfVUr&sign=b4rq2WBcSCNEk&t=1793326806",
+        "finalHttpStatus": 200,
+        "finalContentType": "audio/mpeg",
+        "loginRequired": false,
+        "captchaEncountered": false,
+        "paymentPerformed": false,
+        "authorizationVerified": false,
+        "acquisition": "通过普通可见搜索结果与下载按钮取得页面展示的完整公开链接；未调用隐藏接口。链接可能过期，真实文件状态以本记录解码和SHA为准。",
+        "targetArtist": "陶喆"
+      },
+      "technicalValidation": {
+        "bytes": 10479499,
+        "sha256": "d68670658856f91c4e18874dbdcdd78a029ae34485c60dfe87341084ebd47d11",
+        "format": "MP3",
+        "formatDescription": "MPEG-1/2 Audio",
+        "subtype": "MPEG_LAYER_III",
+        "durationSeconds": 261.90396825396823,
+        "sampleRate": 44100,
+        "channels": 2,
+        "decodedFrames": 11549965,
+        "rms": 0.15360763482602913,
+        "rmsPerChannel": [
+          0.1554840384437387,
+          0.15170802464914707
+        ],
+        "peak": 1.0333200693130493,
+        "nonZeroSampleFraction": 1.0,
+        "nonSilent": true,
+        "fullDecodePassed": true,
+        "bitRate": 320000,
+        "nativeProbeTool": "macOS afinfo",
+        "mpegAudioPayloadSha256": "05d20259a7625175027e8325a039195fa25c88855a968640b292b9a3ec3bd557",
+        "mpegAudioPayloadHashMethod": "macOS afinfo报告的音频数据区，排除首尾文件标签；非听感或旋律指纹。"
+      },
+      "vocalReview": {
+        "modelId": "mlx-community/MiniCPM-o-4_5-4bit",
+        "modelRevision": "592c09d85e7bffbc8f8e45a417aa8e9a96119814",
+        "backend": "mlx",
+        "audioInput": true,
+        "prompt": "请真正听取随附音频，只依据声音判断，不根据文件名、歌手或标题推断。\n本任务检查能否用作个人K歌伴奏，不是演唱评分。\nleadVocal表示清晰前景中持续承担歌词或主旋律的人声主唱：present确实听到，absent没听到，uncertain无法判断。\nbackingVocal表示背景合唱、叠唱、和声、短暂辅助人声：present确实听到，absent没听到，uncertain无法判断。\n不要把萨克斯、合成器、弦乐或其他乐器旋律自动当成人声。人声与乐器无法分辨就回答uncertain。\nsummary用中文说明实际声音；evidence列出听感依据，limitations列出不确定性。你只听到一个片段，不能声称整首绝无主唱，也不能认证版权、原调或原版。\n只返回符合schema的JSON，不复制歌词，不转写歌曲内容。",
+        "clips": [
+          {
+            "startSeconds": 30.0,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.606701750017237,
+            "rawText": "{\"summary\": \"一段抒情流行歌曲的音乐伴奏，包含清晰的电吉他独奏和柔和的鼓点、贝斯等伴奏乐器。\", \"leadVocal\": \"present\", \"backingVocal\": \"absent\", \"evidence\": [\"音乐中可以清晰地听到一位主唱在演唱主旋律\", \"伴奏乐器包括电吉他、鼓、贝斯等，营造出抒情的氛围\", \"没有明显的背景和声或叠唱人声\"], \"limitations\": [\"音频片段较短，无法判断整首歌曲的演唱风格和人声表现的全面性\"]}",
+            "decision": {
+              "summary": "一段抒情流行歌曲的音乐伴奏，包含清晰的电吉他独奏和柔和的鼓点、贝斯等伴奏乐器。",
+              "leadVocal": "present",
+              "backingVocal": "absent",
+              "evidence": [
+                "音乐中可以清晰地听到一位主唱在演唱主旋律",
+                "伴奏乐器包括电吉他、鼓、贝斯等，营造出抒情的氛围",
+                "没有明显的背景和声或叠唱人声"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断整首歌曲的演唱风格和人声表现的全面性"
+              ]
+            }
+          },
+          {
+            "startSeconds": 115.952,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.6759708750178106,
+            "rawText": "{\"summary\": \"以电吉他为主导的摇滚乐段落，伴以鼓点、贝斯和键盘音效，整体氛围轻松且富有律动感。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要乐器为电吉他，演奏旋律性较强\", \"背景中可辨识出鼓点和贝斯的伴奏\", \"有类似键盘或合成器的音效点缀\", \"无明显人声演唱或和声出现\"], \"limitations\": [\"音频片段较短，无法确定是否全曲均无主唱\", \"无法判断该片段是否为原曲的完整表现\"]}",
+            "decision": {
+              "summary": "以电吉他为主导的摇滚乐段落，伴以鼓点、贝斯和键盘音效，整体氛围轻松且富有律动感。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要乐器为电吉他，演奏旋律性较强",
+                "背景中可辨识出鼓点和贝斯的伴奏",
+                "有类似键盘或合成器的音效点缀",
+                "无明显人声演唱或和声出现"
+              ],
+              "limitations": [
+                "音频片段较短，无法确定是否全曲均无主唱",
+                "无法判断该片段是否为原曲的完整表现"
+              ]
+            }
+          },
+          {
+            "startSeconds": 216.904,
+            "durationSeconds": 30.0,
+            "inferenceSeconds": 1.7979829999967478,
+            "rawText": "{\"summary\": \"以电吉他独奏为主的摇滚乐段落，旋律悠扬，伴奏包含鼓点、贝斯和合成器音效，整体氛围较为抒情。\", \"leadVocal\": \"absent\", \"backingVocal\": \"absent\", \"evidence\": [\"音频中主要为电吉他的演奏，旋律清晰，无明显人声演唱\", \"伴奏部分包含鼓点、贝斯和合成器音效，营造出摇滚乐的氛围\", \"无明显主唱或背景和声出现\"], \"limitations\": [\"音频片段较短，无法判断是否为完整歌曲的某一部分\", \"无法确定该片段是否为原版歌曲的独奏部分或改编版本\"]}",
+            "decision": {
+              "summary": "以电吉他独奏为主的摇滚乐段落，旋律悠扬，伴奏包含鼓点、贝斯和合成器音效，整体氛围较为抒情。",
+              "leadVocal": "absent",
+              "backingVocal": "absent",
+              "evidence": [
+                "音频中主要为电吉他的演奏，旋律清晰，无明显人声演唱",
+                "伴奏部分包含鼓点、贝斯和合成器音效，营造出摇滚乐的氛围",
+                "无明显主唱或背景和声出现"
+              ],
+              "limitations": [
+                "音频片段较短，无法判断是否为完整歌曲的某一部分",
+                "无法确定该片段是否为原版歌曲的独奏部分或改编版本"
+              ]
+            }
+          }
+        ],
+        "limitation": "仅本机AI对所列片段的听感判断，不是整首无主唱保证，也不是版权、原版或调性认证。",
+        "status": "completed-local-ai-sampled-listening",
+        "leadVocal": "detected-in-reviewed-clips",
+        "backingVocal": "not-detected-in-reviewed-clips",
+        "reviewedSeconds": 90.0,
+        "manualFullTrackListeningPerformed": false,
+        "note": "MiniCPM实际听取三个分散片段；原始模型输出逐段保留。这是片段AI判断，不能保证整首无人声或认证编曲、原调、授权。",
+        "classification": "mixed-clip-observations",
+        "findingType": "ai-observation-not-human-confirmation",
+        "reviewAdvice": "抽检结果混合，建议试听列出的疑点时间核对主唱与和声；不直接判不可用。"
+      },
+      "versionNote": "谢天宇Live演出版本的制作人伴奏候选，未认证陶喆演唱版本、原版或原调。"
+    }
+  ],
+  "targetTrackCount": 20,
+  "downloadedFileCount": 23,
+  "uniqueAudioSha256Count": 23,
+  "duplicateAudioGroups": [],
+  "uniqueMpegAudioPayloadSha256Count": 23,
+  "duplicateAudioPayloadGroups": [],
+  "vocalReviewSummary": {
+    "completedFileCount": 23,
+    "clipCount": 69,
+    "reviewedSeconds": 2070.0,
+    "allThreeNoLeadDetectedFileCount": 7,
+    "allThreeLeadSuspectedFileCount": 6,
+    "mixedClipObservationFileCount": 10,
+    "mainSuggestedFiles": [
+      {
+        "artist": "陶喆",
+        "title": "普通朋友",
+        "relativePath": "煎饼搜/陶喆 - 普通朋友 (伴奏).mp3",
+        "durationSeconds": 244.61167800453515,
+        "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+      },
+      {
+        "artist": "陶喆",
+        "title": "就是爱你",
+        "relativePath": "煎饼搜/陶喆 - 就是爱你 (伴奏).mp3",
+        "durationSeconds": 285.4933106575964,
+        "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+      },
+      {
+        "artist": "陶喆",
+        "title": "今天你要嫁给我",
+        "relativePath": "煎饼搜/陶喆 - 今天你要嫁给我 (伴奏).mp3",
+        "durationSeconds": 258.5349433106576,
+        "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+      },
+      {
+        "artist": "陶喆",
+        "title": "寂寞的季节",
+        "relativePath": "煎饼搜/陶喆 - 寂寞的季节 (伴奏).mp3",
+        "durationSeconds": 208.58882086167802,
+        "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+      },
+      {
+        "artist": "陶喆",
+        "title": "爱很简单",
+        "relativePath": "煎饼搜/陶喆 - 爱很简单 (伴奏).mp3",
+        "durationSeconds": 432.3537188208617,
+        "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+      },
+      {
+        "artist": "方大同",
+        "title": "特别的人",
+        "relativePath": "煎饼搜/方大同 - 特别的人 (伴奏).mp3",
+        "durationSeconds": 260.0108616780045,
+        "versionNote": "保留来源页面版本标签，未认证原版、原调或全长。"
+      },
+      {
+        "artist": "方大同",
+        "title": "才二十三",
+        "relativePath": "煎饼搜/微音乐 - 才二十三 (kugou伴奏).mp3",
+        "durationSeconds": 224.51199546485262,
+        "versionNote": "微音乐制作人上传候选，曲目身份、方大同版本编曲及原调未经人工核实；实际文件为MP3，不能认定站方“无损”标签。"
+      }
+    ],
+    "allThreeLeadSuspectFiles": [
+      {
+        "artist": "陶喆",
+        "title": "黑色柳丁",
+        "relativePath": "煎饼搜/陶喆 - 黑色柳丁 (伴奏).mp3",
+        "durationSeconds": 254.8319954648526
+      },
+      {
+        "artist": "方大同",
+        "title": "爱爱爱",
+        "relativePath": "煎饼搜/方大同 - 爱爱爱 (伴奏).mp3",
+        "durationSeconds": 217.82310657596372
+      },
+      {
+        "artist": "方大同",
+        "title": "春风吹",
+        "relativePath": "煎饼搜/方大同 - 春风吹 (伴奏).mp3",
+        "durationSeconds": 125.63698412698413
+      },
+      {
+        "artist": "方大同",
+        "title": "Love Song",
+        "relativePath": "煎饼搜/方大同 - Love Song (kugou伴奏).mp3",
+        "durationSeconds": 278.3096371882086
+      },
+      {
+        "artist": "陶喆",
+        "title": "爱很简单",
+        "relativePath": "煎饼搜/陶喆 - 爱很简单 (kugou伴奏).mp3",
+        "durationSeconds": 266.6579591836735
+      },
+      {
+        "artist": "方大同",
+        "title": "好不容易",
+        "relativePath": "煎饼搜/方大同 - 好不容易 (kugou伴奏).mp3",
+        "durationSeconds": 233.2995918367347
+      }
+    ],
+    "manualConfirmation": false,
+    "note": "上述为文件数量：AI疑点不是人工确认，不把和声或单段含糊描述直接等同不合格；未进行全曲人工听音或模型认歌认证。按目标统计20条，其中制作人候选身份与版本限制另列。"
+  }
+}

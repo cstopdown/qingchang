@@ -1,0 +1,2260 @@
+{
+  "site": "煎饼搜",
+  "siteUrl": "https://www.jbsou.cn/",
+  "checkedAt": "2026-10-30",
+  "records": [
+    {
+      "artist": "陶喆",
+      "title": "普通朋友",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T01:59:45.658Z",
+      "query": "陶喆 普通朋友 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E6%99%AE%E9%80%9A%E6%9C%8B%E5%8F%8B%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "versionLabel": "普通朋友 (伴奏) - 陶喆",
+      "visibleDuration": "04:04",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/000UkuiI1AsrHW",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=000UkuiI1AsrHW&sign=5djArwZaUijPc&t=1793325036",
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M500004KTqtY3AlnpX.mp3?guid=cyapi&vkey=C8258FA3DFED5CA6BF32546644DE060A7A8973B06792DA3C392357C71272CEE0A3AF9D323BB426DC2FBCAFF261575A14E5A778660EDAB175__v2b9abba8&uin=2840371766&fromtag=myhkw.cn&cache=1030095622",
+      "httpStatus": 200,
+      "contentType": "audio/mpeg",
+      "bytes": 3915198,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 普通朋友 (伴奏).mp3",
+      "note": "下载链接由可见下载按钮展示；链接可能过期；实际内容与容器交音频验证，非无损认证。"
+    },
+    {
+      "artist": "方大同",
+      "title": "特别的人",
+      "status": "normal_flow_failed",
+      "observedAt": "2026-10-30T01:59:45.662Z",
+      "query": "方大同 特别的人 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%89%B9%E5%88%AB%E7%9A%84%E4%BA%BA%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "特别的人 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "特别的人 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "特别的人",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "特别的人",
+          "author": "Chanlex"
+        },
+        {
+          "index": 4,
+          "title": "特别的人 (R&B版)",
+          "author": "何乐为"
+        },
+        {
+          "index": 5,
+          "title": "特别的人",
+          "author": "白允y"
+        },
+        {
+          "index": 6,
+          "title": "特别的人 (女声版)",
+          "author": "王一只"
+        },
+        {
+          "index": 7,
+          "title": "特别的人-LIve",
+          "author": "袁一琦."
+        },
+        {
+          "index": 8,
+          "title": "特别的人 (网友改编)",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "特别的人",
+          "author": "DJ黑桃"
+        }
+      ],
+      "versionLabel": "特别的人 (伴奏) - 方大同",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/003OXPE71cvvlh",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003OXPE71cvvlh&sign=d6mn6Bio2uXtU&t=1793325589",
+      "error": "apiRequestContext.get: connect ECONNREFUSED ::ffff:114.134.187.87:443"
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱很简单",
+      "status": "no_matching_accompaniment",
+      "observedAt": "2026-10-30T01:59:52.469Z",
+      "query": "陶喆 爱很简单 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E5%BE%88%E7%AE%80%E5%8D%95%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "爱,很简单 (消音伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "爱, 很简单 (伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "爱,很简单",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "爱很简单 (伴奏)",
+          "author": "七元"
+        },
+        {
+          "index": 4,
+          "title": "爱,很简单 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 5,
+          "title": "I Love You",
+          "author": "Stewart Mac"
+        },
+        {
+          "index": 6,
+          "title": "爱,很简单 (木吉他版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 7,
+          "title": "爱很简单 (Live)",
+          "author": "张学友"
+        },
+        {
+          "index": 8,
+          "title": "I Love You",
+          "author": "王若琳"
+        },
+        {
+          "index": 9,
+          "title": "爱,很简单 (Live|伴奏)",
+          "author": "陶喆;潘玮柏;薛凯琪;张碧晨;武艺;张紫宁;Ghost (王琳凯);高卿尘Nine"
+        }
+      ]
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱我还是他",
+      "status": "no_matching_accompaniment",
+      "observedAt": "2026-10-30T01:59:54.016Z",
+      "query": "陶喆 爱我还是他 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E6%88%91%E8%BF%98%E6%98%AF%E4%BB%96%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "爱我还是他 (Live|伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "爱我还是他",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "爱我还是他 (Live)",
+          "author": "李荣浩"
+        },
+        {
+          "index": 3,
+          "title": "爱我还是他 (Live 导师挽救)",
+          "author": "李安"
+        },
+        {
+          "index": 4,
+          "title": "爱我还是他 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 5,
+          "title": "爱我还是他 (2024JJ20世界巡回演唱会重庆站现场)",
+          "author": "林俊杰/陶喆"
+        },
+        {
+          "index": 6,
+          "title": "爱我还是他",
+          "author": "LBI利比（时柏尘）"
+        },
+        {
+          "index": 7,
+          "title": "爱我还是他",
+          "author": "en (王翊恩)"
+        },
+        {
+          "index": 8,
+          "title": "爱我还是他 (Live)",
+          "author": "周笔畅/王铮亮"
+        },
+        {
+          "index": 9,
+          "title": "爱我还是他",
+          "author": "赵乃吉"
+        }
+      ]
+    },
+    {
+      "artist": "陶喆",
+      "title": "就是爱你",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T01:59:56.569Z",
+      "query": "陶喆 就是爱你 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E5%B0%B1%E6%98%AF%E7%88%B1%E4%BD%A0%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "就是爱你 (Live|伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "就是爱你 (伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "就是爱你",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "就是爱你 (伴奏)",
+          "author": "李浩然"
+        },
+        {
+          "index": 4,
+          "title": "就是爱你 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 5,
+          "title": "就是爱你 (片段版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 6,
+          "title": "就是爱你 (Live)",
+          "author": "林俊杰/陶喆"
+        },
+        {
+          "index": 7,
+          "title": "就是爱你 (Live)",
+          "author": "时代少年团"
+        },
+        {
+          "index": 8,
+          "title": "就是爱你 (Live)",
+          "author": "TOP登陆少年-左航"
+        },
+        {
+          "index": 9,
+          "title": "就是爱你",
+          "author": "云汐"
+        }
+      ],
+      "versionLabel": "就是爱你 (伴奏) - 陶喆",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/00479Dk93AlUD6",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=00479Dk93AlUD6&sign=0083oNN3o6iHw&t=1793325600",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M50000479Dk93AlUD6.mp3?guid=122103661&vkey=A1F2A7AB51A61B37C3DB54BC81C6EE8C94AE973335D7D47B52B1C29320AF234824247825E44859028C4E073F4CFA5478C53D4F7C2AB4AC40__v21e2a16c1&uin=&fromtag=120042&src=M5000014Pe8g0vIkpq.mp3",
+      "contentType": "audio/mpeg",
+      "bytes": 4569304,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 就是爱你 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "今天你要嫁给我",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:03.499Z",
+      "query": "陶喆 今天你要嫁给我 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E4%BB%8A%E5%A4%A9%E4%BD%A0%E8%A6%81%E5%AB%81%E7%BB%99%E6%88%91%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "今天你要嫁给我 (伴奏)",
+          "author": "蔡依林;陶喆"
+        },
+        {
+          "index": 1,
+          "title": "今天妳要嫁给我 (Live|伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "今天你要嫁给我",
+          "author": "陶喆/蔡依林"
+        },
+        {
+          "index": 3,
+          "title": "今天你要嫁给我 (Live)",
+          "author": "蔡依林/陶喆"
+        },
+        {
+          "index": 4,
+          "title": "今天你要嫁给我 (Live)",
+          "author": "时代少年团"
+        },
+        {
+          "index": 5,
+          "title": "今天你要嫁给我 (甜妹版)",
+          "author": "ProdbyMend/小野来了"
+        },
+        {
+          "index": 6,
+          "title": "今天你要嫁给我",
+          "author": "一口甜"
+        },
+        {
+          "index": 7,
+          "title": "今天你要嫁给我 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 8,
+          "title": "今天你要嫁给我 (27秒片段)",
+          "author": "哆啦"
+        },
+        {
+          "index": 9,
+          "title": "今天你要嫁给我",
+          "author": "DJ铁柱Remix"
+        }
+      ],
+      "versionLabel": "今天你要嫁给我 (伴奏) - 蔡依林;陶喆",
+      "visibleDuration": "04:18",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/003MQfsz3E4Q8y",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003MQfsz3E4Q8y&sign=eew5Z67VCdwo2&t=1793325604",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500003MQfsz3E4Q8y.mp3?guid=1469985163&vkey=ED7575919168DF26BEEDA1409AD7FE60AEE977AAEB1056233C620868D817FA1D3F6A90E49CDFF480FB00FEBE350C1123C31DA7ABB6270C38__v21e2a16c1&uin=&fromtag=120042&src=M5000048ZbWA2V3LaQ.mp3",
+      "contentType": "audio/mpeg",
+      "bytes": 4137984,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 今天你要嫁给我 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "黑色柳丁",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:08.040Z",
+      "query": "陶喆 黑色柳丁 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "黑色柳丁 (KTV版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "讨厌红楼梦",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "蝴蝶",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "Melody",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "黑色柳丁",
+          "author": "陶喆"
+        },
+        {
+          "index": 5,
+          "title": "Angel",
+          "author": "陶喆"
+        },
+        {
+          "index": 6,
+          "title": "二十二",
+          "author": "陶喆"
+        },
+        {
+          "index": 7,
+          "title": "月亮代表谁的心",
+          "author": "陶喆"
+        },
+        {
+          "index": 8,
+          "title": "黑色柳丁 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 9,
+          "title": "Dear God",
+          "author": "陶喆"
+        }
+      ],
+      "versionLabel": "黑色柳丁 (KTV版伴奏) - 陶喆",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/002jcRq82t2VT6",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=002jcRq82t2VT6&sign=404bYvp1oQyGM&t=1793325608",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M500003WJDvt3TeQUN.mp3?guid=cyapi&vkey=2A47B0347C7061BD1562387781C8C61F39E66F0D2857896F1D3FB8C20C1E88E66FD3B4280D08D9514EAB8D85A67FD0B756772B8E2AF8A722__v2b9aba4b&uin=1658478609&fromtag=myhkw.cn&src=M500003kRmz30zfb7v.mp3&cache=1030100012",
+      "contentType": "audio/mpeg",
+      "bytes": 4078640,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 黑色柳丁 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "流沙",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:20.246Z",
+      "query": "陶喆 流沙 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E6%B5%81%E6%B2%99%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "流沙 (自制版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "流沙+天天 (消音伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "流沙",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "流沙 (Reimagined)",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "流沙 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 5,
+          "title": "流沙",
+          "author": "赵乃吉"
+        },
+        {
+          "index": 6,
+          "title": "流沙 (爱情好像流沙)",
+          "author": "Joysaaaa"
+        },
+        {
+          "index": 7,
+          "title": "流沙",
+          "author": "陈卓璇"
+        },
+        {
+          "index": 8,
+          "title": "流沙 (Live|典藏)",
+          "author": "汪苏泷"
+        },
+        {
+          "index": 9,
+          "title": "流沙 (Live)",
+          "author": "Eric周兴哲/欧阳靖"
+        }
+      ],
+      "versionLabel": "流沙 (自制版伴奏) - 陶喆",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/0039mozM1omNeJ",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=0039mozM1omNeJ&sign=95aAQZH.Pk6sM&t=1793325622",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M5000039mozM1omNeJ.mp3?guid=1760915652&vkey=D0FDFEDB743B8F4B7FD77CDF03D0969D604C929D1A304FD0BD31DAF00FC0CEB302FD0528E8BDDED702FAD1A05F0DB3311B5951CD988ADC36__v21e2a1605&uin=&fromtag=120042",
+      "contentType": "audio/mpeg",
+      "bytes": 3857098,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 流沙 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "小镇姑娘",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:25.493Z",
+      "query": "陶喆 小镇姑娘 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E5%B0%8F%E9%95%87%E5%A7%91%E5%A8%98%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "小镇姑娘 (MV版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "小镇姑娘 (伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "小镇姑娘",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "小镇姑娘 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "小镇姑娘 (温柔女声版)",
+          "author": "许梦宸"
+        },
+        {
+          "index": 5,
+          "title": "万事如意 + 小镇姑娘 (Live)",
+          "author": "陶喆/张也"
+        },
+        {
+          "index": 6,
+          "title": "小镇姑娘",
+          "author": "李瑨瑶"
+        },
+        {
+          "index": 7,
+          "title": "小镇姑娘 (with 王勉)",
+          "author": "鹿晗/王勉"
+        },
+        {
+          "index": 8,
+          "title": "小镇姑娘",
+          "author": "苏醒AllenSu/陆虎"
+        },
+        {
+          "index": 9,
+          "title": "小镇姑娘 (Live)",
+          "author": "颜人中/欧阳靖"
+        }
+      ],
+      "versionLabel": "小镇姑娘 (MV版伴奏) - 陶喆",
+      "visibleDuration": "04:35",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/00155D9312gVCM",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=00155D9312gVCM&sign=9e9bIYuj0ZGf.&t=1793325626",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M500004QkwNR1bqsKV.mp3?guid=cyapi&vkey=1E8B5E29271472CD3C776FF98922C4C2AE98F4927C39C23551005B75160B2FAC3D91869AC2A22F69CBF07D35E3131D7D5D516DBA79A00819__v2b9ab224&uin=1761672906&fromtag=myhkw.cn&src=M500002Iczfk4HjEvX.mp3&cache=1030100028",
+      "contentType": "audio/mpeg",
+      "bytes": 4413840,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 小镇姑娘 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "Melody",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:31.042Z",
+      "query": "陶喆 Melody 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20Melody%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "Melody (KTV版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "Melody (伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "Melody",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "Melody (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "声音 (Melody)",
+          "author": "aespa"
+        },
+        {
+          "index": 5,
+          "title": "Melody (Live)",
+          "author": "NINGNING"
+        },
+        {
+          "index": 6,
+          "title": "Melody (七元版)",
+          "author": "七元"
+        },
+        {
+          "index": 7,
+          "title": "Melody (Live)",
+          "author": "薛之谦/锤娜丽莎"
+        },
+        {
+          "index": 8,
+          "title": "Melody (Live)",
+          "author": "黄一鸣;李熙凝;李茉;乃万NINEONE;秦牛正威;夏花-未书羽"
+        },
+        {
+          "index": 9,
+          "title": "Melody (伴奏)",
+          "author": "陶喆"
+        }
+      ],
+      "versionLabel": "Melody (KTV版伴奏) - 陶喆",
+      "visibleDuration": "04:26",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/000KI9bG1d3dmu",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=000KI9bG1d3dmu&sign=6eGZ4gZQYJkoo&t=1793325631",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M800003Z8Et43265Cj.mp3?guid=cyapi&vkey=E05A1994D83F77C168B3F3991E0C396B098C0DDF90FD07C40555AEB8273EDD93BDBA7BBE586652298E000E94F0B4A40623DBFAEEF4A5719C__v21e2a16c1&uin=951952705&fromtag=myhkw.cn&cache=1030100033",
+      "contentType": "audio/mpeg",
+      "bytes": 10679054,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - Melody (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "寂寞的季节",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:36.165Z",
+      "query": "陶喆 寂寞的季节 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E5%AF%82%E5%AF%9E%E7%9A%84%E5%AD%A3%E8%8A%82%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "寂寞的季节 (原版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "寂寞的季节 (完整版|原版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "寂寞的季节",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "寂寞的季节 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "寂寞的季节 (with 高瀚宇)",
+          "author": "鹿晗/高瀚宇"
+        },
+        {
+          "index": 5,
+          "title": "寂寞的季节 (消音伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 6,
+          "title": "寂寞的季节 (多想要向过去告别)",
+          "author": "杜宣达"
+        },
+        {
+          "index": 7,
+          "title": "寂寞的季节 - 2008陶喆世界巡回演唱会",
+          "author": "陶喆"
+        },
+        {
+          "index": 8,
+          "title": "寂寞的季节",
+          "author": "金玟岐"
+        },
+        {
+          "index": 9,
+          "title": "寂寞的季节 (Live)",
+          "author": "李荣浩;程欣;程墨寒;马心怡;斑马森林"
+        }
+      ],
+      "versionLabel": "寂寞的季节 (原版伴奏) - 陶喆",
+      "visibleDuration": "03:28",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/000CtYav2WqV5o",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=000CtYav2WqV5o&sign=4cVHt1w2an9sE&t=1793325639",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500001OF1Ih4R19gh.mp3?guid=148234650&vkey=4CECB5D13AEB640D3B81A0DF2171859031122E9E552127CA2D333A4A2171D872FC3C227F0178F9744BBAD9C8211E8AB9ED22C72757E9271B__v2b94c2e1&uin=&fromtag=120042",
+      "contentType": "audio/mpeg",
+      "bytes": 3338849,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 寂寞的季节 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "爱爱爱",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:42.979Z",
+      "query": "方大同 爱爱爱 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%88%B1%E7%88%B1%E7%88%B1%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "爱爱爱 (KTV版伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "爱爱爱",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "爱爱爱",
+          "author": "颜小健"
+        },
+        {
+          "index": 3,
+          "title": "苏丽珍",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "爱爱爱 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 5,
+          "title": "爱爱爱",
+          "author": "任然"
+        },
+        {
+          "index": 6,
+          "title": "手拖手",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "四人游",
+          "author": "方大同/薛凯琪"
+        },
+        {
+          "index": 8,
+          "title": "爱爱爱 (氛围版)",
+          "author": "楚念汐"
+        },
+        {
+          "index": 9,
+          "title": "诗人的情人",
+          "author": "方大同"
+        }
+      ],
+      "versionLabel": "爱爱爱 (KTV版伴奏) - 方大同",
+      "visibleDuration": "03:37",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/003cNX7229Eg3L",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003cNX7229Eg3L&sign=42zXgV10Jc0Hk&t=1793325643",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500003cNX7229Eg3L.mp3?guid=1023104062&vkey=22F8C8BF451B15C5FD182329935316906171D6345D2B97E1D1F5F97BC14BD23CB5582700DB4753CE5F93A3A0F9F09E78D4606645AB917282__v2b9a899c&uin=&fromtag=120042&src=M500001HNP9g3AsPy9.mp3",
+      "contentType": "audio/mpeg",
+      "bytes": 3486372,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 爱爱爱 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "Love Song",
+      "status": "no_matching_accompaniment",
+      "observedAt": "2026-10-30T02:00:47.200Z",
+      "query": "方大同 Love Song 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20Love%20Song%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "Love Song (伴奏)",
+          "author": "sis"
+        },
+        {
+          "index": 1,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "Love Songs (Bonus)",
+          "author": "Kaash Paige"
+        },
+        {
+          "index": 3,
+          "title": "Love Song",
+          "author": "BIGBANG"
+        },
+        {
+          "index": 4,
+          "title": "0X1=LOVESONG (I Know I Love You) feat. Seori",
+          "author": "TOMORROW X TOGETHER/Seori"
+        },
+        {
+          "index": 5,
+          "title": "Love Song (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 6,
+          "title": "Love Songs",
+          "author": "Kaash Paige"
+        },
+        {
+          "index": 7,
+          "title": "庆祝",
+          "author": "杨丞琳"
+        },
+        {
+          "index": 8,
+          "title": "Lovesong",
+          "author": "Adele"
+        },
+        {
+          "index": 9,
+          "title": "Love song (Explicit)",
+          "author": "Lana Del Rey"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "三人游",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:48.288Z",
+      "query": "方大同 三人游 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E4%B8%89%E4%BA%BA%E6%B8%B8%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "三人游 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "三人游 (伴奏)",
+          "author": "方大同;DJ Coke_刘捷"
+        },
+        {
+          "index": 2,
+          "title": "三人游",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "三人游 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "《三人游》单依纯：一人留 两人疚 三人游 (Live)",
+          "author": "宝藏挖掘机"
+        },
+        {
+          "index": 5,
+          "title": "三人游 (Live)",
+          "author": "方大同/徐畅"
+        },
+        {
+          "index": 6,
+          "title": "三人游",
+          "author": "周玥"
+        },
+        {
+          "index": 7,
+          "title": "三人游 (Live)",
+          "author": "宋亚轩"
+        },
+        {
+          "index": 8,
+          "title": "三人游 (Live)",
+          "author": "单依纯"
+        },
+        {
+          "index": 9,
+          "title": "三人游",
+          "author": "TF家族-张桂源"
+        }
+      ],
+      "versionLabel": "三人游 (伴奏) - 方大同",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/004anNQF3AINC1",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=004anNQF3AINC1&sign=5eFqqfpK1N9Zg&t=1793325649",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M500002cP7Qg0hpx8f.mp3?guid=cyapi&vkey=B8729D23C483C1E8804527C24E277A19A4C0B116D71808A8CEF0233AF157B6F77F00E2F5017039D1E17265C6E3C45B0B15C5A780D31AC3DF__v2ba83d90&uin=3241813189&fromtag=myhkw.cn&cache=1030100054",
+      "contentType": "audio/mpeg",
+      "bytes": 4018434,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 三人游 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "够不够",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:55.154Z",
+      "query": "方大同 够不够 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E5%A4%9F%E4%B8%8D%E5%A4%9F%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "够不够 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "够不够",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "够不够 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "够不够 (Live)",
+          "author": "萧敬腾/方大同"
+        },
+        {
+          "index": 4,
+          "title": "够不够 (Live)",
+          "author": "方大同/林宥嘉"
+        },
+        {
+          "index": 5,
+          "title": "够不够",
+          "author": "任豪"
+        },
+        {
+          "index": 6,
+          "title": "够不够",
+          "author": "蓝瑞克"
+        },
+        {
+          "index": 7,
+          "title": "够不够",
+          "author": "Zealot周星星"
+        },
+        {
+          "index": 8,
+          "title": "够不够 (DJ 王小龙版)",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "够不够 (Live)",
+          "author": "魏一宁"
+        }
+      ],
+      "versionLabel": "够不够 (伴奏) - 方大同",
+      "visibleDuration": "04:05",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/002TXz2m1yIASg",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=002TXz2m1yIASg&sign=16ppTDi2TUNUA&t=1793325656",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500003sDgMP4GaZ69.mp3?guid=512316376&vkey=8E8D46DDB4DBAD7DFE3D95131A13B351948BFE9DAC29B099CB289DD48D8B5A69E33B74A7CFD84A14C06B1D3FA54F970BFE923ACF2C211E70__v2b94c265&uin=&fromtag=120042",
+      "contentType": "audio/mpeg",
+      "bytes": 3922216,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 够不够 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "春风吹",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:00:59.199Z",
+      "query": "方大同 春风吹 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E6%98%A5%E9%A3%8E%E5%90%B9%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "春风吹 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "春风吹 (伴奏)",
+          "author": "方大同;Silver"
+        },
+        {
+          "index": 2,
+          "title": "春风吹",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "春风吹",
+          "author": "阿冷"
+        },
+        {
+          "index": 4,
+          "title": "春风吹",
+          "author": "锦零"
+        },
+        {
+          "index": 5,
+          "title": "春风吹",
+          "author": "白允y"
+        },
+        {
+          "index": 6,
+          "title": "春风吹 (DJ枫叶版)",
+          "author": "枫叶"
+        },
+        {
+          "index": 7,
+          "title": "春风吹 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "春风吹",
+          "author": "黑崎子"
+        },
+        {
+          "index": 9,
+          "title": "春风吹 (Live)",
+          "author": "张敬轩/方大同"
+        }
+      ],
+      "versionLabel": "春风吹 (伴奏) - 方大同",
+      "visibleDuration": "02:05",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/003KARPM0nVO3Q",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=003KARPM0nVO3Q&sign=b0z8T0ZzpypO6&t=1793325660",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500001RCC4R2tAgH8.mp3?guid=923578913&vkey=DF2A1DC0089569B7FE98DA61A3DDECE3FD1AFE23B86ED8F9A7B380B23D246F2FECF4ABF759886116765B651C6BB06F9F80FB23922ECEE8BE__v2b9ab047&uin=&fromtag=120042&src=M500003EAX0a1RdTkU.mp3",
+      "contentType": "audio/mpeg",
+      "bytes": 2011394,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 春风吹 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "红豆",
+      "status": "no_matching_accompaniment",
+      "observedAt": "2026-10-30T02:01:03.346Z",
+      "query": "方大同 红豆 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%BA%A2%E8%B1%86%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "红豆 (蘑驼如果 消音)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "红豆",
+          "author": "王菲"
+        },
+        {
+          "index": 2,
+          "title": "红豆",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "偿还",
+          "author": "王菲"
+        },
+        {
+          "index": 4,
+          "title": "红豆 (还没跟你牵着手)",
+          "author": "岳燃"
+        },
+        {
+          "index": 5,
+          "title": "红豆",
+          "author": "半吨兄弟"
+        },
+        {
+          "index": 6,
+          "title": "Red Bean",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "红豆 (R&B版)",
+          "author": "小西门"
+        },
+        {
+          "index": 8,
+          "title": "红豆 (2026如果风之岛演唱会曼谷站)",
+          "author": "云旗"
+        },
+        {
+          "index": 9,
+          "title": "红豆 (Live)",
+          "author": "王菲"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "为你写的歌",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:01:05.438Z",
+      "query": "方大同 为你写的歌 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E4%B8%BA%E4%BD%A0%E5%86%99%E7%9A%84%E6%AD%8C%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "为你写的歌 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "为你写的歌",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "Singalongsong",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌 (2025hito流行音乐奖现场)",
+          "author": "卢广仲"
+        },
+        {
+          "index": 4,
+          "title": "My Song For You (为你写的歌)",
+          "author": "Bandari"
+        },
+        {
+          "index": 5,
+          "title": "为你写的歌",
+          "author": "德格叶"
+        },
+        {
+          "index": 6,
+          "title": "为你写的歌",
+          "author": "迦勒"
+        },
+        {
+          "index": 7,
+          "title": "为你写的歌",
+          "author": "Luckice"
+        },
+        {
+          "index": 8,
+          "title": "为你写的歌",
+          "author": "甲子蕙"
+        },
+        {
+          "index": 9,
+          "title": "为你写的歌 (DJ长音频)",
+          "author": "启蒙动画精选"
+        }
+      ],
+      "versionLabel": "为你写的歌 (伴奏) - 方大同",
+      "visibleDuration": "03:10",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/002ftGTN0mwqWT",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=002ftGTN0mwqWT&sign=c4zqtiOkyi24I&t=1793325666",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500002ftGTN0mwqWT.mp3?guid=1028499561&vkey=582EF0E7011AAFEE1018ED948F771B34302D8D6E6584DBF06C846DBE8860D78853B42778128C6A0F41FDEE5936683978B20E912B39AFBC35__v2b94c2e1&uin=&fromtag=120042",
+      "contentType": "audio/mpeg",
+      "bytes": 3046288,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 为你写的歌 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "好不容易",
+      "status": "downloaded",
+      "observedAt": "2026-10-30T02:01:09.984Z",
+      "query": "方大同 好不容易 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "好不容易 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "好不容易",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "好不容易",
+          "author": "告五人"
+        },
+        {
+          "index": 3,
+          "title": "好不容易 (Live)",
+          "author": "张靓颖"
+        },
+        {
+          "index": 4,
+          "title": "好不容易 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 5,
+          "title": "好不容易 (Live)",
+          "author": "陈文非"
+        },
+        {
+          "index": 6,
+          "title": "好不容易 (​DJ IónaLee版)",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "好不容易 (DJ 阿若版)",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "晴れの日",
+          "author": "告五人/藤冈靛"
+        },
+        {
+          "index": 9,
+          "title": "该死的温柔",
+          "author": "周玥"
+        }
+      ],
+      "versionLabel": "好不容易 (伴奏) - 方大同",
+      "visibleDuration": "04:43",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/001HeT1Z3jkOz7",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=001HeT1Z3jkOz7&sign=856GADQ3Do5nQ&t=1793325670",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500002dfoqh2QmbSi.mp3?guid=1744626608&vkey=3E216A530A785181E1F05E9D23FB0FE08C7FF57B1A6F1D3A9C1B1B0F3106CCA3CF54FCB16D9622421539D35111B820FF119BF297503F4465__v2b9a899c&uin=&fromtag=120042&src=M5000043wgIS1gZggA.mp3",
+      "contentType": "audio/mpeg",
+      "bytes": 4539877,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 好不容易 (伴奏).mp3",
+      "note": "通过可见搜索及下载按钮取得；公开下载链接可能过期；实际内容由音频验证确认。"
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "status": "no_matching_accompaniment",
+      "observedAt": "2026-10-30T02:01:15.945Z",
+      "query": "方大同 才二十三 伴奏",
+      "sourceOption": "QQ",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "才二十三 (2026如果风之岛曼谷生日演唱会现场)",
+          "author": "云旗"
+        },
+        {
+          "index": 2,
+          "title": "才二十三 + 爱爱爱 + 苏丽珍 + 好不容易 + Love Song + 为你写的歌 (Live)",
+          "author": "卢广仲"
+        },
+        {
+          "index": 3,
+          "title": "才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌 (2025hito流行音乐奖现场)",
+          "author": "卢广仲"
+        },
+        {
+          "index": 4,
+          "title": "才二十三",
+          "author": "Brianxxxx"
+        },
+        {
+          "index": 5,
+          "title": "才二十三 (Live)",
+          "author": "汪苏泷"
+        },
+        {
+          "index": 6,
+          "title": "才二十三 (DJ Bo版)",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "才二十三 (2025田调Live in Life野地小巡演台南站)",
+          "author": "田馥甄"
+        },
+        {
+          "index": 8,
+          "title": "才二十三 (DJ 晓遥版)",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "才二十三（汪苏泷赶路日记）",
+          "author": "变形钢筋"
+        }
+      ]
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱很简单",
+      "index": 1,
+      "observedAt": "2026-10-30T02:05:51.440Z",
+      "query": "陶喆 爱很简单 伴奏",
+      "sourceOption": "QQ",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E5%BE%88%E7%AE%80%E5%8D%95%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleSelectedResult": "2 爱, 很简单 (伴奏)\n陶喆",
+      "versionLabel": "爱, 很简单 (伴奏) - 陶喆",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/004LIh1O0jcaPx",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=004LIh1O0jcaPx&sign=b0EOcXHdNMRBU&t=1793325952",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://aqqmusic.tc.qq.com/M500004LIh1O0jcaPx.mp3?guid=862779094&vkey=581721E0E93F11CD13C20A2CED5A31E587F08E09E6D6B5B6EFEB8422E6D3F76091682CCFC9241F02D6D2BD1AAA9A35A99D08E9FDD4819CD7__v2b9ab664&uin=&fromtag=120042&src=M500000LGm5T2lDFnh.mp3",
+      "contentType": "audio/mpeg",
+      "bytes": 6919075,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 爱很简单 (伴奏).mp3",
+      "note": "通过另一条正常可见伴奏结果取得；标签与时长按站方实际显示，未确认实际调性。"
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱我还是他",
+      "index": 0,
+      "observedAt": "2026-10-30T02:05:57.433Z",
+      "query": "陶喆 爱我还是他 伴奏",
+      "sourceOption": "QQ",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E6%88%91%E8%BF%98%E6%98%AF%E4%BB%96%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleSelectedResult": "1 爱我还是他 (Live|伴奏)\n陶喆",
+      "versionLabel": "爱我还是他 (Live|伴奏) - 陶喆",
+      "visibleDuration": "05:05",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/001whSCf0AMFOx",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=001whSCf0AMFOx&sign=0fpkKVNuVxUXE&t=1793325958",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M800001whSCf0AMFOx.mp3?guid=cyapi&vkey=479FCBF9D90AD9E495AD6EA04992837EB4777334FAFFCEEBF83D171503E999459ABE620E743519D2EAE34A1A11A4DE4FAE010BC61586ADD3__v2ba83d90&uin=1722327337&fromtag=myhkw.cn&cache=1030100558",
+      "contentType": "audio/mpeg",
+      "bytes": 12206712,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 爱我还是他 (Live版伴奏).mp3",
+      "note": "通过另一条正常可见伴奏结果取得；标签与时长按站方实际显示，未确认实际调性。"
+    },
+    {
+      "artist": "方大同",
+      "title": "特别的人",
+      "index": 1,
+      "observedAt": "2026-10-30T02:06:02.377Z",
+      "query": "方大同 特别的人 伴奏",
+      "sourceOption": "QQ",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%89%B9%E5%88%AB%E7%9A%84%E4%BA%BA%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleSelectedResult": "2 特别的人 (伴奏)\n方大同",
+      "versionLabel": "特别的人 (伴奏) - 方大同",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/001E0HQU0qcL5k",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=001E0HQU0qcL5k&sign=4dxcolkLODRYk&t=1793325963",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M500000Rq6je24WuVU.mp3?guid=cyapi&vkey=CDBC781E9BAB62DE9CD36555CDA3D3B6DAE164B499D7CF787A2CEF736CD3B2AF4B1214AF42CFA7D5B51D2F2ED4842E892B56102CDB583C73__v2b94c2e1&uin=3335967168&fromtag=myhkw.cn&src=M500000iv4IK2VcjXc.mp3&cache=1030100605",
+      "contentType": "audio/mpeg",
+      "bytes": 4161378,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 特别的人 (伴奏).mp3",
+      "note": "通过另一条正常可见伴奏结果取得；标签与时长按站方实际显示，未确认实际调性。"
+    },
+    {
+      "artist": "方大同",
+      "title": "Love Song",
+      "observedAt": "2026-10-30T02:08:45.903Z",
+      "query": "Love Song 伴奏",
+      "sourceOption": "qq",
+      "status": "download_response_failed",
+      "queryUrl": "https://www.jbsou.cn/?name=Love%20Song%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "Love Song (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "Love Song (伴奏)",
+          "author": "sis"
+        },
+        {
+          "index": 3,
+          "title": "Love Song (伴奏)",
+          "author": "日韩群星"
+        },
+        {
+          "index": 4,
+          "title": "Love Song (和声伴奏)",
+          "author": "sis"
+        },
+        {
+          "index": 5,
+          "title": "Love Songs (Karaoke Tribute Version Originally Performed By Kaash Paige)",
+          "author": "Pearly Whites Music Machine"
+        },
+        {
+          "index": 6,
+          "title": "Love Song (伴奏)",
+          "author": "陆星材/朴慧秀"
+        },
+        {
+          "index": 7,
+          "title": "Love Song (青春版伴奏)",
+          "author": "严秋也"
+        },
+        {
+          "index": 8,
+          "title": "Love Song (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "Love song (Live|伴奏)",
+          "author": "雾都L4WUDU"
+        }
+      ],
+      "versionLabel": "Love Song (伴奏) - 方大同",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=&sign=31drhnDwT8P.6&t=1793326127",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=&sign=31drhnDwT8P.6&t=1793326127",
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 12,
+      "responseText": "获取失败"
+    },
+    {
+      "artist": "方大同",
+      "title": "Love Song",
+      "observedAt": "2026-10-30T02:08:51.160Z",
+      "query": "方大同 Love Song 伴奏",
+      "sourceOption": "kugou",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20Love%20Song%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "Love Song (KTV版伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "Love Song (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "Love Song (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "Love Song (2016火星演唱会深圳站)",
+          "author": "华晨宇、方大同"
+        },
+        {
+          "index": 5,
+          "title": "Love Song (Live)",
+          "author": "张敬轩、方大同"
+        },
+        {
+          "index": 6,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "Love Song (0.8X版)",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "love song (Instrumental)",
+          "author": "Jae Kyung"
+        },
+        {
+          "index": 9,
+          "title": "Love Song (2013香港春浪音乐节现场)",
+          "author": "方大同"
+        }
+      ],
+      "versionLabel": "Love Song (KTV版伴奏) - 方大同",
+      "visibleDuration": "04:38",
+      "detailUrl": "https://www.kugou.com/song/#hash=0983474ABE6B2853961BBF135931B8ED",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=0983474ABE6B2853961BBF135931B8ED&sign=20X1GoP.dq2iE&t=1793326132",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://fsandroid.kugou.com/202610301008/392487b8ea226c320aadb5bd6d6954c4/v3/0983474abe6b2853961bbf135931b8ed/yp/full/ap1005_us1970125355_df1bjt3v49wyck19rb0p349nrt_pi2_mx0_qu320_pa151369488_ct110000_s4269566291.mp3?cache=1030100853",
+      "contentType": "application/octet-stream",
+      "bytes": 4453935,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - Love Song (kugou伴奏).mp3",
+      "note": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。"
+    },
+    {
+      "artist": "方大同",
+      "title": "红豆",
+      "observedAt": "2026-10-30T02:08:55.491Z",
+      "query": "方大同 红豆 伴奏",
+      "sourceOption": "kugou",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E7%BA%A2%E8%B1%86%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "红豆 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "红豆",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "红豆",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "红豆 (原版伴奏)",
+          "author": "王菲"
+        },
+        {
+          "index": 4,
+          "title": "红豆 (伴奏)",
+          "author": "王菲"
+        },
+        {
+          "index": 5,
+          "title": "红豆 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 6,
+          "title": "红豆 (Timeless Live 2009)",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "红豆 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "红豆 (小提琴版伴奏)",
+          "author": "中唱群星"
+        },
+        {
+          "index": 9,
+          "title": "红豆 (伴奏)",
+          "author": "半吨兄弟"
+        }
+      ],
+      "versionLabel": "红豆 (伴奏) - 方大同",
+      "visibleDuration": "03:56",
+      "detailUrl": "https://www.kugou.com/song/#hash=4016A6C52A76C465AB8FFCF35E70E941",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=4016A6C52A76C465AB8FFCF35E70E941&sign=f0aX5ezIV7pRY&t=1793326137",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://fsandroid.kugou.com/202610301008/7aef90026ce3120fa5117a6e746a22b1/v3/8c91e7e9c0760f2b606ad52e53fabada/yp/full/ap1005_us1970125355_df1bjt3v49wyck19rb0p349nrt_pi2_mx0_qu320_pa151369488_ct110000_s2404490731.mp3?cache=1030100858",
+      "contentType": "audio/mpeg",
+      "bytes": 9459588,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 红豆 (kugou伴奏).mp3",
+      "note": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。"
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "observedAt": "2026-10-30T02:09:00.631Z",
+      "query": "方大同 才二十三 伴奏",
+      "sourceOption": "kugou",
+      "status": "no_matching_accompaniment",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "特别的人",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "麦恩莉",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "爱爱爱",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 5,
+          "title": "红豆",
+          "author": "方大同"
+        },
+        {
+          "index": 6,
+          "title": "天气先生",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "三人游",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "春风吹",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "因为你",
+          "author": "方大同"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "Love Song",
+      "observedAt": "2026-10-30T02:09:02.796Z",
+      "query": "方大同 Love Song 伴奏",
+      "sourceOption": "kuwo",
+      "status": "no_matching_accompaniment",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20Love%20Song%20%E4%BC%B4%E5%A5%8F&type=kuwo",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "Love Song",
+          "author": "华晨宇/方大同"
+        },
+        {
+          "index": 3,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 5,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 6,
+          "title": "特别的人+Love Song (2015浙江卫视跨年音乐会)",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "Love Song",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "Love Song",
+          "author": "方大同"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "observedAt": "2026-10-30T02:09:04.369Z",
+      "query": "方大同 才二十三 伴奏",
+      "sourceOption": "kuwo",
+      "status": "no_matching_accompaniment",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=kuwo",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 5,
+          "title": "才二十三 (cover: 方大同)",
+          "author": "Brianxxxx"
+        },
+        {
+          "index": 6,
+          "title": "才二十三 (cover: 方大同)",
+          "author": "Mubariz"
+        },
+        {
+          "index": 7,
+          "title": "才二十三 (cover: 方大同)",
+          "author": "迦阳Justs."
+        },
+        {
+          "index": 8,
+          "title": "才二十三 (cover: 方大同)",
+          "author": "辣辣"
+        },
+        {
+          "index": 9,
+          "title": "才二十三 (cover: 方大同)",
+          "author": "不晚"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "observedAt": "2026-10-30T02:10:30.179Z",
+      "query": "才二十三 伴奏",
+      "sourceOption": "qq",
+      "status": "no_matching_accompaniment",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "才二十三 高清无损伴奏",
+          "author": "微音乐"
+        },
+        {
+          "index": 2,
+          "title": "才二十三 (Live)",
+          "author": "汪苏泷"
+        },
+        {
+          "index": 3,
+          "title": "才二十三 + 爱爱爱 + 苏丽珍 + 好不容易 + Love Song + 为你写的歌 (Live)",
+          "author": "卢广仲"
+        },
+        {
+          "index": 4,
+          "title": "才二十三 (2025田调Live in Life野地小巡演台南站)",
+          "author": "田馥甄"
+        },
+        {
+          "index": 5,
+          "title": "才二十三+爱爱爱+苏丽珍+好不容易+Love Song+为你写的歌 (2025hito流行音乐奖现场)",
+          "author": "卢广仲"
+        },
+        {
+          "index": 6,
+          "title": "才二十三 (2024生日见面会现场)",
+          "author": "周翊然"
+        },
+        {
+          "index": 7,
+          "title": "才二十三 (38秒片段)",
+          "author": "TF家族-王烁然"
+        },
+        {
+          "index": 8,
+          "title": "单依纯《才二十三》 (2025纯妹妹巡回演唱会成都站)",
+          "author": "是文川吖"
+        },
+        {
+          "index": 9,
+          "title": "才二十三",
+          "author": "Muddy麻迪"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "observedAt": "2026-10-30T02:10:33.359Z",
+      "query": "才二十三 伴奏",
+      "sourceOption": "netease",
+      "status": "no_matching_accompaniment",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=netease",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三（伴奏）",
+          "author": "白羊"
+        },
+        {
+          "index": 1,
+          "title": "才二十三",
+          "author": "温栗"
+        },
+        {
+          "index": 2,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "遇见的那个人 伴奏",
+          "author": "马嘉义/崔璨（虚拟歌手）"
+        },
+        {
+          "index": 4,
+          "title": "才二十三",
+          "author": "Joeson_Yang"
+        },
+        {
+          "index": 5,
+          "title": "才二十三",
+          "author": "JC Music Studio"
+        },
+        {
+          "index": 6,
+          "title": "才二十三 (Cover 方大同)",
+          "author": "离伤灵"
+        },
+        {
+          "index": 7,
+          "title": "才二十三",
+          "author": "张溪月"
+        },
+        {
+          "index": 8,
+          "title": "才二十三",
+          "author": "大碗小面"
+        },
+        {
+          "index": 9,
+          "title": "才二十三",
+          "author": "雷米克斯"
+        }
+      ]
+    },
+    {
+      "artist": "方大同",
+      "title": "才二十三",
+      "observedAt": "2026-10-30T02:10:34.423Z",
+      "query": "才二十三 伴奏",
+      "sourceOption": "kugou",
+      "status": "no_matching_accompaniment",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三 高清无损伴奏",
+          "author": "微音乐"
+        },
+        {
+          "index": 1,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "才二十三",
+          "author": "Brianxxxx"
+        },
+        {
+          "index": 3,
+          "title": "才二十三 (微醺版)",
+          "author": "微醺实验室"
+        },
+        {
+          "index": 4,
+          "title": "才二十三",
+          "author": "变形钢筋"
+        },
+        {
+          "index": 5,
+          "title": "才二十三 (2026如果风之岛曼谷生日演唱会现场)",
+          "author": "云旗"
+        },
+        {
+          "index": 6,
+          "title": "才二十三 (Live)",
+          "author": "汪苏泷"
+        },
+        {
+          "index": 7,
+          "title": "才二十三 (2024生日见面会现场)",
+          "author": "周翊然"
+        },
+        {
+          "index": 8,
+          "title": "才二十三 (吉他弹唱版)",
+          "author": "莉燕"
+        },
+        {
+          "index": 9,
+          "title": "才二十三 (男声版)",
+          "author": "洋灡一"
+        }
+      ]
+    },
+    {
+      "artist": "陶喆",
+      "title": "爱很简单",
+      "observedAt": "2026-10-30T02:10:36.495Z",
+      "query": "陶喆 爱很简单 伴奏",
+      "sourceOption": "kugou",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%99%B6%E5%96%86%20%E7%88%B1%E5%BE%88%E7%AE%80%E5%8D%95%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "爱,很简单 (KTV版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "爱,很简单 (伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 2,
+          "title": "爱,很简单 (升调伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 3,
+          "title": "爱,很简单",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "爱,很简单 (木吉他版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 5,
+          "title": "爱,很简单 (Live|伴奏)",
+          "author": "陶喆、潘玮柏、薛凯琪、张碧晨、武艺、张紫宁、Ghost (王琳凯)、高卿尘Nine"
+        },
+        {
+          "index": 6,
+          "title": "爱,很简单 (消音伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 7,
+          "title": "爱,很简单 (初心版)(Live伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 8,
+          "title": "爱,很简单 (升调版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 9,
+          "title": "爱,很简单 (DJ伴奏)",
+          "author": "陶喆"
+        }
+      ],
+      "versionLabel": "爱,很简单 (KTV版伴奏) - 陶喆",
+      "visibleDuration": "04:26",
+      "detailUrl": "https://www.kugou.com/song/#hash=DF9A30E19D5E361FE4683CDFF7DF559B",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=DF9A30E19D5E361FE4683CDFF7DF559B&sign=35HPM6vwOi0Nk&t=1793326237",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://fsandroid.kugou.com/202610301010/02df12399366d2062908a78932b73fd6/v3/24466357273ff2695e2cf5f1dee757f5/yp/full/ap1005_us1970125355_df1bjt3v49wyck19rb0p349nrt_pi2_mx0_qu320_pa151369488_ct110000_s4054863602.mp3?cache=1030101038",
+      "contentType": "audio/mpeg",
+      "bytes": 10751522,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/陶喆 - 爱很简单 (kugou伴奏).mp3",
+      "note": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。"
+    },
+    {
+      "artist": "方大同",
+      "title": "好不容易",
+      "observedAt": "2026-10-30T02:10:41.560Z",
+      "query": "方大同 好不容易 伴奏",
+      "sourceOption": "kugou",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%96%B9%E5%A4%A7%E5%90%8C%20%E5%A5%BD%E4%B8%8D%E5%AE%B9%E6%98%93%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "好不容易 (伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 1,
+          "title": "好不容易 (降调版伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "好不容易 (MV版伴奏)",
+          "author": "方大同"
+        },
+        {
+          "index": 3,
+          "title": "好不容易",
+          "author": "方大同"
+        },
+        {
+          "index": 4,
+          "title": "好不容易 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 5,
+          "title": "好不容易 (伴奏)",
+          "author": "张靓颖"
+        },
+        {
+          "index": 6,
+          "title": "好不容易 (Live)",
+          "author": "方大同"
+        },
+        {
+          "index": 7,
+          "title": "好不容易 (钢琴曲)",
+          "author": "方大同"
+        },
+        {
+          "index": 8,
+          "title": "好不容易 (电台版)",
+          "author": "方大同"
+        },
+        {
+          "index": 9,
+          "title": "好不容易 (消音伴奏)",
+          "author": "网络歌手"
+        }
+      ],
+      "versionLabel": "好不容易 (伴奏) - 方大同",
+      "visibleDuration": "03:53",
+      "detailUrl": "https://www.kugou.com/song/#hash=21F7FC6E53CB605E2834FA6EC9F96E92",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=21F7FC6E53CB605E2834FA6EC9F96E92&sign=a6GHYJuM6luEw&t=1793326245",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://fsandroid.kugou.com/202610301010/7facb6fddb21760c6ef96429bf072e19/v3/21f7fc6e53cb605e2834fa6ec9f96e92/yp/full/ap1005_us1970125355_df1bjt3v49wyck19rb0p349nrt_pi2_mx0_qu320_pa151369488_ct110000_s3144135908.mp3?cache=1030101046",
+      "contentType": "audio/mpeg",
+      "bytes": 3733756,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/方大同 - 好不容易 (kugou伴奏).mp3",
+      "note": "正常可见搜索/下载取得；版本按站方标签记录，真实内容待音频核验。"
+    },
+    {
+      "artist": "微音乐",
+      "title": "才二十三",
+      "observedAt": "2026-10-30T02:12:17.195Z",
+      "query": "才二十三 伴奏",
+      "sourceOption": "kugou",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E6%89%8D%E4%BA%8C%E5%8D%81%E4%B8%89%20%E4%BC%B4%E5%A5%8F&type=kugou",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "才二十三 高清无损伴奏",
+          "author": "微音乐"
+        },
+        {
+          "index": 1,
+          "title": "才二十三",
+          "author": "方大同"
+        },
+        {
+          "index": 2,
+          "title": "才二十三",
+          "author": "Brianxxxx"
+        },
+        {
+          "index": 3,
+          "title": "才二十三 (微醺版)",
+          "author": "微醺实验室"
+        },
+        {
+          "index": 4,
+          "title": "才二十三",
+          "author": "变形钢筋"
+        },
+        {
+          "index": 5,
+          "title": "才二十三 (2026如果风之岛曼谷生日演唱会现场)",
+          "author": "云旗"
+        },
+        {
+          "index": 6,
+          "title": "才二十三 (Live)",
+          "author": "汪苏泷"
+        },
+        {
+          "index": 7,
+          "title": "才二十三 (2024生日见面会现场)",
+          "author": "周翊然"
+        },
+        {
+          "index": 8,
+          "title": "才二十三 (吉他弹唱版)",
+          "author": "莉燕"
+        },
+        {
+          "index": 9,
+          "title": "才二十三 (男声版)",
+          "author": "洋灡一"
+        }
+      ],
+      "versionLabel": "才二十三 高清无损伴奏 - 微音乐",
+      "visibleDuration": "03:44",
+      "detailUrl": "https://www.kugou.com/song/#hash=3A07E5D6FB631F017DB123930483A7F2",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=kg&id=3A07E5D6FB631F017DB123930483A7F2&sign=bfYz0QijIIN0o&t=1793326236",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://fsandroid.kugou.com/202610301010/e268d9804aa514b59488c1b41b106fd9/v3/01b29934e45929b331e972ffa5ac302d/yp/full/ap1005_us1970125355_df1bjt3v49wyck19rb0p349nrt_pi2_mx0_qu320_pa151369488_ct110000_s1458408037.mp3?cache=1030101037",
+      "contentType": "audio/mpeg",
+      "bytes": 8983203,
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/微音乐 - 才二十三 (kugou伴奏).mp3",
+      "note": "制作人上传的才二十三伴奏候选，目标为方大同作品；实际上传者微音乐。站方高清无损标签不作为无损认证，曲目与实际音频内容待核验，未确认原调或原版。",
+      "targetArtist": "方大同",
+      "uploader": "微音乐",
+      "candidate": true,
+      "detailCheck": {
+        "observedAt": "2026-10-30T02:14:07.819Z",
+        "status": 200,
+        "url": "https://www.kugou.com/song/#hash=3A07E5D6FB631F017DB123930483A7F2",
+        "title": "酷狗音乐-就是歌多",
+        "creditLines": []
+      }
+    },
+    {
+      "artist": "陶喆",
+      "title": "黑色柳丁",
+      "observedAt": "2026-10-30T02:20:04.177Z",
+      "query": "黑色柳丁 伴奏",
+      "sourceOption": "qq",
+      "purpose": "与既有KTV条目对比的单份替代候选",
+      "status": "downloaded",
+      "queryUrl": "https://www.jbsou.cn/?name=%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81%20%E4%BC%B4%E5%A5%8F&type=qq",
+      "visibleResults": [
+        {
+          "index": 0,
+          "title": "黑色柳丁 (KTV版伴奏)",
+          "author": "陶喆"
+        },
+        {
+          "index": 1,
+          "title": "黑色柳丁 (Live|伴奏)",
+          "author": "谢天宇"
+        },
+        {
+          "index": 2,
+          "title": "黑色柳丁 (Live|伴奏)",
+          "author": "李芷婷"
+        },
+        {
+          "index": 3,
+          "title": "黑色柳丁",
+          "author": "陶喆"
+        },
+        {
+          "index": 4,
+          "title": "黑色柳丁 (消音伴奏)",
+          "author": "苏6"
+        },
+        {
+          "index": 5,
+          "title": "黑色柳丁 (Live)",
+          "author": "丁程鑫/宋亚轩"
+        },
+        {
+          "index": 6,
+          "title": "黑色柳丁 (Live)",
+          "author": "陶喆"
+        },
+        {
+          "index": 7,
+          "title": "黑色柳丁 (Live)",
+          "author": "胡彦斌/陶喆"
+        },
+        {
+          "index": 8,
+          "title": "黑色柳丁 (Live)",
+          "author": "田馥甄"
+        },
+        {
+          "index": 9,
+          "title": "黑色柳丁 (Live)",
+          "author": "张郁梓/黄誉博"
+        }
+      ],
+      "uploader": "谢天宇",
+      "targetArtist": "陶喆",
+      "versionLabel": "黑色柳丁 (Live|伴奏) - 谢天宇",
+      "visibleDuration": "00:00",
+      "detailUrl": "https://y.qq.com/n/ryqq/songDetail/004Cfefv2vfVUr",
+      "publicDownloadUrl": "https://www.jbsou.cn/api.php?get=url&type=qq&id=004Cfefv2vfVUr&sign=b4rq2WBcSCNEk&t=1793326806",
+      "httpStatus": 200,
+      "finalAudioUrl": "https://isure6.stream.qqmusic.qq.com/M800003UZH2V1ka7Ds.mp3?guid=cyapi&vkey=120BA70873C9D7ECAF93B0D9CDCF3058258DE39F993665169A1DD9D49FC704AB0A0790AD45BF6EF78925F2C2DE3BC42AC1F4804C9B79898B__v2b9aba4b&uin=2428026237&fromtag=myhkw.cn&cache=1030102011",
+      "contentType": "audio/mpeg",
+      "bytes": 10479499,
+      "sha256": "d68670658856f91c4e18874dbdcdd78a029ae34485c60dfe87341084ebd47d11",
+      "filePath": "/Users/linus/src/personal/qingchang/素材/伴奏准备/免费音频/煎饼搜/谢天宇 - 黑色柳丁 (Live版伴奏候选).mp3",
+      "candidate": true,
+      "note": "谢天宇Live版伴奏候选，目标为陶喆作品，不是陶喆演唱版本。仅新增这一份不同于既有KTV条目的正常公开免费候选，与原文件SHA256不同；未确认无主唱或实际调性，交音频验证对比。"
+    }
+  ]
+}
