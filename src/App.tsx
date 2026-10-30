@@ -64,6 +64,7 @@ import { MixerPanel } from "./components/MixerPanel";
 import { createScalePractice } from "./scoring/practice";
 import { ReferencePanel } from "./components/ReferencePanel";
 import { formatTime } from "./components/formatTime";
+import { SecureRecordingNotice } from "./components/SecureRecordingNotice";
 
 type View = "library" | "studio" | "recordings" | "settings";
 type Filter = "all" | "favorite" | "local";
@@ -447,7 +448,7 @@ export default function App() {
             </span>
           </div>
         </header>
-        {!window.isSecureContext && <div className="engine-error" role="status">当前 HTTP 预览无法使用麦克风。请在配置 SSH 隧道的设备上打开 http://127.0.0.1:8765 录音；本地文件导入仍可使用。</div>}
+        {!window.isSecureContext && <SecureRecordingNotice />}
         {(loadError || studio.error) && (
           <div className="engine-error" role="alert">
             <CircleHelp size={18} />

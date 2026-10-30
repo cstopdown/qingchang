@@ -1129,6 +1129,14 @@ h1 {
   margin-left: auto;
   color: #a85e42;
 }
+.secure-recording-notice p {
+  margin: 2px 0;
+}
+.secure-recording-notice a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+}
 .empty-state {
   display: flex;
   flex-direction: column;
