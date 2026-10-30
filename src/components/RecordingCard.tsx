@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDownToLine, AudioLines, Trash2 } from "lucide-react";
 import type { Recording } from "../core/types";
+import { Metrics } from "./ReferencePanel";
 import { formatTime } from "./formatTime";
 import { AiScorePanel, type AiScoringState } from "./AiScorePanel";
 
@@ -60,6 +61,7 @@ export function RecordingCard({
             <Trash2 size={17} />
           </button>
         </div>
+        {recording.realtimeScore && <section><h4>录制时实时参考：{recording.realtimeScore.referenceTitle}</h4><Metrics metrics={recording.realtimeScore.metrics} /><small>延迟补偿 {recording.realtimeScore.latencyMs} ms</small></section>}
         <AiScorePanel
           report={recording.aiScore}
           state={scoreState}

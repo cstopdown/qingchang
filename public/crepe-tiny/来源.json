@@ -1,0 +1,65 @@
+{
+  "source": "https://github.com/marl/crepe/tree/de4888e6d448357ceafea10fc6010061c6f19a55/model",
+  "files": {
+    "LICENSE": {
+      "bytes": 1080,
+      "sha256": "7c6fab51c6f84ab934211c90fd1754c505a72049ca3da2ae699c2b693c1ecfc4"
+    },
+    "group1-shard1of1": {
+      "bytes": 370080,
+      "sha256": "d6be0f544dc2b95d469ec66845904795ef1bd0ced572d69e9ae053a920e420fc"
+    },
+    "group10-shard1of1": {
+      "bytes": 131200,
+      "sha256": "265b02c2777f1a21d07b7675be370a9cbb1de458e26c35cb1aa61b8f234d2559"
+    },
+    "group11-shard1of1": {
+      "bytes": 512,
+      "sha256": "62ac80dfa85deb608ebc63ace5a9205ebbc53c6e1b94dc304e7c54a181015654"
+    },
+    "group12-shard1of1": {
+      "bytes": 524544,
+      "sha256": "c3ea32df8f2d0a888ab5f2da59d498238cc762fb95e81fc767f58700bd1a8c47"
+    },
+    "group13-shard1of1": {
+      "bytes": 1024,
+      "sha256": "4ad0215ed19fd7235bc56460d436c86765562d0159f54385766b44d30dc071a0"
+    },
+    "group2-shard1of1": {
+      "bytes": 262656,
+      "sha256": "e92d46f432c4d8dd72c9b345a1f2949967ff278cabb2b187ad727ae81b8f0f2f"
+    },
+    "group3-shard1of1": {
+      "bytes": 2048,
+      "sha256": "9550cb10c547cd8f4dd01d3f23792ce7260ee42eec912c05a860f9224a72e717"
+    },
+    "group4-shard1of1": {
+      "bytes": 524352,
+      "sha256": "6749b89c49a0e4a8a072a624e203e0a8288f557f44a5981f9ea259afd9338322"
+    },
+    "group5-shard1of1": {
+      "bytes": 256,
+      "sha256": "2e0ad5db5661975a06990482f34aadfd2d2564cadda84b0d5f3641b92b003cc5"
+    },
+    "group6-shard1of1": {
+      "bytes": 65600,
+      "sha256": "76fc8f2f48a17ef827f8b70da5c2e137064fd75f9e8c5deeeb905cb2d514e92c"
+    },
+    "group7-shard1of1": {
+      "bytes": 256,
+      "sha256": "3f11e74bc0336d40b53f106a6316c5a7c50546994a07542185e2d9f29b3e43de"
+    },
+    "group8-shard1of1": {
+      "bytes": 65600,
+      "sha256": "fc9c5f00aba6184f025273d437ef57140beb8cd269a1c17b88a582c0fddb8cad"
+    },
+    "group9-shard1of1": {
+      "bytes": 256,
+      "sha256": "46231837e6c374519cc4d787676eb5ee8863881faa1f406c85e39d9b9285ca3d"
+    },
+    "model.json": {
+      "bytes": 15653,
+      "sha256": "91015e8891c8cf9ded26277f1bb487de26357938ee653e3f9d410676d9ed0e32"
+    }
+  }
+}

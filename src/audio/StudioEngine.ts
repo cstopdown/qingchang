@@ -1,6 +1,8 @@
+import { createId } from '../core/id'
 import type { MixerSettings, Pitch, Recording, StudioStatus, Track } from '../core/types'
 import { DEFAULT_MIXER_SETTINGS, encodeWav, renderMix } from './mix'
-import { detectPitch } from './pitch'
+import { PitchScoringClient, MODEL_ID } from '../scoring/client'
+import type { RealtimeAnalysis, ReferenceMelody, RealtimeScore } from '../scoring/types'
 import { createRealtimeToneChain, VOCAL_TONE_PRESETS, type RealtimeToneChain } from './effects'
 
 export interface StudioSnapshot {
@@ -15,6 +17,7 @@ export interface StudioSnapshot {
   notice: string | null
   pendingRecording: Recording | null
   previewStatus: 'off' | 'starting' | 'on'
+  realtime: RealtimeAnalysis
 }
 
 interface MicrophoneInput {
@@ -45,6 +48,9 @@ interface RecordingSession {
   receivedFrames: number
   released: boolean
   interruptionReason: string | null
+  scorer: PitchScoringClient
+  latencyMs: number
+  reference: ReferenceMelody | undefined
 }
 
 /** 仅在浏览器 I/O 边界转换错误；内部音频图与 PCM 格式使用固定契约。 */
@@ -110,6 +116,7 @@ export class StudioEngine {
     notice: null,
     pendingRecording: null,
     previewStatus: 'off',
+    realtime: { modelStatus: 'idle', modelId: MODEL_ID, pitch: null, metrics: null, error: null },
   }
   private listeners = new Set<() => void>()
   private context: AudioContext | null = null
@@ -127,6 +134,8 @@ export class StudioEngine {
   private loadVersion = 0
   private animationFrame = 0
   private lastMeterAt = 0
+  private scorer: PitchScoringClient | null = null
+  private previewWorklet: AudioWorkletNode | null = null
 
   constructor(private onRecordingComplete: (recording: Recording) => Promise<void>) {
     this.snapshot = { ...this.snapshot, ...loadSettings() }
@@ -169,7 +178,7 @@ export class StudioEngine {
       const buffer = await this.getContext().decodeAudioData(bytes)
       if (version !== this.loadVersion) return
       this.backing = buffer
-      this.update({ track: { ...track, duration: buffer.duration }, status: 'ready', duration: buffer.duration })
+      this.update({ track: { ...track, duration: buffer.duration }, status: 'ready', duration: buffer.duration, realtime: { ...this.snapshot.realtime, metrics: null, pitch: null } })
     } catch (error) {
       if (version !== this.loadVersion) return
       console.error('伴奏解码失败', error)
@@ -177,6 +186,44 @@ export class StudioEngine {
       this.update({ error: message })
       throw new Error(message, { cause: error })
     }
+  }
+
+  setReferenceMelody = (trackId: string, reference: ReferenceMelody | undefined): void => {
+    const { track, status, previewStatus } = this.snapshot
+    if (track?.id !== trackId || status === 'recording' || status === 'finishing' || previewStatus === 'starting') return
+    this.stopPreview()
+    this.update({ track: { ...track, referenceMelody: reference },
+      realtime: { ...this.snapshot.realtime, metrics: null } })
+  }
+
+  private async prepareScoring(sampleRate: number, latencyMs: number, reference: ReferenceMelody | undefined): Promise<PitchScoringClient> {
+    this.update({ realtime: { modelStatus: 'loading', modelId: MODEL_ID, pitch: null, metrics: null, error: null } })
+    const client = new PitchScoringClient(sampleRate, latencyMs, reference, false, ({ frames, metrics }) => {
+      if (this.scorer !== client) return
+      const frame = frames.at(-1)
+      if (!frame) return
+      let pitch: Pitch | null = null
+      if (frame.frequencyHz !== null) {
+        const midi = Math.round(69 + 12 * Math.log2(frame.frequencyHz / 440))
+        const names = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'B']
+        pitch = { frequency: frame.frequencyHz, note: `${names[((midi % 12) + 12) % 12]}${Math.floor(midi / 12) - 1}`,
+          cents: 1200 * Math.log2(frame.frequencyHz / (440 * 2 ** ((midi - 69) / 12))) }
+      }
+      this.update({ pitch, realtime: { modelStatus: 'ready', modelId: MODEL_ID, pitch: frame, metrics, error: null } })
+    }, message => {
+      if (this.scorer === client) this.update({ pitch: null, realtime: { ...this.snapshot.realtime, modelStatus: 'error', pitch: null, error: `CREPE 实时分析失败：${message}` } })
+    })
+    this.scorer = client
+    void client.ready.then(() => {
+      if (this.scorer === client) this.update({ realtime: { ...this.snapshot.realtime, modelStatus: 'ready' } })
+    }).catch((error: unknown) => { console.error('CREPE 初始化失败', error) })
+    return client
+  }
+
+  private async loadPcmWorklet(context: AudioContext): Promise<void> {
+    if (!context.audioWorklet) throw new Error('当前浏览器不支持 AudioWorklet，请升级浏览器。')
+    this.workletLoaded ??= context.audioWorklet.addModule(`${import.meta.env.BASE_URL}audio-worklets/pcm-recorder.js`)
+    await this.workletLoaded
   }
 
   togglePlayback = async (): Promise<void> => {
@@ -252,7 +299,15 @@ export class StudioEngine {
         this.stopStartingStream(stream)
         return
       }
+      await this.loadPcmWorklet(context)
+      const scorer = await this.prepareScoring(context.sampleRate, 0, undefined)
+      if (version !== this.previewVersion) { scorer.dispose(); this.stopStartingStream(stream); return }
       this.preview = this.createMicrophoneInput(context, stream)
+      const worklet = new AudioWorkletNode(context, 'pcm-recorder', { processorOptions: { startFrame: Math.ceil(context.currentTime * context.sampleRate), endFrame: Number.MAX_SAFE_INTEGER } })
+      worklet.port.onmessage = ({ data }: MessageEvent<{ type: 'chunk'; samples: Float32Array }>) => { scorer.push(data.samples) }
+      worklet.onprocessorerror = () => { void this.interrupt('麦克风处理器运行失败') }
+      this.preview.analyser.connect(worklet).connect(context.destination)
+      this.previewWorklet = worklet
       this.startingStream = null
       this.update({ previewStatus: 'on' })
       this.startAnimation()
@@ -266,6 +321,13 @@ export class StudioEngine {
 
   stopPreview = (): void => {
     ++this.previewVersion
+    if (this.snapshot.previewStatus !== 'off') { this.scorer?.dispose(); this.scorer = null }
+    if (this.previewWorklet) {
+      this.previewWorklet.port.onmessage = null
+      this.previewWorklet.port.close()
+      this.previewWorklet.disconnect()
+      this.previewWorklet = null
+    }
     if (this.startingStream?.purpose === 'preview') this.stopStartingStream(this.startingStream.stream)
     if (this.preview) {
       this.releaseInput(this.preview)
@@ -357,9 +419,7 @@ export class StudioEngine {
         return
       }
       this.startingStream = { stream, purpose: 'recording' }
-      if (!context.audioWorklet) throw new Error('当前浏览器不支持 AudioWorklet，请升级浏览器或使用桌面应用。')
-      this.workletLoaded ??= context.audioWorklet.addModule(`${import.meta.env.BASE_URL}audio-worklets/pcm-recorder.js`)
-      await this.workletLoaded
+      await this.loadPcmWorklet(context)
       if (version !== this.transportVersion) {
         this.stopStartingStream(stream)
         return
@@ -369,7 +429,9 @@ export class StudioEngine {
         this.stopStartingStream(stream)
         return
       }
-      this.createRecordingSession(context, stream)
+      const scorer = await this.prepareScoring(context.sampleRate, this.snapshot.settings.latencyMs, this.snapshot.track!.referenceMelody)
+      if (version !== this.transportVersion) { scorer.dispose(); this.stopStartingStream(stream); return }
+      this.createRecordingSession(context, stream, scorer)
       this.startingStream = null
     } catch (error) {
       if (stream) this.stopStartingStream(stream)
@@ -379,7 +441,7 @@ export class StudioEngine {
     }
   }
 
-  private createRecordingSession(context: AudioContext, stream: MediaStream): void {
+  private createRecordingSession(context: AudioContext, stream: MediaStream, scorer: PitchScoringClient): void {
     const backing = this.backing!
     const settings = this.snapshot.settings
     const startFrame = Math.ceil((context.currentTime + 0.1) * context.sampleRate)
@@ -409,6 +471,7 @@ export class StudioEngine {
       nodes: [source, musicGain, worklet, silent],
       pcm: new Float32Array(backing.length), startFrame, endFrame, done, resolveDone,
       finishing: null, cancelled: false, receivedFrames: 0, released: false, interruptionReason: null,
+      scorer, latencyMs: settings.latencyMs, reference: this.snapshot.track!.referenceMelody,
     }
     worklet.port.onmessage = ({ data }: MessageEvent<
       { type: 'chunk'; offset: number; samples: Float32Array } | { type: 'complete'; frames: number }
@@ -416,6 +479,7 @@ export class StudioEngine {
       if (data.type === 'chunk') {
         session.pcm.set(data.samples, data.offset)
         session.receivedFrames = data.offset + data.samples.length
+        scorer.push(data.samples)
       }
       else {
         resolveDone(data.frames)
@@ -424,6 +488,7 @@ export class StudioEngine {
     }
     worklet.onprocessorerror = () => {
       session.cancelled = true
+      scorer.dispose()
       resolveDone(0)
       this.releaseSession(session)
       this.recording = null
@@ -482,6 +547,20 @@ export class StudioEngine {
       const frames = await session.done
       this.releaseSession(session)
       if (session.cancelled) return
+      let realtimeScore: RealtimeScore | undefined
+      try {
+          const result = await session.scorer.finish()
+          if (result.metrics && session.reference) realtimeScore = {
+            metrics: result.metrics, modelId: MODEL_ID, referenceId: session.reference.id,
+            referenceTitle: session.reference.title, latencyMs: session.latencyMs,
+          }
+          this.update({ realtime: { ...this.snapshot.realtime, metrics: result.metrics } })
+        } catch (error) {
+          console.error('实时分析未完成，继续保存原始录音', error)
+      } finally {
+        session.scorer.dispose()
+        if (this.scorer === session.scorer) this.scorer = null
+      }
       if (frames === 0) {
         this.recording = null
         this.update({
@@ -494,7 +573,7 @@ export class StudioEngine {
       const music = Array.from({ length: session.backing.numberOfChannels }, (_, index) => session.backing.getChannelData(index))
       const mixed = renderMix(music, session.pcm.subarray(0, frames), session.backing.sampleRate, settings)
       const recording: Recording = {
-        id: crypto.randomUUID(),
+        id: createId(),
         trackId: session.track.id,
         trackTitle: session.track.title,
         title: `${session.track.title} · 我的演唱`,
@@ -502,6 +581,7 @@ export class StudioEngine {
         duration: frames / session.backing.sampleRate,
         audio: encodeWav(mixed, session.backing.sampleRate),
         vocalAudio: encodeWav([session.pcm.subarray(0, frames)], session.backing.sampleRate),
+        realtimeScore,
       }
       try {
         await this.saveRecording(recording)
@@ -621,7 +701,6 @@ export class StudioEngine {
         let energy = 0
         for (const sample of samples) energy += sample * sample
         patch.level = Math.min(1, Math.sqrt(energy / samples.length) * 3)
-        patch.pitch = detectPitch(samples, this.context!.sampleRate)
       }
       this.update(patch)
       if (this.snapshot.status === 'playing' || this.snapshot.status === 'recording' || this.preview) {
@@ -637,6 +716,8 @@ export class StudioEngine {
   }
 
   dispose = (): void => {
+    this.scorer?.dispose()
+    this.scorer = null
     ++this.loadVersion
     ++this.transportVersion
     this.stopPreview()

@@ -1,3 +1,4 @@
+import { createId } from './core/id'
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDownToLine,
@@ -60,6 +61,8 @@ import {
   MicPreviewButton,
 } from "./components/StudioControls";
 import { MixerPanel } from "./components/MixerPanel";
+import { createScalePractice } from "./scoring/practice";
+import { ReferencePanel } from "./components/ReferencePanel";
 import { formatTime } from "./components/formatTime";
 
 type View = "library" | "studio" | "recordings" | "settings";
@@ -444,6 +447,7 @@ export default function App() {
             </span>
           </div>
         </header>
+        {!window.isSecureContext && <div className="engine-error" role="status">当前 HTTP 预览无法使用麦克风。请在配置 SSH 隧道的设备上打开 http://127.0.0.1:8765 录音；本地文件导入仍可使用。</div>}
         {(loadError || studio.error) && (
           <div className="engine-error" role="alert">
             <CircleHelp size={18} />
@@ -556,6 +560,7 @@ export default function App() {
                 <Plus size={18} /> 导入歌曲
               </button>
             </section>
+            <button className="button ghost" disabled={locked || selecting} onClick={() => perform(async () => { const exercise = createScalePractice(); const item: Track = { id: createId(), title: "自制 C 大调音阶练习", artist: "轻唱", duration: exercise.duration, cover: "mint", origin: "local", audio: exercise.audio, lyrics: "", createdAt: Date.now(), favorite: false, referenceMelody: exercise.reference }; await saveTrack(item); setTracks(await listTracks()); await studio.selectTrack(item); setView("studio"); })}>添加自制音阶练习</button>
             {filter !== "favorite" && (
               <section className="feature-layout">
                 <div className="hero-card">
@@ -1045,10 +1050,11 @@ export default function App() {
                   </section>
                   <MixerPanel studio={studio} onPreview={togglePreview} />
                 </div>
+                <ReferencePanel track={track} realtime={studio.realtime} disabled={locked || selecting} onChange={async (reference) => { const updated = { ...track, referenceMelody: reference }; await saveTrack(updated); setTracks(items => items.map(item => item.id === updated.id ? updated : item)); studio.setReferenceMelody(track.id, reference); }} />
                 <div className="studio-bottom-note">
                   <ShieldCheck size={16} />
                   <span>
-                    人声与伴奏将在本机混合保存。音高仅作练唱参考，不生成评分。
+                    人声与伴奏保存在本机；实时指标与录后参考分分别展示。
                   </span>
                   <button onClick={() => setView("settings")}>
                     调整延迟与歌词偏移 <ArrowRight size={14} />

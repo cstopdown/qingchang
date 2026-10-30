@@ -1,3 +1,4 @@
+import { createId } from '../core/id'
 import type { Recording, Track } from '../core/types'
 import { DEMO_TRACKS } from './demos'
 
@@ -161,7 +162,7 @@ export async function importTrack(file: File, lyrics = ''): Promise<Track> {
   checkAudioSize(file)
   const duration = await decodeDuration(file)
   const track: Track = {
-    id: crypto.randomUUID(),
+    id: createId(),
     title: file.name.replace(/\.[^.]+$/, ''),
     artist: '本地导入',
     duration,
@@ -211,7 +212,7 @@ export async function importTrackFromUrl(url: string, title: string, lyrics = ''
     })
   const duration = await decodeDuration(audio)
   const track: Track = {
-    id: crypto.randomUUID(),
+    id: createId(),
     title: title.trim(),
     artist: '直链导入',
     duration,

@@ -119,101 +119,20 @@ async function request(
     throw error;
   }
 }
-export async function checkAiService(
-  settings: AiServiceSettings,
-): Promise<AiServiceHealth> {
+export async function checkAiService(settings: AiServiceSettings): Promise<AiServiceHealth> {
   const body = object(await request(settings, "/health", {}, 10000));
-  if (
-    body.service !== "qingchang-ai" ||
-    body.apiVersion !== 1 ||
-    body.model !== "MiniCPM-o 4.5" ||
-    !(["mlx", "transformers"].includes(text(body.backend))) ||
-    body.audioInput !== true ||
-    !["loading", "ready", "error"].includes(text(body.status))
-  )
-    throw new Error("这个地址不是支持音频评分的轻唱 MiniCPM 私有服务。");
-  return {
-    status: body.status as AiServiceHealth["status"],
-    model: "MiniCPM-o 4.5",
-    modelId: text(body.modelId),
-    backend: body.backend as AiServiceHealth["backend"],
-    audioInput: true,
-    ...(body.message === undefined ? {} : { message: text(body.message) }),
-  };
+  if (body.service !== "qingchang-score" || body.apiVersion !== 2 || body.engine !== "vocalverse" || body.backend !== "pytorch-cpu" || body.audioInput !== true || !["loading", "ready", "error"].includes(text(body.status)) || JSON.stringify(body.scoreRange) !== "[0,100]")
+    throw new Error("这个地址不是支持音频评分的轻唱 VocalVerse 服务。");
+  return { status: body.status as AiServiceHealth["status"], model: text(body.model), modelId: text(body.modelId), modelRevision: text(body.modelRevision), backend: "pytorch-cpu", audioInput: true, ...(body.message === undefined ? {} : { message: text(body.message) }) };
 }
-function parseReport(value: unknown): AiScoreReport {
-  const body = object(value);
-  const dimensions = object(body.dimensions);
-  if (
-    typeof body.scorable !== "boolean" ||
-    !["dry-vocal", "mixed"].includes(text(body.inputKind))
-  )
-    throw new Error("AI 服务返回的评估状态不正确。");
-  const overall = score(body.overall);
-  if (
-    (body.scorable && overall === null) ||
-    (!body.scorable && overall !== null)
-  )
-    throw new Error("AI 服务返回的可评分状态与分数不一致。");
-  const analyzedSeconds = number(body.analyzedSeconds),
-    totalSeconds = number(body.totalSeconds),
-    clipStartSeconds = number(body.clipStartSeconds);
-  if (
-    analyzedSeconds < 0 ||
-    totalSeconds < 0 ||
-    clipStartSeconds < 0 ||
-    clipStartSeconds + analyzedSeconds > totalSeconds + 0.1
-  )
-    throw new Error("AI 服务返回的音频评估片段范围不正确。");
-  return {
-    id: text(body.id),
-    recordingId: text(body.recordingId),
-    model: text(body.model),
-    modelRevision: text(body.modelRevision),
-    createdAt: number(body.createdAt),
-    inputKind: body.inputKind as AiScoreReport["inputKind"],
-    scorable: body.scorable,
-    overall,
-    dimensions: {
-      clarity: score(dimensions.clarity),
-      steadiness: score(dimensions.steadiness),
-      expression: score(dimensions.expression),
-      recordingQuality: score(dimensions.recordingQuality),
-    },
-    summary: text(body.summary),
-    strengths: texts(body.strengths),
-    improvements: texts(body.improvements),
-    limitations: texts(body.limitations),
-    analyzedSeconds,
-    totalSeconds,
-    clipStartSeconds,
-  };
-}
-export async function scoreRecording(
-  recording: Recording,
-  lyrics: string,
-  settings: AiServiceSettings,
-): Promise<AiScoreReport> {
-  const inputKind = recording.vocalAudio ? "dry-vocal" : "mixed";
+export async function scoreRecording(recording: Recording, _lyrics: string, settings: AiServiceSettings): Promise<AiScoreReport> {
+  if (!recording.vocalAudio) throw new Error("作品没有保存干声，无法进行 VocalVerse 评分。");
   const form = new FormData();
-  form.append(
-    "audio",
-    recording.vocalAudio ?? recording.audio,
-    `${recording.id}.wav`,
-  );
-  form.append("recordingId", recording.id);
-  form.append("title", recording.title);
-  form.append("lyrics", lyrics);
-  form.append("inputKind", inputKind);
-  const report = parseReport(
-    await request(
-      settings,
-      "/v1/score",
-      { method: "POST", body: form },
-      300000,
-    ),
-  );
-  if (report.recordingId !== recording.id || report.inputKind !== inputKind)
-    throw new Error("AI 返回的报告与当前作品不匹配，请重试。");
-  return report;
+  form.append("audio", recording.vocalAudio, `${recording.id}.wav`);
+  form.append("recordingId", recording.id); form.append("title", recording.title);
+  const body = object(await request(settings, "/v2/score", { method: "POST", body: form }, 300000));
+  const analysis = object(body.analysis);
+  const resultScore = score(body.score);
+  if (body.schemaVersion !== 2 || body.engine !== "vocalverse" || body.recordingId !== recording.id || typeof body.scorable !== "boolean" || body.scorable !== (resultScore !== null) || JSON.stringify(body.scoreRange) !== "[0,100]" || analysis.inputKind !== "dry-vocal" || typeof analysis.modelCalled !== "boolean") throw new Error("评分服务返回的报告与当前作品不匹配。");
+  return { schemaVersion: 2, id: text(body.id), recordingId: text(body.recordingId), createdAt: number(body.createdAt), engine: "vocalverse", model: text(body.model), modelId: text(body.modelId), modelRevision: text(body.modelRevision), scorable: body.scorable, score: resultScore, scoreRange: [0, 100], summary: text(body.summary), limitations: texts(body.limitations), analysis: { sourceDurationSeconds: number(analysis.sourceDurationSeconds), startSeconds: number(analysis.startSeconds), durationSeconds: number(analysis.durationSeconds), inputKind: "dry-vocal", modelCalled: analysis.modelCalled } };
 }

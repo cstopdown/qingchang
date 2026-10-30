@@ -46,7 +46,7 @@ export function AiScorePanel({
         <span>
           <Sparkles size={14} /> AI 听唱反馈
         </span>
-        <small>MINICPM</small>
+        <small>VocalVerse</small>
       </div>
       {state?.status === "analyzing" ? (
         <div className="ai-analyzing" role="status">
@@ -59,8 +59,12 @@ export function AiScorePanel({
         </div>
       ) : (
         <>
-          {report && (
+          {report && "schemaVersion" in report && (
+            <div><div className="ai-score-overview"><strong>{report.score === null ? "暂不评分" : `${report.score.toFixed(1)} / 100`}</strong><span>原生总体参考分 · 干声</span></div><p>{report.summary}</p><p>评估片段 {formatTime(report.analysis.startSeconds)}–{formatTime(report.analysis.startSeconds + report.analysis.durationSeconds)}，共 {report.analysis.durationSeconds.toFixed(1)} 秒；作品 {formatTime(report.analysis.sourceDurationSeconds)}。</p><ul>{report.limitations.map((item, index) => <li key={index}>{item}</li>)}</ul><small>{report.model} · {report.modelRevision}</small></div>
+          )}
+          {report && !("schemaVersion" in report) && (
             <>
+              <p>历史报告 · {report.model}</p>
               <div
                 className={`ai-score-overview ${report.scorable ? "" : "unscorable"}`}
               >
@@ -176,20 +180,20 @@ export function AiScorePanel({
           )}
           {!report && state?.status !== "error" && (
             <p className="ai-intro">
-              让私有 AI 服务听听你的声音，给下一遍一点练习灵感。
+              使用 VocalVerse 评估保存的人声干声。
             </p>
           )}
-          <button className="ai-score-button" onClick={onScore} disabled={busy}>
+          <button className="ai-score-button" onClick={onScore} disabled={busy || mixed}>
             <Sparkles size={14} />
             {state?.status === "error"
               ? "重试 AI 评估"
               : report
                 ? "重新评估"
-                : "AI 打分与练习建议"}
+                : "VocalVerse 评分"}
           </button>
           {mixed && (
             <p className="ai-mixed-note">
-              这份作品仅有混音，将连同伴奏评估；伴奏可能影响判断。
+              这份作品没有保存干声，无法评分。
             </p>
           )}
         </>

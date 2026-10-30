@@ -1,0 +1,21 @@
+{
+  "source": "@tensorflow/tfjs-backend-wasm@4.22.0; https://github.com/tensorflow/tfjs/tree/tfjs-v4.22.0",
+  "files": {
+    "LICENSE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "tfjs-backend-wasm-simd.wasm": {
+      "bytes": 424594,
+      "sha256": "77ebb28a6d34f371dbbf2086b7f2de8994acd8ea5a3cf1fa24d2c26c840cac7b"
+    },
+    "tfjs-backend-wasm-threaded-simd.wasm": {
+      "bytes": 435643,
+      "sha256": "c052228d4bef185c27bbe59a9e029570c78bbb9f08b3cb46b597851650373de2"
+    },
+    "tfjs-backend-wasm.wasm": {
+      "bytes": 311123,
+      "sha256": "70a5d516060464e5269f01c74bac1772d6b8ab6cb612acf16b5cdaf61f78d892"
+    }
+  }
+}

@@ -31,6 +31,7 @@ export function useStudio(onRecordingComplete: (recording: Recording) => Promise
   return {
     ...snapshot,
     selectTrack: engine.selectTrack,
+    setReferenceMelody: engine.setReferenceMelody,
     togglePlayback: engine.togglePlayback,
     seek: engine.seek,
     startRecording: engine.startRecording,

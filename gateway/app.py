@@ -65,7 +65,7 @@ def create_app():
     app = web.Application(client_max_size=LIMIT)
     app.cleanup_ctx.append(session_context)
     app.router.add_get('/ai/health', proxy)
-    app.router.add_post('/ai/v1/score', proxy)
+    app.router.add_post('/ai/v2/score', proxy)
     app.router.add_get('/{path:.*}', static)
     return app
 

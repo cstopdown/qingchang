@@ -1,4 +1,4 @@
-export interface AiScoreReport {
+export interface LegacyAiScoreReport {
   id: string;
   recordingId: string;
   model: string;
@@ -22,16 +22,18 @@ export interface AiScoreReport {
   clipStartSeconds: number;
 }
 
+export interface VocalScoreReport {
+  schemaVersion: 2; id: string; recordingId: string; createdAt: number;
+  engine: "vocalverse"; model: string; modelId: string; modelRevision: string;
+  scorable: boolean; score: number | null; scoreRange: [number, number];
+  summary: string; limitations: string[];
+  analysis: { sourceDurationSeconds: number; startSeconds: number; durationSeconds: number; inputKind: "dry-vocal"; modelCalled: boolean };
+}
+export type AiScoreReport = LegacyAiScoreReport | VocalScoreReport;
+
 export interface AiServiceHealth {
-  status: "loading" | "ready" | "error";
-  model: "MiniCPM-o 4.5";
-  modelId: string;
-  backend: "mlx" | "transformers";
-  audioInput: true;
-  message?: string;
+  status: "loading" | "ready" | "error"; model: string; modelId: string;
+  modelRevision: string; backend: "pytorch-cpu"; audioInput: true; message?: string;
 }
 
-export interface AiServiceSettings {
-  endpoint: string;
-  token: string;
-}
+export interface AiServiceSettings { endpoint: string; token: string; }

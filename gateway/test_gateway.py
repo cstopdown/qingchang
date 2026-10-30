@@ -29,7 +29,7 @@ class GatewayTest(unittest.IsolatedAsyncioTestCase):
 
         worker = web.Application()
         worker.router.add_get('/health', health)
-        worker.router.add_post('/v1/score', score)
+        worker.router.add_post('/v2/score', score)
         async with TestServer(worker) as upstream:
             gateway.WORKER = str(upstream.make_url('')).rstrip('/')
             async with TestClient(TestServer(gateway.create_app())) as client:
@@ -40,11 +40,11 @@ class GatewayTest(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual((await client.get('/ai/health', headers={'Origin': 'https://evil.example'})).status, 403)
                 self.assertEqual((await client.get('/ai/health', headers={'Origin': 'null'})).status, 403)
                 self.assertEqual(len(health_calls), 1)
-                response = await client.post('/ai/v1/score', data=gzip.compress(b'audio'), headers={'Content-Encoding': 'gzip', 'Content-Type': 'audio/wav'})
+                response = await client.post('/ai/v2/score', data=gzip.compress(b'audio'), headers={'Content-Encoding': 'gzip', 'Content-Type': 'audio/wav'})
                 self.assertEqual(response.status, 415)
                 self.assertEqual(received, [])
                 audio = b'audio' * 100000
-                response = await client.post('/ai/v1/score', data=audio, headers={'Content-Type': 'audio/wav'})
+                response = await client.post('/ai/v2/score', data=audio, headers={'Content-Type': 'audio/wav'})
                 self.assertEqual(response.status, 201)
                 self.assertEqual(await response.json(), {'recordingId': 'one'})
                 self.assertEqual(received, [audio])

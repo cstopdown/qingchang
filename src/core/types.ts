@@ -1,3 +1,4 @@
+import type { ReferenceMelody, RealtimeScore } from '../scoring/types'
 import type { AiScoreReport } from '../ai/types'
 
 export interface Track {
@@ -11,6 +12,7 @@ export interface Track {
   lyrics: string
   createdAt: number
   favorite: boolean
+  referenceMelody?: ReferenceMelody
 }
 
 export interface Recording {
@@ -23,6 +25,7 @@ export interface Recording {
   audio: Blob
   vocalAudio?: Blob
   aiScore?: AiScoreReport
+  realtimeScore?: RealtimeScore
 }
 
 export interface MixerSettings {
