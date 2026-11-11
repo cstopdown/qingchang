@@ -341,17 +341,12 @@ export default function App() {
     <div className={`app-shell ${track ? "has-player" : ""}`}>
       <aside className="sidebar">
         <button className="brand" onClick={showLibrary} aria-label="轻唱首页">
-          <span className="brand-symbol">
-            <i />
-            <i />
-            <i />
-            <i />
-          </span>
+          <span className="brand-symbol"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 31V14l17-4v17" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/><ellipse cx="15.5" cy="32" rx="5.5" ry="4" fill="white"/><ellipse cx="32.5" cy="28" rx="5.5" ry="4" fill="white"/></svg></span>
           <span>
-            轻唱<span className="brand-english">qingchang</span>
+            轻唱
           </span>
         </button>
-        <div className="sidebar-caption">给自己，一首歌的时间</div>
+
         <nav className="main-nav" aria-label="主导航">
           {navigation.map((item) => (
             <button
@@ -393,16 +388,6 @@ export default function App() {
           <span>导入歌曲</span>
         </button>
         <div className="sidebar-bottom">
-          <div className="private-card">
-            <span className="private-icon">
-              <Headphones size={22} strokeWidth={1.4} />
-            </span>
-            <strong>小小的私人舞台</strong>
-            <p>不必完美，尽管开口。</p>
-            <span>
-              <span className="status-dot" /> 音频与作品保存在本机
-            </span>
-          </div>
           <button
             aria-label="偏好设置"
             className={`nav-item settings-nav ${view === "settings" ? "active" : ""}`}
@@ -418,7 +403,7 @@ export default function App() {
       <main className={`main-content view-${view}`}>
         <header className="topbar">
           <div className="breadcrumb">
-            我的音乐空间 <ChevronRight size={14} />
+            资料库 <ChevronRight size={14} />
             <span>
               {view === "library"
                 ? filter === "favorite"
@@ -539,19 +524,12 @@ export default function App() {
           <div className="page-content library-page">
             <section className="page-heading">
               <div>
-                <div className="eyebrow">
-                  <span className="small-line" /> MAKE ROOM FOR YOUR VOICE
-                </div>
                 <h1>
                   {filter === "favorite"
-                    ? "留给心动的歌。"
-                    : "今天，想唱点什么？"}
+                    ? "心动收藏"
+                    : "练唱曲库"}
                 </h1>
-                <p>
-                  {filter === "favorite"
-                    ? "反复喜欢的旋律，值得再唱一遍。"
-                    : "戴上耳机，把日常的片刻唱成自己的声音。"}
-                </p>
+
               </div>
               <button
                 className="button import-button"
@@ -561,94 +539,31 @@ export default function App() {
                 <Plus size={18} /> 导入歌曲
               </button>
             </section>
-            <button className="button ghost" disabled={locked || selecting} onClick={() => perform(async () => { const exercise = createScalePractice(); const item: Track = { id: createId(), title: "自制 C 大调音阶练习", artist: "轻唱", duration: exercise.duration, cover: "mint", origin: "local", audio: exercise.audio, lyrics: "", createdAt: Date.now(), favorite: false, referenceMelody: exercise.reference }; await saveTrack(item); setTracks(await listTracks()); await studio.selectTrack(item); setView("studio"); })}>添加自制音阶练习</button>
-            {filter !== "favorite" && (
-              <section className="feature-layout">
-                <div className="hero-card">
-                  <div className="hero-copy">
-                    <span className="hero-tag">
-                      <span /> 你的私人练唱时刻
-                    </span>
-                    <h2>
-                      把今天，
-                      <br />
-                      唱给自己听<span>。</span>
-                    </h2>
-                    <p>
-                      这里没有评委，也不用等一个好天气。
-                      <br />
-                      从一首歌开始，听见自己的声音。
-                    </p>
-                    <button
-                      className="button primary hero-action"
-                      disabled={!featured || locked || selecting}
-                      onClick={() => featured && selectForStudio(featured)}
-                    >
-                      <Mic size={18} /> 开始我的第一首 <ArrowRight size={17} />
-                    </button>
-                    <span className="hero-footnote">
-                      {selecting
-                        ? "正在准备音频…"
-                        : "原创伴奏已就位 · 随时开唱"}
-                    </span>
-                  </div>
-                  <div className="hero-art" aria-hidden="true">
-                    <div className="hero-orbit orbit-one" />
-                    <div className="hero-orbit orbit-two" />
-                    <div className="hero-art-label">
-                      A LITTLE MOMENT
-                      <br />
-                      ALL YOURS.
-                    </div>
-                    <div className="hero-vinyl">
-                      <div className="vinyl-grooves" />
-                      <div className="vinyl-label">
-                        <span>轻 / 唱</span>
-                        <i />
-                        <small>SIDE A · YOUR VOICE</small>
-                      </div>
-                    </div>
-                    <svg className="hero-sparkle" viewBox="0 0 40 40">
-                      <path
-                        d="M20 1c0 14 5 19 19 19-14 0-19 5-19 19C20 25 15 20 1 20 15 20 20 15 20 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <span className="hero-art-small">33⅓ RPM / SLOW DOWN</span>
-                  </div>
+            {filter !== "favorite" && featured && (
+              <section className="featured-section" aria-label="推荐练唱">
+                <div className="featured-heading">
+                  <h2>推荐练唱</h2>
                 </div>
-                <div className="daily-card">
-                  <div className="daily-top">
-                    <span className="eyebrow">THE QUIET SESSION</span>
-                    <Headphones size={20} strokeWidth={1.5} />
+                <div className="featured-content">
+                  <button className="featured-cover" aria-label={`推荐练唱 ${featured.title}`} disabled={locked || selecting} onClick={() => selectForStudio(featured)}>
+                    <CoverArt color={featured.cover} />
+                  </button>
+                  <div className="featured-detail">
+                    <span className="featured-label">推荐曲目 · {originLabel(featured)}</span>
+                    <h3>{featured.title}</h3>
+                    <p>{featured.artist} · {formatTime(featured.duration)}</p>
+
+                    <button className="button primary" aria-label="开始我的第一首" disabled={locked || selecting} onClick={() => selectForStudio(featured)}><Mic size={17} /> 开始练唱</button>
                   </div>
-                  <div className="daily-wave" aria-hidden="true">
-                    {[
-                      16, 28, 45, 64, 39, 74, 91, 60, 42, 69, 48, 31, 53, 34,
-                      18,
-                    ].map((height, index) => (
-                      <i key={index} style={{ height: `${height}%` }} />
-                    ))}
-                  </div>
-                  <h3>
-                    让声音，
-                    <br />
-                    有个自在的地方。
-                  </h3>
-                  <p>
-                    一副耳机，一点勇气。
-                    <br />
-                    剩下的，交给旋律。
-                  </p>
-                  <div className="daily-bottom">
-                    <span>为热爱而唱</span>
-                    <span>
-                      JUST FOR YOU <ArrowRight size={14} />
-                    </span>
+                  <div className="practice-card">
+                    <div className="practice-icon"><AudioLines size={24} /></div>
+                    <div><strong>音阶练习</strong><p>从简单的旋律开始，感受实时音高。</p></div>
+                    <button className="button ghost" disabled={locked || selecting} onClick={() => perform(async () => { const exercise = createScalePractice(); const item: Track = { id: createId(), title: "自制 C 大调音阶练习", artist: "轻唱", duration: exercise.duration, cover: "mint", origin: "local", audio: exercise.audio, lyrics: "", createdAt: Date.now(), favorite: false, referenceMelody: exercise.reference }; await saveTrack(item); setTracks(await listTracks()); await studio.selectTrack(item); setView("studio"); })}>添加自制音阶练习</button>
                   </div>
                 </div>
               </section>
             )}
+            {(filter === "favorite" || !featured) && <div className="favorite-practice"><button className="button ghost" disabled={locked || selecting} onClick={() => perform(async () => { const exercise = createScalePractice(); const item: Track = { id: createId(), title: "自制 C 大调音阶练习", artist: "轻唱", duration: exercise.duration, cover: "mint", origin: "local", audio: exercise.audio, lyrics: "", createdAt: Date.now(), favorite: false, referenceMelody: exercise.reference }; await saveTrack(item); setTracks(await listTracks()); await studio.selectTrack(item); setView("studio"); })}>添加自制音阶练习</button></div>}
             <section className="library-section">
               <div className="section-title-row">
                 <div>
@@ -662,7 +577,7 @@ export default function App() {
                       }
                     </span>
                   </h2>
-                  <p>从熟悉的旋律开始，慢慢找到自己的节奏</p>
+
                 </div>
                 <div className="search-field">
                   <Search size={17} />
@@ -877,7 +792,7 @@ export default function App() {
                 轻唱 <span>每一种声音，都值得被听见。</span>
               </span>
               <span>
-                MADE FOR YOUR LITTLE STAGE{" "}
+                轻唱{" "}
                 <span className="footer-star">✳</span>
               </span>
             </footer>
@@ -888,11 +803,8 @@ export default function App() {
           <div className="page-content studio-page">
             <section className="page-heading">
               <div>
-                <div className="eyebrow">
-                  <span className="small-line" /> YOUR LITTLE RECORDING STUDIO
-                </div>
-                <h1>现在，舞台属于你。</h1>
-                <p>不必一遍就完美。放松，跟着旋律，慢慢唱。</p>
+                <h1>录音工作室</h1>
+
               </div>
               <button className="button ghost" onClick={showLibrary}>
                 <ArrowLeft size={16} /> 返回曲库
@@ -1049,9 +961,9 @@ export default function App() {
                       </div>
                     </div>
                   </section>
-                  <MixerPanel studio={studio} onPreview={togglePreview} />
+                  <div className="studio-side"><MixerPanel studio={studio} onPreview={togglePreview} />
+                <ReferencePanel track={track} realtime={studio.realtime} disabled={locked || selecting} onChange={async (reference) => { const updated = { ...track, referenceMelody: reference }; await saveTrack(updated); setTracks(items => items.map(item => item.id === updated.id ? updated : item)); studio.setReferenceMelody(track.id, reference); }} /></div>
                 </div>
-                <ReferencePanel track={track} realtime={studio.realtime} disabled={locked || selecting} onChange={async (reference) => { const updated = { ...track, referenceMelody: reference }; await saveTrack(updated); setTracks(items => items.map(item => item.id === updated.id ? updated : item)); studio.setReferenceMelody(track.id, reference); }} />
                 <div className="studio-bottom-note">
                   <ShieldCheck size={16} />
                   <span>
@@ -1070,11 +982,8 @@ export default function App() {
           <div className="page-content recordings-page">
             <section className="page-heading">
               <div>
-                <div className="eyebrow">
-                  <span className="small-line" /> A COLLECTION OF YOUR MOMENTS
-                </div>
-                <h1>把声音，留在这里。</h1>
-                <p>每一次认真开口，都是一份只属于你的作品。</p>
+                <h1>我的作品</h1>
+
               </div>
               <span className="works-count">
                 {recordings.length} <span>份声音记忆</span>
@@ -1142,10 +1051,7 @@ export default function App() {
           <div className="page-content settings-page">
             <section className="page-heading">
               <div>
-                <div className="eyebrow">
-                  <span className="small-line" /> MAKE YOURSELF COMFORTABLE
-                </div>
-                <h1>找到舒服的节奏。</h1>
+                <h1>偏好设置</h1>
                 <p>让设备配合你的声音，偏好会自动保存在本机。</p>
               </div>
             </section>
