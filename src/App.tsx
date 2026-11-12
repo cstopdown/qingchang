@@ -25,6 +25,7 @@ import {
   ShieldCheck,
   SlidersHorizontal,
   Square,
+  Sparkles,
   Trash2,
   X,
 } from "lucide-react";
@@ -64,9 +65,10 @@ import { MixerPanel } from "./components/MixerPanel";
 import { createScalePractice } from "./scoring/practice";
 import { ReferencePanel } from "./components/ReferencePanel";
 import { formatTime } from "./components/formatTime";
+import { AiEntry } from "./components/AiEntry";
 import { SecureRecordingNotice } from "./components/SecureRecordingNotice";
 
-type View = "library" | "studio" | "recordings" | "settings";
+type View = "library" | "studio" | "recordings" | "settings" | "ai";
 type Filter = "all" | "favorite" | "local";
 const originLabel = (track: Track) =>
   ({ demo: "原创练唱", local: "本地导入", url: "直链导入" })[track.origin];
@@ -74,6 +76,7 @@ const navigation = [
   { id: "library" as const, label: "练唱曲库", icon: Library },
   { id: "studio" as const, label: "录音工作室", icon: Mic },
   { id: "recordings" as const, label: "我的作品", icon: AudioLines },
+  { id: "ai" as const, label: "AI", icon: Sparkles },
 ];
 
 export default function App() {
@@ -413,7 +416,7 @@ export default function App() {
                   ? "录音工作室"
                   : view === "recordings"
                     ? "我的作品"
-                    : "偏好设置"}
+                    : view === "ai" ? "AI" : "偏好设置"}
             </span>
           </div>
           <div className="topbar-right">
@@ -520,6 +523,7 @@ export default function App() {
           </div>
         )}
 
+        {view === "ai" && <AiEntry onBack={showLibrary} />}
         {view === "library" && (
           <div className="page-content library-page">
             <section className="page-heading">
