@@ -136,9 +136,7 @@ export default function App() {
       [item.id]: { status: "analyzing", startedAt: Date.now() },
     }));
     try {
-      const lyrics =
-        tracks.find((song) => song.id === item.trackId)?.lyrics ?? "";
-      const report = await scoreRecording(item, lyrics, aiSettings);
+      const report = await scoreRecording(item, aiSettings);
       await saveRecording({ ...item, aiScore: report });
       setRecordings(await listRecordings());
       setAiJobs((jobs) => {

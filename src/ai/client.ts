@@ -125,7 +125,7 @@ export async function checkAiService(settings: AiServiceSettings): Promise<AiSer
     throw new Error("这个地址不是支持音频评分的轻唱 VocalVerse 服务。");
   return { status: body.status as AiServiceHealth["status"], model: text(body.model), modelId: text(body.modelId), modelRevision: text(body.modelRevision), backend: "pytorch-cpu", audioInput: true, ...(body.message === undefined ? {} : { message: text(body.message) }) };
 }
-export async function scoreRecording(recording: Recording, _lyrics: string, settings: AiServiceSettings): Promise<AiScoreReport> {
+export async function scoreRecording(recording: Recording, settings: AiServiceSettings): Promise<AiScoreReport> {
   if (!recording.vocalAudio) throw new Error("作品没有保存干声，无法进行 VocalVerse 评分。");
   const form = new FormData();
   form.append("audio", recording.vocalAudio, `${recording.id}.wav`);

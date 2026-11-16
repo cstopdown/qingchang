@@ -8,7 +8,7 @@ import {
   Upload,
 } from "lucide-react";
 import type { Track } from "../core/types";
-import { importTrack, importTrackFromUrl, saveTrack } from "../data/library";
+import { importTrack, importTrackFromUrl } from "../data/library";
 
 export function ImportForm({
   onImported,
@@ -32,12 +32,8 @@ export function ImportForm({
     try {
       const track =
         mode === "local"
-          ? await importTrack(file!, lyrics)
+          ? await importTrack(file!, lyrics, title)
           : await importTrackFromUrl(url.trim(), title.trim(), lyrics);
-      if (mode === "local" && title.trim()) {
-        track.title = title.trim();
-        await saveTrack(track);
-      }
       await onImported(track);
       onClose();
     } catch (error) {

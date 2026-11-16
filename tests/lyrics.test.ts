@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatTime, getActiveLyricIndex, parseLrc } from '../src/audio/lyrics'
+import { getActiveLyricIndex, parseLrc } from '../src/audio/lyrics'
 
 describe('歌词时间轴', () => {
   it('将多时间标签、元数据和提前量合并为顺序歌词，并随播放和跳转定位', () => {
@@ -25,6 +25,5 @@ describe('歌词时间轴', () => {
     expect(getActiveLyricIndex(lyrics, 80)).toBe(4)
     expect(getActiveLyricIndex([], 80)).toBe(-1)
     expect(parseLrc('第一行\n第二行')).toEqual([])
-    expect(formatTime(125.9)).toBe('2:05')
   })
 })

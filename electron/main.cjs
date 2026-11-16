@@ -2,14 +2,12 @@ const { app, BrowserWindow, dialog, ipcMain, shell, systemPreferences } = requir
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { writeFile } = require('node:fs/promises');
-const { createLocalAiController } = require('./local-ai.cjs');
 
 const development = !app.isPackaged && process.argv.includes('--development');
 const rendererURL = development
   ? 'http://127.0.0.1:5173/'
   : pathToFileURL(path.join(__dirname, '../dist/index.html')).href;
 let mainWindow;
-let localAi;
 
 function trustedURL(value) {
   return value.split('#')[0] === rendererURL;
@@ -59,16 +57,6 @@ ipcMain.handle('qingchang:open-external', async (event, url) => {
   await shell.openExternal(externalURL(url));
 });
 
-ipcMain.handle('qingchang:start-local-ai', event => {
-  trustedSender(event);
-  localAi.start();
-});
-
-ipcMain.handle('qingchang:local-ai-progress', event => {
-  trustedSender(event);
-  return localAi.getProgress();
-});
-
 function createWindow() {
   mainWindow = new BrowserWindow({
     title: '轻唱', width: 1440, height: 940, minWidth: 820, minHeight: 640,
@@ -114,19 +102,10 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  localAi = createLocalAiController(app.isPackaged ? process.resourcesPath : app.getAppPath(), app.getPath('userData'));
   createWindow();
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
-});
-
-let stoppingAi = false;
-app.on('will-quit', event => {
-  if (stoppingAi || !localAi) return;
-  stoppingAi = true;
-  event.preventDefault();
-  localAi.stop().finally(() => app.exit());
 });
 
 app.on('window-all-closed', () => {

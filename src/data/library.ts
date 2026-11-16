@@ -155,7 +155,7 @@ async function decodeDuration(audio: Blob): Promise<number> {
   }
 }
 
-export async function importTrack(file: File, lyrics = ''): Promise<Track> {
+export async function importTrack(file: File, lyrics = '', title = ''): Promise<Track> {
   if (!file.type.startsWith('audio/') && !AUDIO_EXTENSION.test(file.name)) {
     throw new Error('请选择 MP3、WAV、M4A、FLAC、OGG 等常见音频文件。')
   }
@@ -163,7 +163,7 @@ export async function importTrack(file: File, lyrics = ''): Promise<Track> {
   const duration = await decodeDuration(file)
   const track: Track = {
     id: createId(),
-    title: file.name.replace(/\.[^.]+$/, ''),
+    title: title.trim() || file.name.replace(/\.[^.]+$/, ''),
     artist: '本地导入',
     duration,
     cover: 'mint',

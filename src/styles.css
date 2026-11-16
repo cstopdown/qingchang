@@ -4098,12 +4098,12 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 9px;
+  font-size: 13px;
   color: #555555;
   gap: 6px;
 }
 .ai-dimensions strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   color: #555555;
   font-variant-numeric: tabular-nums;
@@ -4126,8 +4126,8 @@ h1 {
   margin-top: 19px;
 }
 .ai-report-section h4 {
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 550;
   color: #555555;
   margin: 0 0 8px;
 }
@@ -4135,14 +4135,14 @@ h1 {
   padding-left: 15px;
   margin: 8px 0 0;
   color: #555555;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.9;
 }
 .ai-report-section li + li {
   margin-top: 6px;
 }
 .ai-report-section p {
-  font-size: 9px;
+  font-size: 13px;
   color: #555555;
   line-height: 1.9;
   margin-top: 8px;
@@ -4152,8 +4152,9 @@ h1 {
   padding-top: 16px;
 }
 .ai-limitations ul {
-  font-size: 9px;
+  font-size: 13px;
   color: #555555;
+  line-height: 1.9;
 }
 .ai-model-detail {
   font-size: 8px !important;
@@ -4201,34 +4202,6 @@ h1 {
   line-height: 1.9;
   margin-top: 18px;
 }
-.ai-local-start {
-  margin-top: 22px;
-  padding: 17px;
-  border: 1px solid #dedee2;
-  border-radius: 7px;
-  background: #646464;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-.ai-local-start strong {
-  font-size: 11px;
-  font-weight: 500;
-  color: #555555;
-}
-.ai-local-start p {
-  font-size: 9px;
-  color: #555555;
-  line-height: 1.8;
-  margin-top: 8px;
-}
-.ai-local-start .button {
-  flex-shrink: 0;
-  font-size: 10px;
-  padding: 10px 12px;
-  background: #606060;
-}
 .ai-address-help {
   font-size: 9px;
   color: #555555;
@@ -4262,29 +4235,6 @@ h1 {
   color: #b08b66;
   background: #fbf0e3;
   border-color: #eddbc4;
-}
-.ai-setup-help {
-  margin-top: 20px;
-  font-size: 10px;
-  color: #555555;
-}
-.ai-setup-help summary {
-  cursor: pointer;
-  color: #555555;
-}
-.ai-setup-help p {
-  font-size: 9px;
-  color: #555555;
-  line-height: 1.9;
-  margin-top: 12px;
-}
-.ai-setup-help code {
-  font-size: 9px;
-  overflow-wrap: anywhere;
-  background: #595959;
-  color: #555555;
-  border-radius: 3px;
-  padding: 1px 4px;
 }
 .ai-service-boundary {
   border-top: 1px solid #555555;
@@ -4324,16 +4274,6 @@ h1 {
   .ai-score-overview > span {
     font-size: 9px;
   }
-  .ai-report-section h4 {
-    font-size: 12px;
-  }
-  .ai-report-section ul {
-    font-size: 11px;
-  }
-  .ai-report-section p,
-  .ai-limitations ul {
-    font-size: 10px;
-  }
   .ai-model-detail {
     font-size: 9px !important;
   }
@@ -4364,22 +4304,6 @@ h1 {
   .ai-service-intro {
     font-size: 11px;
   }
-  .ai-local-start {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-    gap: 13px;
-  }
-  .ai-local-start strong {
-    font-size: 12px;
-  }
-  .ai-local-start p {
-    font-size: 10px;
-  }
-  .ai-local-start .button {
-    width: 100%;
-    font-size: 11px;
-  }
   .ai-service-status {
     font-size: 10px;
   }
@@ -4389,21 +4313,8 @@ h1 {
   .ai-service-boundary {
     font-size: 10px;
   }
-  .ai-setup-help {
-    font-size: 11px;
-  }
-  .ai-setup-help p,
-  .ai-setup-help code {
-    font-size: 10px;
-  }
   .ai-check-button {
     width: 100%;
-    font-size: 11px;
-  }
-  .ai-dimensions > div > span {
-    font-size: 10px;
-  }
-  .ai-dimensions strong {
     font-size: 11px;
   }
 }
@@ -4413,30 +4324,6 @@ h1 {
   overflow-wrap: anywhere;
 }
 /* AI 报告正文保持清晰，细小装饰文字延续原有视觉节奏。 */
-.ai-dimensions > div > span {
-  font-size: 13px;
-  color: #555555;
-}
-.ai-dimensions strong {
-  font-size: 13px;
-  color: #555555;
-}
-.ai-report-section h4 {
-  font-size: 13px;
-  font-weight: 550;
-  color: #555555;
-}
-.ai-report-section ul,
-.ai-limitations ul {
-  font-size: 13px;
-  color: #555555;
-  line-height: 1.9;
-}
-.ai-report-section p {
-  font-size: 13px;
-  color: #555555;
-  line-height: 1.9;
-}
 .ai-score-panel .ai-summary {
   font-size: 13px;
   color: #555555;

@@ -1,0 +1,12 @@
+# 开发专用：控制评分器覆盖服务契约，不安装 PyTorch 或下载模型。
+# 音频/API 依赖版本与 vocal_service/requirements.txt 保持一致。
+-r gateway/requirements.txt
+fastapi==0.119.0
+python-multipart==0.0.20
+librosa==0.11.0
+numpy==2.3.5
+scipy==1.16.3
+soundfile==0.13.1
+pyloudnorm==0.1.1
+httpx==0.28.1
+pytest==8.4.2

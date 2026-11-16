@@ -3,7 +3,8 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   testMatch: "**/*.spec.ts",
-  timeout: 60000,
+  // 首次启动 Vite 需预编译音频模型依赖，给完整录音流程留出执行时间。
+  timeout: 120000,
   fullyParallel: false,
   workers: 1,
   use: {

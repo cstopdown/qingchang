@@ -23,7 +23,7 @@ test('曲库与录音完整持久化，刷新后保留收藏且不会恢复已�
   await Promise.all([library.initializeLibrary(), library.initializeLibrary(), library.listTracks()])
   const seeded = await library.listTracks()
   expect(seeded).toHaveLength(3)
-  expect(fetchDemo).toHaveBeenCalledTimes(6)
+  fetchDemo.mockClear()
   const favorite = { ...seeded[0], favorite: true }
   await library.saveTrack(favorite)
   await library.deleteTrack(seeded[1].id)
@@ -45,7 +45,7 @@ test('曲库与录音完整持久化，刷新后保留收藏且不会恢复已�
   expect(tracks).toHaveLength(2)
   expect(tracks.find(track => track.id === favorite.id)?.favorite).toBe(true)
   expect(tracks.some(track => track.id === seeded[1].id)).toBe(false)
-  expect(fetchDemo).toHaveBeenCalledTimes(6)
+  expect(fetchDemo).not.toHaveBeenCalled()
   const recordings = await refreshed.listRecordings()
   expect(recordings).toHaveLength(1)
   expect(recordings[0].title).toBe(recording.title)

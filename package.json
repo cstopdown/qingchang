@@ -28,9 +28,7 @@
     "ios:check": "node scripts/ios.mjs check",
     "ios:build": "node scripts/ios.mjs build",
     "ios:run": "node scripts/ios.mjs run",
-    "ai:setup": "node scripts/setup-ai.mjs",
-    "ai:start": "node scripts/start-ai.mjs",
-    "test:ai": "node scripts/test-ai.mjs"
+    "test:ai": "python -m pytest vocal_service/tests -q && python -m unittest discover -s gateway -p \"test_*.py\" -v"
   },
   "dependencies": {
     "@capacitor/android": "8.6.0",
@@ -74,27 +72,6 @@
       "package.json"
     ],
     "asar": true,
-    "extraResources": [
-      {
-        "from": "ai_service",
-        "to": "ai_service",
-        "filter": [
-          "**/*",
-          "!**/__pycache__/**",
-          "!**/.pytest_cache/**",
-          "!**/*.pyc",
-          "!tests/**"
-        ]
-      },
-      {
-        "from": "scripts",
-        "to": "scripts",
-        "filter": [
-          "setup-ai.mjs",
-          "start-ai.mjs"
-        ]
-      }
-    ],
     "mac": {
       "icon": "electron/icons/icon.icns",
       "category": "public.app-category.music",

@@ -4,7 +4,7 @@ import { readFile, mkdir, mkdtemp, rm } from "node:fs/promises";
 test.use({ channel: undefined, launchOptions: {} });
 
 // 显式启用的桌面 WebKit 流程；安全区和键盘高度为浏览器模拟，不替代 iOS 真机。
-test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad 布局", async () => {
+test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad 布局", async ({}, testInfo) => {
   test.skip(
     process.env.QINGCHANG_WEBKIT_UI !== "1",
     "需显式启用并安装官方 WebKit 运行时",
@@ -27,7 +27,6 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
       if (message.type() === "error")
         console.error("WebKit控制台", message.text());
     });
-    await mkdir("artifacts", { recursive: true });
     await page.goto("http://127.0.0.1:5173");
     await expect(page.locator(".track-row")).toHaveCount(3);
     await page.evaluate(() => {
@@ -37,11 +36,12 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
     const header = await page.locator(".breadcrumb").boundingBox();
     expect(header!.y).toBeGreaterThanOrEqual(59);
     const navBounds = await page.locator(".mobile-nav").boundingBox();
-    expect(navBounds!.height).toBe(102);
+    expect(navBounds!.y + navBounds!.height).toBeLessThanOrEqual(844 - 34);
     const lastNav = await page
       .locator(".mobile-nav button")
       .last()
       .boundingBox();
+    expect(lastNav!.height).toBeGreaterThanOrEqual(44);
     expect(lastNav!.y + lastNav!.height).toBeLessThanOrEqual(810);
     await page.getByRole("button", { name: "导入歌曲", exact: true }).click();
     const dialog = page.getByRole("dialog");
@@ -73,7 +73,7 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
     await dialog
       .getByRole("button", { name: "加入我的曲库", exact: true })
       .scrollIntoViewIfNeeded();
-    await page.screenshot({ path: "artifacts/iOS-WebKit-手机导入表单.png" });
+    await page.screenshot({ path: testInfo.outputPath("iOS-WebKit-手机导入表单.png") });
     await dialog
       .getByRole("button", { name: "加入我的曲库", exact: true })
       .click();
@@ -124,7 +124,7 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
     await page
       .locator(".studio-transport")
       .evaluate((element) => element.scrollIntoView({ block: "center" }));
-    await page.screenshot({ path: "artifacts/iOS-WebKit-手机工作室.png" });
+    await page.screenshot({ path: testInfo.outputPath("iOS-WebKit-手机工作室.png") });
     await page.getByRole("button", { name: "设置", exact: true }).click();
     await expect(page.getByRole("textbox", { name: "服务地址" })).toHaveCSS(
       "font-size",
@@ -134,7 +134,7 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
       .getByRole("textbox", { name: "服务地址" })
       .fill("http://192.168.1.20:8787");
     await page.locator(".ai-service-card").scrollIntoViewIfNeeded();
-    await page.screenshot({ path: "artifacts/iOS-WebKit-手机AI设置.png" });
+    await page.screenshot({ path: testInfo.outputPath("iOS-WebKit-手机AI设置.png") });
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
@@ -168,7 +168,7 @@ test("WebKit 完成手机文件导入收藏与表单，检查安全区及 iPad �
       "font-size",
       "16px",
     );
-    await page.screenshot({ path: "artifacts/iOS-WebKit-iPad设置.png" });
+    await page.screenshot({ path: testInfo.outputPath("iOS-WebKit-iPad设置.png") });
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

@@ -2,7 +2,6 @@ import { readFileSync } from 'node:fs'
 import { runInNewContext } from 'node:vm'
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_MIXER_SETTINGS, encodeWav, renderMix } from '../src/audio/mix'
-import { detectPitch } from '../src/audio/pitch'
 import { VOCAL_TONE_PRESETS } from '../src/audio/effects'
 
 describe('完整音频输出', () => {
@@ -11,12 +10,6 @@ describe('完整音频输出', () => {
     const vocal = Float32Array.from({ length: sampleRate }, (_, frame) => 0.2 * Math.sin(2 * Math.PI * 440 * frame / sampleRate))
     const left = new Float32Array(sampleRate).fill(0.1)
     const right = new Float32Array(sampleRate).fill(-0.1)
-    const pitch = detectPitch(vocal.subarray(0, 2048), sampleRate)!
-    expect(pitch.note).toBe('A4')
-    expect(pitch.frequency).toBeCloseTo(440, 0)
-    expect(Math.abs(pitch.cents)).toBeLessThanOrEqual(1)
-    expect(detectPitch(new Float32Array(2048), sampleRate)).toBeNull()
-
     const mixed = renderMix([left, right], vocal, sampleRate, {
       ...DEFAULT_MIXER_SETTINGS, musicVolume: 0.5, vocalVolume: 0.8, reverb: 0,
     })

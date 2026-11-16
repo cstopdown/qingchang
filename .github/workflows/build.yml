@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   web:
-    name: 网页构建与功能测试
+    name: 网页构建与网页/服务功能测试
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,6 +23,11 @@ jobs:
           ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
       - run: npm test
       - run: npm run build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-test.txt
+      - run: npm run test:ai
       - uses: actions/upload-artifact@v4
         with:
           name: 网页生产文件

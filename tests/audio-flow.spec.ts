@@ -2,28 +2,11 @@ import { expect, test } from '@playwright/test'
 import { writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { makeToneWav } from './helpers/audio'
 
 // Chrome 内置假麦克风有静音间隔；使用连续 A4 输入让非静音验收可复现。
 const microphoneFixture = join(tmpdir(), 'qingchang-test-microphone.wav')
-const fixtureSampleRate = 48000
-const fixtureFrames = fixtureSampleRate * 2
-const fixture = Buffer.alloc(44 + fixtureFrames * 2)
-fixture.write('RIFF', 0)
-fixture.writeUInt32LE(fixture.length - 8, 4)
-fixture.write('WAVEfmt ', 8)
-fixture.writeUInt32LE(16, 16)
-fixture.writeUInt16LE(1, 20)
-fixture.writeUInt16LE(1, 22)
-fixture.writeUInt32LE(fixtureSampleRate, 24)
-fixture.writeUInt32LE(fixtureSampleRate * 2, 28)
-fixture.writeUInt16LE(2, 32)
-fixture.writeUInt16LE(16, 34)
-fixture.write('data', 36)
-fixture.writeUInt32LE(fixtureFrames * 2, 40)
-for (let frame = 0; frame < fixtureFrames; frame++) {
-  fixture.writeInt16LE(Math.round(0.2 * 32767 * Math.sin(2 * Math.PI * 440 * frame / fixtureSampleRate)), 44 + frame * 2)
-}
-writeFileSync(microphoneFixture, fixture)
+writeFileSync(microphoneFixture, makeToneWav(2, 48000, 440, 0.2))
 
 test.use({
   launchOptions: {
@@ -49,7 +32,8 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
       return stream
     }
     const sampleRate = 48000
-    const samples = Float32Array.from({ length: sampleRate * 1.25 }, (_, frame) => 0.12 * Math.sin(2 * Math.PI * 220 * frame / sampleRate))
+    // 手动录制留出真实 CREPE 初始化时间；曲终另用短伴奏验收。
+    const samples = Float32Array.from({ length: sampleRate * 20 }, (_, frame) => 0.12 * Math.sin(2 * Math.PI * 220 * frame / sampleRate))
     const recorded: { duration: number; wav: Blob; vocalWav: Blob }[] = []
     let failNextSave = false
     // 使用已发布首版的真实缓存结构，验证一次性补 natural 并保留用户参数。
@@ -60,30 +44,28 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
       recorded.push({ duration: recording.duration, wav: recording.audio, vocalWav: recording.vocalAudio })
     })
     const migratedSettings = engine.getSnapshot().settings
-    const wait = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds))
-    const waitReady = () => new Promise<void>((resolve) => {
-      if (engine.getSnapshot().status === 'ready') return resolve()
+    const waitFor = (condition: () => boolean) => new Promise<void>((resolve) => {
+      if (condition()) return resolve()
       const unsubscribe = engine.subscribe(() => {
-        if (engine.getSnapshot().status === 'ready') { unsubscribe(); resolve() }
+        if (condition()) { unsubscribe(); resolve() }
       })
     })
     const track = {
-      id: 'audio-browser-test', title: '测试伴奏', artist: '测试', duration: 1.25,
+      id: 'audio-browser-test', title: '测试伴奏', artist: '测试', duration: 20,
       cover: 'amber', origin: 'local', lyrics: '[00:00]测试', createdAt: Date.now(), favorite: false,
       audio: encodeWav([samples], sampleRate),
     }
 
     engine.updateSettings({ monitoring: false })
     await engine.startPreview()
-    await wait(280)
+    await waitFor(() => engine.getSnapshot().realtime.modelStatus === 'ready' && engine.getSnapshot().pitch !== null && engine.getSnapshot().level > 0)
     const preview = { status: engine.getSnapshot().previewStatus, level: engine.getSnapshot().level, note: engine.getSnapshot().pitch?.note }
     engine.updateSettings({ monitoring: true, vocalTone: 'warm' })
-    await wait(100)
     engine.stopPreview()
     const previewReleased = streams.every((stream) => stream.getTracks().every((track) => track.readyState === 'ended'))
     await engine.selectTrack(track)
     await engine.togglePlayback()
-    await wait(160)
+    await waitFor(() => engine.getSnapshot().position >= 0.15)
     const playingPosition = engine.getSnapshot().position
     engine.seek(0.4)
     await engine.togglePlayback()
@@ -102,16 +84,17 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     engine.seek(1)
     await engine.selectTrack({ ...track, id: 'forbidden-during-recording' })
     const recordingTrackId = engine.getSnapshot().track.id
-    await wait(520)
+    await waitFor(() => engine.getSnapshot().position >= 0.3 && engine.getSnapshot().pitch !== null && engine.getSnapshot().level > 0)
     const measuredLevel = engine.getSnapshot().level
     const measuredNote = engine.getSnapshot().pitch?.note
     await engine.stopRecording()
     const firstReleased = streams.every((stream) => stream.getTracks().every((track) => track.readyState === 'ended'))
 
     // 第二遍以电台滤镜自然曲终，最终 WAV 频响应与原声不同。
+    await engine.selectTrack({ ...track, duration: 1.25, audio: encodeWav([samples.subarray(0, sampleRate * 1.25)], sampleRate) })
     engine.updateSettings({ vocalTone: 'radio' })
     await engine.startRecording()
-    await waitReady()
+    await waitFor(() => engine.getSnapshot().status === 'ready')
     const autoEndedStatus = engine.getSnapshot().status
     const allReleased = streams.every((stream) => stream.getTracks().every((track) => track.readyState === 'ended'))
 
@@ -119,7 +102,7 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     engine.updateSettings({ musicVolume: 0.5, vocalVolume: 0.5, reverb: 0.25, latencyMs: 30 })
     failNextSave = true
     await engine.startRecording()
-    await wait(300)
+    await waitFor(() => engine.getSnapshot().position >= 0.3 && engine.getSnapshot().level > 0)
     await engine.stopRecording()
     const pending = engine.getSnapshot().pendingRecording
     const pendingBytes = pending.audio.size
@@ -127,6 +110,7 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     const pendingBlocksRecording = engine.getSnapshot().status === 'ready' && engine.getSnapshot().pendingRecording.id === pending.id
     await engine.retrySaveRecording()
     const pendingCleared = engine.getSnapshot().pendingRecording === null
+    const retriedOriginalAudio = recorded.at(-1)!.wav === pending.audio && recorded.at(-1)!.vocalWav === pending.vocalAudio
     const output = []
     for (const recording of recorded) {
       const view = new DataView(await recording.wav.arrayBuffer())
@@ -150,7 +134,7 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
         dryRms: Math.sqrt(Array.from({ length: (dry.byteLength - 44) / 2 }, (_, frame) => (dry.getInt16(44 + frame * 2, true) / 32768) ** 2).reduce((sum, value) => sum + value, 0) / ((dry.byteLength - 44) / 2)),
       })
     }
-    // 在权限准备阶段取消后，结果不应产生第三份录音。
+    // 在权限准备阶段取消后，不应额外产生录音。
     const preparation = engine.startRecording()
     engine.stop()
     await preparation
@@ -196,7 +180,7 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     return {
       playingPosition, paused, stoppedPosition, recordingStatus, recordingTrackId,
       measuredLevel, measuredNote, firstReleased, autoEndedStatus, allReleased, cancelledStatus, output,
-      pendingBytes, pendingBlocksRecording, pendingCleared, restoredLatency,
+      pendingBytes, pendingBlocksRecording, pendingCleared, retriedOriginalAudio, restoredLatency,
       preview, previewReleased, previewToRecordingReleased, disposeReleasedPreview, migratedSettings, agreement,
     }
   })
@@ -213,7 +197,7 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
   expect(result.disposeReleasedPreview).toBe(true)
   for (const preset of result.agreement) expect(preset.maxError).toBeLessThan(0.000001)
   expect(result.paused.status).toBe('ready')
-  expect(result.paused.position).toBeGreaterThanOrEqual(0.4)
+  expect(result.paused.position).toBeCloseTo(0.4, 1)
   expect(result.stoppedPosition).toBe(0)
   expect(result.recordingStatus).toBe('recording')
   expect(result.recordingTrackId).toBe('audio-browser-test')
@@ -226,10 +210,12 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
   expect(result.pendingBytes).toBeGreaterThan(44)
   expect(result.pendingBlocksRecording).toBe(true)
   expect(result.pendingCleared).toBe(true)
+  expect(result.retriedOriginalAudio).toBe(true)
   expect(result.restoredLatency).toBe(30)
   expect(result.output).toHaveLength(3)
   expect(result.output[0].duration).toBeGreaterThan(0.2)
-  expect(result.output[0].duration).toBeLessThan(1.25)
+  expect(result.output[0].duration).toBeLessThan(20)
+  expect(result.output[0].dryRms).toBeCloseTo(0.2 / Math.sqrt(2), 2)
   expect(result.output[1].duration).toBeCloseTo(1.25, 3)
   expect(result.output[1].rms).toBeLessThan(result.output[0].rms * 0.95)
   expect(result.output[1].rms).toBeGreaterThan(result.output[0].rms * 0.5)
@@ -240,7 +226,8 @@ test('真实浏览器完成麦克风返听预览、音色录制与保存，并�
     expect(recording.nonSilent).toBeGreaterThan(1000)
     expect(recording.dryChannels).toBe(1)
     expect(recording.dryFrames).toBe(recording.frames)
-    expect(recording.dryRms).toBeCloseTo(0.2 / Math.sqrt(2), 2)
+    // 短录音可能包含设备启动的静音；重试保存验证同一 Blob，而非固定整段幅度。
+    expect(recording.dryRms).toBeGreaterThan(0.002)
   }
 })
 
@@ -284,11 +271,10 @@ test('音频线程挂起后保存已收到的部分PCM，允许重新录音并�
       if (failOnce) { failOnce = false; throw new Error('测试：中断后存储写入失败') }
       saved.push(recording)
     })
-    const wait = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds))
-    const waitReady = () => new Promise<void>((resolve) => {
-      if (engine.getSnapshot().status === 'ready') return resolve()
+    const waitFor = (condition: () => boolean) => new Promise<void>((resolve) => {
+      if (condition()) return resolve()
       const remove = engine.subscribe(() => {
-        if (engine.getSnapshot().status === 'ready') { remove(); resolve() }
+        if (condition()) { remove(); resolve() }
       })
     })
     const readWav = async (recording: Captured) => {
@@ -310,23 +296,22 @@ test('音频线程挂起后保存已收到的部分PCM，允许重新录音并�
 
     // 真实停止音频渲染线程，而非模拟 Worklet 完成消息。
     await engine.startRecording()
-    await wait(520)
+    await waitFor(() => receivedFrames.at(-1)! >= rate * 0.25)
+    const streamCount = streams.length
     await audioContext.suspend()
-    await waitReady()
+    await waitFor(() => engine.getSnapshot().status === 'ready')
     const interrupted = await readWav(saved[0])
     const interruptedNotice = engine.getSnapshot().notice
     const firstReleased = streams.every((stream) => stream.getTracks().every((track) => track.readyState === 'ended'))
-    const streamCount = streams.length
-    await wait(100)
     const didNotRestart = audioContext.state === 'suspended' && streams.length === streamCount
 
     // 用户重新开始才恢复音频；同一次中断的保存失败必须保留真实部分作品。
     failOnce = true
     await engine.startRecording()
     const restarted = engine.getSnapshot().status
-    await wait(420)
+    await waitFor(() => receivedFrames.at(-1)! >= rate * 0.25)
     await audioContext.suspend()
-    await waitReady()
+    await waitFor(() => engine.getSnapshot().status === 'ready')
     const pending = engine.getSnapshot().pendingRecording
     const pendingWav = await readWav(pending)
     const pendingNotice = engine.getSnapshot().notice
@@ -342,9 +327,9 @@ test('音频线程挂起后保存已收到的部分PCM，允许重新录音并�
 
     // 输入设备事件为受控注入，不将此等同于 iPhone 真机麦克风中断。
     await engine.startRecording()
-    await wait(420)
+    await waitFor(() => receivedFrames.at(-1)! >= rate * 0.25)
     streams.at(-1)!.getAudioTracks()[0].dispatchEvent(new Event('mute'))
-    await waitReady()
+    await waitFor(() => engine.getSnapshot().status === 'ready')
     const muteWav = await readWav(saved[2])
     const mutedNotice = engine.getSnapshot().notice
 

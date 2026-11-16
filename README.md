@@ -8,6 +8,7 @@
 - 管理本地曲库、收藏和作品；录制时可调整返听、音色、音量、混响与延迟补偿，作品可回放和导出。
 - 使用浏览器内的 CREPE 检测人声音高；绑定参考人声或音高数据后，通过 DTW 显示音准、节奏和覆盖率等实时指标。
 - 可选连接私有 VocalVerse 服务，对已保存的人声干声进行录后评估。模型输出为实验分数，当前不能用来判断唱功或录音质量。
+- 独立 AI 页面保留后续功能入口，当前展示筹备状态；`ai.env.example` 尚未被应用读取，详见 [AI 入口与配置](./docs/AI入口与配置.md)。
 
 曲库与作品保存在当前浏览器或应用的 IndexedDB 中，不会自动跨设备同步。清除站点或应用数据、卸载应用可能删除内容，请及时导出重要作品。第三方音频需有使用权限，歌曲网页地址不一定是可导入的音频直链。
 
@@ -29,11 +30,26 @@ npm run build        # TypeScript 检查和生产构建
 npm run preview      # 预览构建结果，默认 127.0.0.1:4173
 ```
 
+浏览器测试的临时截图写入 `test-results/`，正式历史验收证据保留在 `artifacts/`。
+
+服务功能测试使用 Python 3.12。先用 `python -m venv .venv` 创建虚拟环境，Windows PowerShell 执行 `.venv\Scripts\Activate.ps1`，macOS/Linux 执行 `source .venv/bin/activate`，再运行：
+
+```sh
+python -m pip install -r requirements-test.txt
+npm run test:ai
+```
+
+该入口运行 VocalVerse 的 3 个功能测试和网关的 2 个功能测试，使用控制评分器及本机测试服务器，不安装 PyTorch、下载权重或访问线上服务。真实模型验收由 `vocal_service/verify.py` 和按需启用的 `tests/ai-real.spec.ts` 执行，需要另行准备私有服务和音频素材。
+
+Windows 若系统临时目录受限，可创建 `.venv/tmp` 并将当前终端的 `TEMP`、`TMP` 指向其绝对路径；pytest 可通过 `PYTEST_ADDOPTS=--basetemp=.venv/tmp/pytest` 使用同一项目内目录。Vite 已忽略这些运行环境与测试产物。
+
 ## 实时对比与录后评估
 
 实时 CREPE 模型和 WASM 资源随网页提供，分析在本机运行。没有参考旋律时只显示音高；可添加参考人声、音高 JSON 或使用内置音阶练习体验对比。示例伴奏本身不自动作为参考旋律。
 
 录后评估需要单独配置可访问的私有 VocalVerse 服务，在应用设置中保存地址并检测连接。模型权重和服务运行环境不包含在普通网页构建或安装包中，连接是否就绪以健康检测为准。历史作品如果没有保存干声，不能进行新的录后评估。部署和模型限制参见[评分方案](./docs/评分方案.md)与[服务部署与验收](./vocal_service/部署与验收.md)。
+
+旧 MiniCPM 服务、桌面自动安装/启动链路及配套测试已移除，源码可查 Git 历史；已保存的旧报告继续显示。
 
 ## 桌面与移动端
 

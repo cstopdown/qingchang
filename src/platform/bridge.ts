@@ -12,37 +12,14 @@ export async function subscribeAppPause(listener: () => void): Promise<() => voi
   return () => { void handle.remove(); };
 }
 
-export interface LocalAiProgress {
-  state: 'idle' | 'installing' | 'starting' | 'ready' | 'error';
-  message: string;
-}
-
 declare global {
   interface Window {
     qingchangDesktop?: {
       platform: string;
-      canStartLocalAi: boolean;
       exportAudio(bytes: Uint8Array, fileName: string): Promise<ExportResult>;
       openExternal(url: string): Promise<void>;
-      startLocalAi(): Promise<void>;
-      getLocalAiProgress(): Promise<LocalAiProgress>;
     };
   }
-}
-
-export function canStartLocalAi(): boolean {
-  return window.qingchangDesktop?.canStartLocalAi === true;
-}
-
-export async function startLocalAi(): Promise<void> {
-  if (!canStartLocalAi()) throw new Error('当前平台请连接已有私有 AI 服务。');
-  await window.qingchangDesktop!.startLocalAi();
-}
-
-export async function getLocalAiProgress(): Promise<LocalAiProgress> {
-  return window.qingchangDesktop
-    ? window.qingchangDesktop.getLocalAiProgress()
-    : { state: 'idle', message: '当前平台请连接已有私有 AI 服务。' };
 }
 
 export async function aiRequest(value: string, init: RequestInit = {}): Promise<Response> {
